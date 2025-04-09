@@ -1,8 +1,8 @@
 CREATE TABLE Users(
   Id int UNIQUE PRIMARY KEY,
-  Uname varchar(100) UNIQUE,
-  Password varchar(255),
-  Urank int,
-  Points int,
-  Role int
+  Uname varchar(100) UNIQUE NOT NULL,
+  Password varchar(255) NOT NULL,
+  Urank int NOT NULL,
+  Points int NOT NULL,
+  Role int NOT NULL
 )
