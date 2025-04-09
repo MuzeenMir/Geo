@@ -30,20 +30,20 @@
         {
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.mainMenuTab = new System.Windows.Forms.TabPage();
+            this.quickPlayPanel = new System.Windows.Forms.Panel();
+            this.quickPlay_ReturnButton = new System.Windows.Forms.Button();
+            this.quickPlay_PlayButton = new System.Windows.Forms.Button();
+            this.quizModeRadioButton = new System.Windows.Forms.RadioButton();
+            this.mapModeRadioButton = new System.Windows.Forms.RadioButton();
+            this.learnPanel = new System.Windows.Forms.Panel();
+            this.gameNameLabel = new System.Windows.Forms.Label();
+            this.quitButton = new System.Windows.Forms.Button();
+            this.quickplayButton = new System.Windows.Forms.Button();
+            this.learnButton = new System.Windows.Forms.Button();
             this.groupsTab = new System.Windows.Forms.TabPage();
             this.leaderboardTab = new System.Windows.Forms.TabPage();
             this.settingsTab = new System.Windows.Forms.TabPage();
-            this.learnButton = new System.Windows.Forms.Button();
-            this.quickplayButton = new System.Windows.Forms.Button();
-            this.quitButton = new System.Windows.Forms.Button();
-            this.gameNameLabel = new System.Windows.Forms.Label();
-            this.learnPanel = new System.Windows.Forms.Panel();
-            this.quickPlayPanel = new System.Windows.Forms.Panel();
-            this.mapModeRadioButton = new System.Windows.Forms.RadioButton();
-            this.quizModeRadioButton = new System.Windows.Forms.RadioButton();
-            this.quickPlay_PlayButton = new System.Windows.Forms.Button();
             this.loginTab = new System.Windows.Forms.TabPage();
-            this.quickPlay_ReturnButton = new System.Windows.Forms.Button();
             this.mainTabControl.SuspendLayout();
             this.mainMenuTab.SuspendLayout();
             this.quickPlayPanel.SuspendLayout();
@@ -58,10 +58,11 @@
             this.mainTabControl.Controls.Add(this.loginTab);
             this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainTabControl.Location = new System.Drawing.Point(1, 1);
+            this.mainTabControl.Location = new System.Drawing.Point(2, 2);
+            this.mainTabControl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
-            this.mainTabControl.Size = new System.Drawing.Size(798, 448);
+            this.mainTabControl.Size = new System.Drawing.Size(1596, 861);
             this.mainTabControl.TabIndex = 0;
             // 
             // mainMenuTab
@@ -74,171 +75,188 @@
             this.mainMenuTab.Controls.Add(this.quitButton);
             this.mainMenuTab.Controls.Add(this.quickplayButton);
             this.mainMenuTab.Controls.Add(this.learnButton);
-            this.mainMenuTab.Location = new System.Drawing.Point(4, 25);
+            this.mainMenuTab.Location = new System.Drawing.Point(8, 44);
+            this.mainMenuTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.mainMenuTab.Name = "mainMenuTab";
-            this.mainMenuTab.Padding = new System.Windows.Forms.Padding(3);
-            this.mainMenuTab.Size = new System.Drawing.Size(790, 419);
+            this.mainMenuTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mainMenuTab.Size = new System.Drawing.Size(1580, 809);
             this.mainMenuTab.TabIndex = 0;
             this.mainMenuTab.Text = "Main Menu";
             this.mainMenuTab.UseVisualStyleBackColor = true;
             // 
-            // groupsTab
-            // 
-            this.groupsTab.Location = new System.Drawing.Point(4, 25);
-            this.groupsTab.Name = "groupsTab";
-            this.groupsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.groupsTab.Size = new System.Drawing.Size(790, 419);
-            this.groupsTab.TabIndex = 1;
-            this.groupsTab.Text = "Groups";
-            this.groupsTab.UseVisualStyleBackColor = true;
-            // 
-            // leaderboardTab
-            // 
-            this.leaderboardTab.Location = new System.Drawing.Point(4, 25);
-            this.leaderboardTab.Name = "leaderboardTab";
-            this.leaderboardTab.Padding = new System.Windows.Forms.Padding(3);
-            this.leaderboardTab.Size = new System.Drawing.Size(790, 419);
-            this.leaderboardTab.TabIndex = 2;
-            this.leaderboardTab.Text = "Leaderboard";
-            this.leaderboardTab.UseVisualStyleBackColor = true;
-            // 
-            // settingsTab
-            // 
-            this.settingsTab.Location = new System.Drawing.Point(4, 25);
-            this.settingsTab.Name = "settingsTab";
-            this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
-            this.settingsTab.Size = new System.Drawing.Size(790, 419);
-            this.settingsTab.TabIndex = 3;
-            this.settingsTab.Text = "Settings";
-            this.settingsTab.UseVisualStyleBackColor = true;
-            // 
-            // learnButton
-            // 
-            this.learnButton.Location = new System.Drawing.Point(375, 99);
-            this.learnButton.Name = "learnButton";
-            this.learnButton.Size = new System.Drawing.Size(75, 23);
-            this.learnButton.TabIndex = 0;
-            this.learnButton.Text = "Learn";
-            this.learnButton.UseVisualStyleBackColor = true;
-            this.learnButton.Click += new System.EventHandler(this.learnButton_Click);
-            // 
-            // quickplayButton
-            // 
-            this.quickplayButton.Location = new System.Drawing.Point(375, 171);
-            this.quickplayButton.Name = "quickplayButton";
-            this.quickplayButton.Size = new System.Drawing.Size(75, 45);
-            this.quickplayButton.TabIndex = 1;
-            this.quickplayButton.Text = "Quick Play";
-            this.quickplayButton.UseVisualStyleBackColor = true;
-            this.quickplayButton.Click += new System.EventHandler(this.quickplayButton_Click);
-            // 
-            // quitButton
-            // 
-            this.quitButton.Location = new System.Drawing.Point(375, 264);
-            this.quitButton.Name = "quitButton";
-            this.quitButton.Size = new System.Drawing.Size(75, 23);
-            this.quitButton.TabIndex = 2;
-            this.quitButton.Text = "Quit";
-            this.quitButton.UseVisualStyleBackColor = true;
-            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
-            // 
-            // gameNameLabel
-            // 
-            this.gameNameLabel.AutoSize = true;
-            this.gameNameLabel.Font = new System.Drawing.Font("Perpetua", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameNameLabel.Location = new System.Drawing.Point(283, 34);
-            this.gameNameLabel.Name = "gameNameLabel";
-            this.gameNameLabel.Size = new System.Drawing.Size(269, 42);
-            this.gameNameLabel.TabIndex = 3;
-            this.gameNameLabel.Text = "Geography Game";
-            this.gameNameLabel.Click += new System.EventHandler(this.gameNameLabel_Click);
-            // 
-            // learnPanel
-            // 
-            this.learnPanel.Location = new System.Drawing.Point(6, 81);
-            this.learnPanel.Name = "learnPanel";
-            this.learnPanel.Size = new System.Drawing.Size(352, 229);
-            this.learnPanel.TabIndex = 4;
-            this.learnPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.learnPanel_Paint);
-            // 
             // quickPlayPanel
             // 
+            this.quickPlayPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.quickPlayPanel.Controls.Add(this.quickPlay_ReturnButton);
             this.quickPlayPanel.Controls.Add(this.quickPlay_PlayButton);
             this.quickPlayPanel.Controls.Add(this.quizModeRadioButton);
             this.quickPlayPanel.Controls.Add(this.mapModeRadioButton);
-            this.quickPlayPanel.Location = new System.Drawing.Point(483, 81);
+            this.quickPlayPanel.Location = new System.Drawing.Point(966, 156);
+            this.quickPlayPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quickPlayPanel.Name = "quickPlayPanel";
-            this.quickPlayPanel.Size = new System.Drawing.Size(301, 229);
+            this.quickPlayPanel.Size = new System.Drawing.Size(602, 440);
             this.quickPlayPanel.TabIndex = 5;
             this.quickPlayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.quickPlayPanel_Paint);
             // 
-            // mapModeRadioButton
+            // quickPlay_ReturnButton
             // 
-            this.mapModeRadioButton.AutoSize = true;
-            this.mapModeRadioButton.Location = new System.Drawing.Point(39, 73);
-            this.mapModeRadioButton.Name = "mapModeRadioButton";
-            this.mapModeRadioButton.Size = new System.Drawing.Size(98, 20);
-            this.mapModeRadioButton.TabIndex = 0;
-            this.mapModeRadioButton.TabStop = true;
-            this.mapModeRadioButton.Text = "Map Mode";
-            this.mapModeRadioButton.UseVisualStyleBackColor = true;
-            this.mapModeRadioButton.CheckedChanged += new System.EventHandler(this.mapModeRadioButton_CheckedChanged);
+            this.quickPlay_ReturnButton.Location = new System.Drawing.Point(446, 6);
+            this.quickPlay_ReturnButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.quickPlay_ReturnButton.Name = "quickPlay_ReturnButton";
+            this.quickPlay_ReturnButton.Size = new System.Drawing.Size(150, 44);
+            this.quickPlay_ReturnButton.TabIndex = 3;
+            this.quickPlay_ReturnButton.Text = "Return";
+            this.quickPlay_ReturnButton.UseVisualStyleBackColor = true;
+            this.quickPlay_ReturnButton.Click += new System.EventHandler(this.quickPlay_ReturnButton_Click);
+            // 
+            // quickPlay_PlayButton
+            // 
+            this.quickPlay_PlayButton.Location = new System.Drawing.Point(254, 277);
+            this.quickPlay_PlayButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.quickPlay_PlayButton.Name = "quickPlay_PlayButton";
+            this.quickPlay_PlayButton.Size = new System.Drawing.Size(150, 44);
+            this.quickPlay_PlayButton.TabIndex = 2;
+            this.quickPlay_PlayButton.Text = "Play";
+            this.quickPlay_PlayButton.UseVisualStyleBackColor = true;
+            this.quickPlay_PlayButton.Click += new System.EventHandler(this.quickPlay_PlayButton_Click);
             // 
             // quizModeRadioButton
             // 
             this.quizModeRadioButton.AutoSize = true;
-            this.quizModeRadioButton.Location = new System.Drawing.Point(180, 75);
+            this.quizModeRadioButton.Location = new System.Drawing.Point(360, 144);
+            this.quizModeRadioButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quizModeRadioButton.Name = "quizModeRadioButton";
-            this.quizModeRadioButton.Size = new System.Drawing.Size(98, 20);
+            this.quizModeRadioButton.Size = new System.Drawing.Size(177, 34);
             this.quizModeRadioButton.TabIndex = 1;
             this.quizModeRadioButton.TabStop = true;
             this.quizModeRadioButton.Text = "Quiz Mode";
             this.quizModeRadioButton.UseVisualStyleBackColor = true;
             this.quizModeRadioButton.CheckedChanged += new System.EventHandler(this.quizModeRadioButton_CheckedChanged);
             // 
-            // quickPlay_PlayButton
+            // mapModeRadioButton
             // 
-            this.quickPlay_PlayButton.Location = new System.Drawing.Point(127, 144);
-            this.quickPlay_PlayButton.Name = "quickPlay_PlayButton";
-            this.quickPlay_PlayButton.Size = new System.Drawing.Size(75, 23);
-            this.quickPlay_PlayButton.TabIndex = 2;
-            this.quickPlay_PlayButton.Text = "Play";
-            this.quickPlay_PlayButton.UseVisualStyleBackColor = true;
-            this.quickPlay_PlayButton.Click += new System.EventHandler(this.quickPlay_PlayButton_Click);
+            this.mapModeRadioButton.AutoSize = true;
+            this.mapModeRadioButton.Location = new System.Drawing.Point(78, 140);
+            this.mapModeRadioButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mapModeRadioButton.Name = "mapModeRadioButton";
+            this.mapModeRadioButton.Size = new System.Drawing.Size(173, 34);
+            this.mapModeRadioButton.TabIndex = 0;
+            this.mapModeRadioButton.TabStop = true;
+            this.mapModeRadioButton.Text = "Map Mode";
+            this.mapModeRadioButton.UseVisualStyleBackColor = true;
+            this.mapModeRadioButton.CheckedChanged += new System.EventHandler(this.mapModeRadioButton_CheckedChanged);
+            // 
+            // learnPanel
+            // 
+            this.learnPanel.Location = new System.Drawing.Point(12, 156);
+            this.learnPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.learnPanel.Name = "learnPanel";
+            this.learnPanel.Size = new System.Drawing.Size(704, 440);
+            this.learnPanel.TabIndex = 4;
+            this.learnPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.learnPanel_Paint);
+            // 
+            // gameNameLabel
+            // 
+            this.gameNameLabel.AutoSize = true;
+            this.gameNameLabel.Font = new System.Drawing.Font("Segoe UI Variable Text", 28.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameNameLabel.Location = new System.Drawing.Point(566, 65);
+            this.gameNameLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.gameNameLabel.Name = "gameNameLabel";
+            this.gameNameLabel.Size = new System.Drawing.Size(654, 100);
+            this.gameNameLabel.TabIndex = 3;
+            this.gameNameLabel.Text = "Geography Game";
+            this.gameNameLabel.Click += new System.EventHandler(this.gameNameLabel_Click);
+            // 
+            // quitButton
+            // 
+            this.quitButton.Location = new System.Drawing.Point(750, 508);
+            this.quitButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.quitButton.Name = "quitButton";
+            this.quitButton.Size = new System.Drawing.Size(150, 44);
+            this.quitButton.TabIndex = 2;
+            this.quitButton.Text = "Quit";
+            this.quitButton.UseVisualStyleBackColor = true;
+            this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
+            // 
+            // quickplayButton
+            // 
+            this.quickplayButton.Location = new System.Drawing.Point(750, 329);
+            this.quickplayButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.quickplayButton.Name = "quickplayButton";
+            this.quickplayButton.Size = new System.Drawing.Size(150, 87);
+            this.quickplayButton.TabIndex = 1;
+            this.quickplayButton.Text = "Quick Play";
+            this.quickplayButton.UseVisualStyleBackColor = true;
+            this.quickplayButton.Click += new System.EventHandler(this.quickplayButton_Click);
+            // 
+            // learnButton
+            // 
+            this.learnButton.Location = new System.Drawing.Point(750, 190);
+            this.learnButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.learnButton.Name = "learnButton";
+            this.learnButton.Size = new System.Drawing.Size(150, 44);
+            this.learnButton.TabIndex = 0;
+            this.learnButton.Text = "Learn";
+            this.learnButton.UseVisualStyleBackColor = true;
+            this.learnButton.Click += new System.EventHandler(this.learnButton_Click);
+            // 
+            // groupsTab
+            // 
+            this.groupsTab.Location = new System.Drawing.Point(8, 44);
+            this.groupsTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupsTab.Name = "groupsTab";
+            this.groupsTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupsTab.Size = new System.Drawing.Size(1580, 809);
+            this.groupsTab.TabIndex = 1;
+            this.groupsTab.Text = "Groups";
+            this.groupsTab.UseVisualStyleBackColor = true;
+            // 
+            // leaderboardTab
+            // 
+            this.leaderboardTab.Location = new System.Drawing.Point(8, 44);
+            this.leaderboardTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.leaderboardTab.Name = "leaderboardTab";
+            this.leaderboardTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.leaderboardTab.Size = new System.Drawing.Size(1580, 809);
+            this.leaderboardTab.TabIndex = 2;
+            this.leaderboardTab.Text = "Leaderboard";
+            this.leaderboardTab.UseVisualStyleBackColor = true;
+            // 
+            // settingsTab
+            // 
+            this.settingsTab.Location = new System.Drawing.Point(8, 44);
+            this.settingsTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.settingsTab.Name = "settingsTab";
+            this.settingsTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.settingsTab.Size = new System.Drawing.Size(1580, 809);
+            this.settingsTab.TabIndex = 3;
+            this.settingsTab.Text = "Settings";
+            this.settingsTab.UseVisualStyleBackColor = true;
             // 
             // loginTab
             // 
-            this.loginTab.Location = new System.Drawing.Point(4, 25);
+            this.loginTab.Location = new System.Drawing.Point(8, 44);
+            this.loginTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.loginTab.Name = "loginTab";
-            this.loginTab.Padding = new System.Windows.Forms.Padding(3);
-            this.loginTab.Size = new System.Drawing.Size(790, 419);
+            this.loginTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.loginTab.Size = new System.Drawing.Size(1580, 809);
             this.loginTab.TabIndex = 4;
             this.loginTab.Text = "Login";
             this.loginTab.UseVisualStyleBackColor = true;
             // 
-            // quickPlay_ReturnButton
-            // 
-            this.quickPlay_ReturnButton.Location = new System.Drawing.Point(223, 3);
-            this.quickPlay_ReturnButton.Name = "quickPlay_ReturnButton";
-            this.quickPlay_ReturnButton.Size = new System.Drawing.Size(75, 23);
-            this.quickPlay_ReturnButton.TabIndex = 3;
-            this.quickPlay_ReturnButton.Text = "Return";
-            this.quickPlay_ReturnButton.UseVisualStyleBackColor = true;
-            this.quickPlay_ReturnButton.Click += new System.EventHandler(this.quickPlay_ReturnButton_Click);
-            // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1600, 865);
             this.Controls.Add(this.mainTabControl);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "mainForm";
-            this.Padding = new System.Windows.Forms.Padding(1);
+            this.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Text = "Geography Game";
             this.mainTabControl.ResumeLayout(false);
             this.mainMenuTab.ResumeLayout(false);
