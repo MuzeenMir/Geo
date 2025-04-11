@@ -95,8 +95,8 @@
             this.quickPlayPanel.Controls.Add(this.quickPlay_PlayButton);
             this.quickPlayPanel.Controls.Add(this.quizModeRadioButton);
             this.quickPlayPanel.Controls.Add(this.mapModeRadioButton);
-            this.quickPlayPanel.Location = new System.Drawing.Point(428, 106);
-            this.quickPlayPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quickPlayPanel.Location = new System.Drawing.Point(463, 71);
+            this.quickPlayPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.quickPlayPanel.Name = "quickPlayPanel";
             this.quickPlayPanel.Size = new System.Drawing.Size(328, 227);
             this.quickPlayPanel.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             // quickPlay_ReturnButton
             // 
-            this.quickPlay_ReturnButton.Location = new System.Drawing.Point(112, 2);
+            this.quickPlay_ReturnButton.Location = new System.Drawing.Point(255, 2);
             this.quickPlay_ReturnButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.quickPlay_ReturnButton.Name = "quickPlay_ReturnButton";
             this.quickPlay_ReturnButton.Size = new System.Drawing.Size(71, 46);
@@ -115,10 +115,10 @@
             // 
             // quickPlay_PlayButton
             // 
-            this.quickPlay_PlayButton.Location = new System.Drawing.Point(32, 39);
+            this.quickPlay_PlayButton.Location = new System.Drawing.Point(144, 183);
             this.quickPlay_PlayButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.quickPlay_PlayButton.Name = "quickPlay_PlayButton";
-            this.quickPlay_PlayButton.Size = new System.Drawing.Size(19, 6);
+            this.quickPlay_PlayButton.Size = new System.Drawing.Size(60, 26);
             this.quickPlay_PlayButton.TabIndex = 2;
             this.quickPlay_PlayButton.Text = "Play";
             this.quickPlay_PlayButton.UseVisualStyleBackColor = true;
@@ -127,7 +127,7 @@
             // quizModeRadioButton
             // 
             this.quizModeRadioButton.AutoSize = true;
-            this.quizModeRadioButton.Location = new System.Drawing.Point(94, 23);
+            this.quizModeRadioButton.Location = new System.Drawing.Point(211, 108);
             this.quizModeRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.quizModeRadioButton.Name = "quizModeRadioButton";
             this.quizModeRadioButton.Size = new System.Drawing.Size(98, 20);
@@ -140,7 +140,7 @@
             // mapModeRadioButton
             // 
             this.mapModeRadioButton.AutoSize = true;
-            this.mapModeRadioButton.Location = new System.Drawing.Point(10, 20);
+            this.mapModeRadioButton.Location = new System.Drawing.Point(20, 108);
             this.mapModeRadioButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.mapModeRadioButton.Name = "mapModeRadioButton";
             this.mapModeRadioButton.Size = new System.Drawing.Size(98, 20);
@@ -152,10 +152,10 @@
             // 
             // learnPanel
             // 
-            this.learnPanel.Location = new System.Drawing.Point(4, 155);
+            this.learnPanel.Location = new System.Drawing.Point(4, 73);
             this.learnPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.learnPanel.Name = "learnPanel";
-            this.learnPanel.Size = new System.Drawing.Size(88, 62);
+            this.learnPanel.Size = new System.Drawing.Size(308, 225);
             this.learnPanel.TabIndex = 4;
             this.learnPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.learnPanel_Paint);
             // 
@@ -163,7 +163,7 @@
             // 
             this.gameNameLabel.AutoSize = true;
             this.gameNameLabel.Font = new System.Drawing.Font("Perpetua", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameNameLabel.Location = new System.Drawing.Point(71, 9);
+            this.gameNameLabel.Location = new System.Drawing.Point(221, 28);
             this.gameNameLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.gameNameLabel.Name = "gameNameLabel";
             this.gameNameLabel.Size = new System.Drawing.Size(269, 42);
@@ -173,10 +173,10 @@
             // 
             // quitButton
             // 
-            this.quitButton.Location = new System.Drawing.Point(163, 155);
+            this.quitButton.Location = new System.Drawing.Point(355, 236);
             this.quitButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.quitButton.Name = "quitButton";
-            this.quitButton.Size = new System.Drawing.Size(19, 6);
+            this.quitButton.Size = new System.Drawing.Size(69, 24);
             this.quitButton.TabIndex = 2;
             this.quitButton.Text = "Quit";
             this.quitButton.UseVisualStyleBackColor = true;
@@ -184,10 +184,10 @@
             // 
             // quickplayButton
             // 
-            this.quickplayButton.Location = new System.Drawing.Point(225, 134);
+            this.quickplayButton.Location = new System.Drawing.Point(355, 156);
             this.quickplayButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.quickplayButton.Name = "quickplayButton";
-            this.quickplayButton.Size = new System.Drawing.Size(19, 12);
+            this.quickplayButton.Size = new System.Drawing.Size(69, 43);
             this.quickplayButton.TabIndex = 1;
             this.quickplayButton.Text = "Quick Play";
             this.quickplayButton.UseVisualStyleBackColor = true;
@@ -195,10 +195,10 @@
             // 
             // learnButton
             // 
-            this.learnButton.Location = new System.Drawing.Point(94, 27);
+            this.learnButton.Location = new System.Drawing.Point(355, 92);
             this.learnButton.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.learnButton.Name = "learnButton";
-            this.learnButton.Size = new System.Drawing.Size(19, 6);
+            this.learnButton.Size = new System.Drawing.Size(69, 27);
             this.learnButton.TabIndex = 0;
             this.learnButton.Text = "Learn";
             this.learnButton.UseVisualStyleBackColor = true;
@@ -209,7 +209,7 @@
             this.groupsTab.Location = new System.Drawing.Point(4, 25);
             this.groupsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupsTab.Name = "groupsTab";
-            this.groupsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupsTab.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.groupsTab.Size = new System.Drawing.Size(792, 419);
             this.groupsTab.TabIndex = 1;
             this.groupsTab.Text = "Groups";
@@ -220,7 +220,7 @@
             this.leaderboardTab.Location = new System.Drawing.Point(4, 25);
             this.leaderboardTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.leaderboardTab.Name = "leaderboardTab";
-            this.leaderboardTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.leaderboardTab.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.leaderboardTab.Size = new System.Drawing.Size(792, 419);
             this.leaderboardTab.TabIndex = 2;
             this.leaderboardTab.Text = "Leaderboard";
@@ -231,7 +231,7 @@
             this.settingsTab.Location = new System.Drawing.Point(4, 25);
             this.settingsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.settingsTab.Name = "settingsTab";
-            this.settingsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.settingsTab.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.settingsTab.Size = new System.Drawing.Size(792, 419);
             this.settingsTab.TabIndex = 3;
             this.settingsTab.Text = "Settings";
@@ -242,7 +242,7 @@
             this.loginTab.Location = new System.Drawing.Point(4, 25);
             this.loginTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loginTab.Name = "loginTab";
-            this.loginTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginTab.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.loginTab.Size = new System.Drawing.Size(792, 419);
             this.loginTab.TabIndex = 4;
             this.loginTab.Text = "Login";
