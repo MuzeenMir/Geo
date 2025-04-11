@@ -90,11 +90,12 @@ namespace Geo
 
         private void quizModeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void quickPlay_PlayButton_Click(object sender, EventArgs e)
         {
+            
 
         }
 
