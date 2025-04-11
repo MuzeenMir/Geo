@@ -16,5 +16,10 @@ namespace Geo
         {
             InitializeComponent();
         }
+
+        private void leaderboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

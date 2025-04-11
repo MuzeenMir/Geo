@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // leaderboard
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1558, 738);
+            this.Name = "leaderboard";
+            this.Padding = new System.Windows.Forms.Padding(6);
             this.Text = "leaderboard";
+            this.Load += new System.EventHandler(this.leaderboard_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
