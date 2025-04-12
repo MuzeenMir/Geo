@@ -84,6 +84,8 @@
     <None Include="Resources\Screenshot 2025-04-08 130130.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\userCreds.csv" />
+    <None Include="Resources\user_creds.json" />
     <None Include="Resources\wrld-21.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
