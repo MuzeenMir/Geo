@@ -7,6 +7,9 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn; // Add this field
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score; // Add this field
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -20,8 +23,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -29,8 +30,8 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn(); // Initialize NameColumn
+            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn(); // Initialize Score
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,21 +39,22 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
-            this.Score});
-            this.dataGridView1.Location = new System.Drawing.Point(552, 296);
+                      this.NameColumn,
+                      this.Score});
+            this.dataGridView1.Location = new System.Drawing.Point(268, 96);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(484, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(330, 159);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Name
+            // NameColumn
             // 
-            this.Name.HeaderText = "Name";
-            this.Name.MinimumWidth = 10;
-            this.Name.Name = "Name";
-            this.Name.Width = 200;
+            this.NameColumn.HeaderText = "Name";
+            this.NameColumn.MinimumWidth = 10;
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.Width = 200;
             // 
             // Score
             // 
@@ -63,12 +65,13 @@
             // 
             // leaderboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1558, 738);
+            this.ClientSize = new System.Drawing.Size(779, 384);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "leaderboard";
-            this.Padding = new System.Windows.Forms.Padding(6);
+            this.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Text = "leaderboard";
             this.Load += new System.EventHandler(this.leaderboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -76,10 +79,7 @@
 
         }
 
-        #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Score;
     }
 }

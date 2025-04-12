@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.mainTabControl = new System.Windows.Forms.TabControl();
+            this.leaderboardTab = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.mainMenuTab = new System.Windows.Forms.TabPage();
             this.quickPlayPanel = new System.Windows.Forms.Panel();
             this.quickPlay_ReturnButton = new System.Windows.Forms.Button();
@@ -41,20 +43,10 @@
             this.quickplayButton = new System.Windows.Forms.Button();
             this.learnButton = new System.Windows.Forms.Button();
             this.groupsTab = new System.Windows.Forms.TabPage();
-            this.leaderboardTab = new System.Windows.Forms.TabPage();
             this.settingsTab = new System.Windows.Forms.TabPage();
             this.loginTab = new System.Windows.Forms.TabPage();
             this.login_SignUpButton = new System.Windows.Forms.Button();
             this.logiin_LoginButton = new System.Windows.Forms.Button();
-            this.loginPanel = new System.Windows.Forms.Panel();
-            this.userLoginButton = new System.Windows.Forms.Button();
-            this.login_returnButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.passwordBox = new System.Windows.Forms.TextBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.usernameBox = new System.Windows.Forms.TextBox();
             this.signUpPlanel = new System.Windows.Forms.Panel();
             this.saveSignupInfoButton = new System.Windows.Forms.Button();
             this.signupReturnButton = new System.Windows.Forms.Button();
@@ -64,6 +56,15 @@
             this.signupUsernamePanel = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.signupUsernameBox = new System.Windows.Forms.TextBox();
+            this.loginPanel = new System.Windows.Forms.Panel();
+            this.userLoginButton = new System.Windows.Forms.Button();
+            this.login_returnButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.passwordBox = new System.Windows.Forms.TextBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.usernameBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -71,16 +72,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.learn_ReturnButton = new System.Windows.Forms.Button();
+            this.startButtonsPanel = new System.Windows.Forms.Panel();
             this.mainTabControl.SuspendLayout();
+            this.leaderboardTab.SuspendLayout();
             this.mainMenuTab.SuspendLayout();
             this.quickPlayPanel.SuspendLayout();
+            this.learnPanel.SuspendLayout();
             this.loginTab.SuspendLayout();
-            this.loginPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.signUpPlanel.SuspendLayout();
             this.signupPasswordPanel.SuspendLayout();
             this.signupUsernamePanel.SuspendLayout();
+            this.loginPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.startButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTabControl
@@ -98,16 +105,35 @@
             this.mainTabControl.Size = new System.Drawing.Size(800, 448);
             this.mainTabControl.TabIndex = 0;
             // 
+            // leaderboardTab
+            // 
+            this.leaderboardTab.Controls.Add(this.button1);
+            this.leaderboardTab.Location = new System.Drawing.Point(4, 25);
+            this.leaderboardTab.Margin = new System.Windows.Forms.Padding(2);
+            this.leaderboardTab.Name = "leaderboardTab";
+            this.leaderboardTab.Padding = new System.Windows.Forms.Padding(1);
+            this.leaderboardTab.Size = new System.Drawing.Size(792, 419);
+            this.leaderboardTab.TabIndex = 2;
+            this.leaderboardTab.Text = "Leaderboard";
+            this.leaderboardTab.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(329, 169);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // mainMenuTab
             // 
             this.mainMenuTab.BackgroundImage = global::Geo.Properties.Resources.wrld_21;
             this.mainMenuTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainMenuTab.Controls.Add(this.startButtonsPanel);
             this.mainMenuTab.Controls.Add(this.quickPlayPanel);
             this.mainMenuTab.Controls.Add(this.learnPanel);
-            this.mainMenuTab.Controls.Add(this.gameNameLabel);
-            this.mainMenuTab.Controls.Add(this.quitButton);
-            this.mainMenuTab.Controls.Add(this.quickplayButton);
-            this.mainMenuTab.Controls.Add(this.learnButton);
             this.mainMenuTab.Location = new System.Drawing.Point(4, 25);
             this.mainMenuTab.Name = "mainMenuTab";
             this.mainMenuTab.Padding = new System.Windows.Forms.Padding(3);
@@ -123,19 +149,20 @@
             this.quickPlayPanel.Controls.Add(this.quickPlay_PlayButton);
             this.quickPlayPanel.Controls.Add(this.quizModeRadioButton);
             this.quickPlayPanel.Controls.Add(this.mapModeRadioButton);
-            this.quickPlayPanel.Location = new System.Drawing.Point(463, 71);
+            this.quickPlayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quickPlayPanel.Location = new System.Drawing.Point(3, 3);
             this.quickPlayPanel.Margin = new System.Windows.Forms.Padding(1);
             this.quickPlayPanel.Name = "quickPlayPanel";
-            this.quickPlayPanel.Size = new System.Drawing.Size(328, 227);
+            this.quickPlayPanel.Size = new System.Drawing.Size(786, 413);
             this.quickPlayPanel.TabIndex = 5;
             this.quickPlayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.quickPlayPanel_Paint);
             // 
             // quickPlay_ReturnButton
             // 
-            this.quickPlay_ReturnButton.Location = new System.Drawing.Point(255, 2);
+            this.quickPlay_ReturnButton.Location = new System.Drawing.Point(712, 2);
             this.quickPlay_ReturnButton.Margin = new System.Windows.Forms.Padding(2);
             this.quickPlay_ReturnButton.Name = "quickPlay_ReturnButton";
-            this.quickPlay_ReturnButton.Size = new System.Drawing.Size(71, 46);
+            this.quickPlay_ReturnButton.Size = new System.Drawing.Size(71, 23);
             this.quickPlay_ReturnButton.TabIndex = 3;
             this.quickPlay_ReturnButton.Text = "Return";
             this.quickPlay_ReturnButton.UseVisualStyleBackColor = true;
@@ -143,7 +170,7 @@
             // 
             // quickPlay_PlayButton
             // 
-            this.quickPlay_PlayButton.Location = new System.Drawing.Point(144, 183);
+            this.quickPlay_PlayButton.Location = new System.Drawing.Point(361, 282);
             this.quickPlay_PlayButton.Margin = new System.Windows.Forms.Padding(1);
             this.quickPlay_PlayButton.Name = "quickPlay_PlayButton";
             this.quickPlay_PlayButton.Size = new System.Drawing.Size(60, 26);
@@ -155,7 +182,7 @@
             // quizModeRadioButton
             // 
             this.quizModeRadioButton.AutoSize = true;
-            this.quizModeRadioButton.Location = new System.Drawing.Point(211, 108);
+            this.quizModeRadioButton.Location = new System.Drawing.Point(574, 89);
             this.quizModeRadioButton.Margin = new System.Windows.Forms.Padding(1);
             this.quizModeRadioButton.Name = "quizModeRadioButton";
             this.quizModeRadioButton.Size = new System.Drawing.Size(98, 20);
@@ -168,7 +195,7 @@
             // mapModeRadioButton
             // 
             this.mapModeRadioButton.AutoSize = true;
-            this.mapModeRadioButton.Location = new System.Drawing.Point(20, 108);
+            this.mapModeRadioButton.Location = new System.Drawing.Point(119, 89);
             this.mapModeRadioButton.Margin = new System.Windows.Forms.Padding(1);
             this.mapModeRadioButton.Name = "mapModeRadioButton";
             this.mapModeRadioButton.Size = new System.Drawing.Size(98, 20);
@@ -180,10 +207,13 @@
             // 
             // learnPanel
             // 
-            this.learnPanel.Location = new System.Drawing.Point(4, 73);
+            this.learnPanel.Controls.Add(this.learn_ReturnButton);
+            this.learnPanel.Controls.Add(this.label10);
+            this.learnPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.learnPanel.Location = new System.Drawing.Point(3, 3);
             this.learnPanel.Margin = new System.Windows.Forms.Padding(1);
             this.learnPanel.Name = "learnPanel";
-            this.learnPanel.Size = new System.Drawing.Size(308, 225);
+            this.learnPanel.Size = new System.Drawing.Size(786, 413);
             this.learnPanel.TabIndex = 4;
             this.learnPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.learnPanel_Paint);
             // 
@@ -191,7 +221,7 @@
             // 
             this.gameNameLabel.AutoSize = true;
             this.gameNameLabel.Font = new System.Drawing.Font("Perpetua", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameNameLabel.Location = new System.Drawing.Point(221, 28);
+            this.gameNameLabel.Location = new System.Drawing.Point(1, 0);
             this.gameNameLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.gameNameLabel.Name = "gameNameLabel";
             this.gameNameLabel.Size = new System.Drawing.Size(269, 42);
@@ -201,7 +231,7 @@
             // 
             // quitButton
             // 
-            this.quitButton.Location = new System.Drawing.Point(355, 236);
+            this.quitButton.Location = new System.Drawing.Point(112, 209);
             this.quitButton.Margin = new System.Windows.Forms.Padding(1);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(69, 24);
@@ -212,7 +242,7 @@
             // 
             // quickplayButton
             // 
-            this.quickplayButton.Location = new System.Drawing.Point(355, 156);
+            this.quickplayButton.Location = new System.Drawing.Point(112, 133);
             this.quickplayButton.Margin = new System.Windows.Forms.Padding(1);
             this.quickplayButton.Name = "quickplayButton";
             this.quickplayButton.Size = new System.Drawing.Size(69, 43);
@@ -223,7 +253,7 @@
             // 
             // learnButton
             // 
-            this.learnButton.Location = new System.Drawing.Point(355, 92);
+            this.learnButton.Location = new System.Drawing.Point(112, 71);
             this.learnButton.Margin = new System.Windows.Forms.Padding(1);
             this.learnButton.Name = "learnButton";
             this.learnButton.Size = new System.Drawing.Size(69, 27);
@@ -243,17 +273,6 @@
             this.groupsTab.Text = "Groups";
             this.groupsTab.UseVisualStyleBackColor = true;
             // 
-            // leaderboardTab
-            // 
-            this.leaderboardTab.Location = new System.Drawing.Point(4, 25);
-            this.leaderboardTab.Margin = new System.Windows.Forms.Padding(2);
-            this.leaderboardTab.Name = "leaderboardTab";
-            this.leaderboardTab.Padding = new System.Windows.Forms.Padding(1);
-            this.leaderboardTab.Size = new System.Drawing.Size(792, 419);
-            this.leaderboardTab.TabIndex = 2;
-            this.leaderboardTab.Text = "Leaderboard";
-            this.leaderboardTab.UseVisualStyleBackColor = true;
-            // 
             // settingsTab
             // 
             this.settingsTab.Location = new System.Drawing.Point(4, 25);
@@ -269,8 +288,8 @@
             // 
             this.loginTab.Controls.Add(this.login_SignUpButton);
             this.loginTab.Controls.Add(this.logiin_LoginButton);
-            this.loginTab.Controls.Add(this.signUpPlanel);
             this.loginTab.Controls.Add(this.loginPanel);
+            this.loginTab.Controls.Add(this.signUpPlanel);
             this.loginTab.Location = new System.Drawing.Point(4, 25);
             this.loginTab.Margin = new System.Windows.Forms.Padding(2);
             this.loginTab.Name = "loginTab";
@@ -300,96 +319,6 @@
             this.logiin_LoginButton.Text = "LogIn";
             this.logiin_LoginButton.UseVisualStyleBackColor = true;
             this.logiin_LoginButton.Click += new System.EventHandler(this.logiin_LoginButton_Click);
-            // 
-            // loginPanel
-            // 
-            this.loginPanel.Controls.Add(this.userLoginButton);
-            this.loginPanel.Controls.Add(this.login_returnButton);
-            this.loginPanel.Controls.Add(this.panel2);
-            this.loginPanel.Controls.Add(this.panel1);
-            this.loginPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.loginPanel.Location = new System.Drawing.Point(1, 1);
-            this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(790, 417);
-            this.loginPanel.TabIndex = 2;
-            this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
-            // 
-            // userLoginButton
-            // 
-            this.userLoginButton.Location = new System.Drawing.Point(389, 345);
-            this.userLoginButton.Name = "userLoginButton";
-            this.userLoginButton.Size = new System.Drawing.Size(75, 23);
-            this.userLoginButton.TabIndex = 7;
-            this.userLoginButton.Text = "LogIn";
-            this.userLoginButton.UseVisualStyleBackColor = true;
-            this.userLoginButton.Click += new System.EventHandler(this.userLoginButton_Click);
-            // 
-            // login_returnButton
-            // 
-            this.login_returnButton.Location = new System.Drawing.Point(712, 3);
-            this.login_returnButton.Name = "login_returnButton";
-            this.login_returnButton.Size = new System.Drawing.Size(75, 23);
-            this.login_returnButton.TabIndex = 6;
-            this.login_returnButton.Text = "Return";
-            this.login_returnButton.UseVisualStyleBackColor = true;
-            this.login_returnButton.Click += new System.EventHandler(this.login_returnButton_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.passwordBox);
-            this.panel2.Controls.Add(this.passwordLabel);
-            this.panel2.Location = new System.Drawing.Point(150, 207);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(526, 78);
-            this.panel2.TabIndex = 5;
-            // 
-            // passwordBox
-            // 
-            this.passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordBox.Location = new System.Drawing.Point(126, 24);
-            this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(329, 31);
-            this.passwordBox.TabIndex = 8;
-            this.passwordBox.UseSystemPasswordChar = true;
-            this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
-            // 
-            // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(41, 34);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(79, 16);
-            this.passwordLabel.TabIndex = 1;
-            this.passwordLabel.Text = "Password:";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.usernameLabel);
-            this.panel1.Controls.Add(this.usernameBox);
-            this.panel1.Location = new System.Drawing.Point(150, 67);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 78);
-            this.panel1.TabIndex = 4;
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(38, 33);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(82, 16);
-            this.usernameLabel.TabIndex = 0;
-            this.usernameLabel.Text = "Username:";
-            // 
-            // usernameBox
-            // 
-            this.usernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameBox.Location = new System.Drawing.Point(126, 23);
-            this.usernameBox.Name = "usernameBox";
-            this.usernameBox.Size = new System.Drawing.Size(329, 31);
-            this.usernameBox.TabIndex = 7;
-            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
             // signUpPlanel
             // 
@@ -481,6 +410,96 @@
             this.signupUsernameBox.TabIndex = 7;
             this.signupUsernameBox.TextChanged += new System.EventHandler(this.signupUsernameBox_TextChanged);
             // 
+            // loginPanel
+            // 
+            this.loginPanel.Controls.Add(this.userLoginButton);
+            this.loginPanel.Controls.Add(this.login_returnButton);
+            this.loginPanel.Controls.Add(this.panel2);
+            this.loginPanel.Controls.Add(this.panel1);
+            this.loginPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginPanel.Location = new System.Drawing.Point(1, 1);
+            this.loginPanel.Name = "loginPanel";
+            this.loginPanel.Size = new System.Drawing.Size(790, 417);
+            this.loginPanel.TabIndex = 2;
+            this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
+            // 
+            // userLoginButton
+            // 
+            this.userLoginButton.Location = new System.Drawing.Point(389, 345);
+            this.userLoginButton.Name = "userLoginButton";
+            this.userLoginButton.Size = new System.Drawing.Size(75, 23);
+            this.userLoginButton.TabIndex = 7;
+            this.userLoginButton.Text = "LogIn";
+            this.userLoginButton.UseVisualStyleBackColor = true;
+            this.userLoginButton.Click += new System.EventHandler(this.userLoginButton_Click);
+            // 
+            // login_returnButton
+            // 
+            this.login_returnButton.Location = new System.Drawing.Point(712, 3);
+            this.login_returnButton.Name = "login_returnButton";
+            this.login_returnButton.Size = new System.Drawing.Size(75, 23);
+            this.login_returnButton.TabIndex = 6;
+            this.login_returnButton.Text = "Return";
+            this.login_returnButton.UseVisualStyleBackColor = true;
+            this.login_returnButton.Click += new System.EventHandler(this.login_returnButton_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.passwordBox);
+            this.panel2.Controls.Add(this.passwordLabel);
+            this.panel2.Location = new System.Drawing.Point(150, 207);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(526, 78);
+            this.panel2.TabIndex = 5;
+            // 
+            // passwordBox
+            // 
+            this.passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordBox.Location = new System.Drawing.Point(126, 24);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.Size = new System.Drawing.Size(329, 31);
+            this.passwordBox.TabIndex = 8;
+            this.passwordBox.UseSystemPasswordChar = true;
+            this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(41, 34);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(79, 16);
+            this.passwordLabel.TabIndex = 1;
+            this.passwordLabel.Text = "Password:";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.usernameLabel);
+            this.panel1.Controls.Add(this.usernameBox);
+            this.panel1.Location = new System.Drawing.Point(150, 67);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(526, 78);
+            this.panel1.TabIndex = 4;
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Location = new System.Drawing.Point(38, 33);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(82, 16);
+            this.usernameLabel.TabIndex = 0;
+            this.usernameLabel.Text = "Username:";
+            // 
+            // usernameBox
+            // 
+            this.usernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameBox.Location = new System.Drawing.Point(126, 23);
+            this.usernameBox.Name = "usernameBox";
+            this.usernameBox.Size = new System.Drawing.Size(329, 31);
+            this.usernameBox.TabIndex = 7;
+            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
+            // 
             // label7
             // 
             this.label7.Location = new System.Drawing.Point(0, 0);
@@ -530,6 +549,37 @@
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 16);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "learn panel";
+            // 
+            // learn_ReturnButton
+            // 
+            this.learn_ReturnButton.Location = new System.Drawing.Point(708, 3);
+            this.learn_ReturnButton.Name = "learn_ReturnButton";
+            this.learn_ReturnButton.Size = new System.Drawing.Size(75, 23);
+            this.learn_ReturnButton.TabIndex = 1;
+            this.learn_ReturnButton.Text = "Return";
+            this.learn_ReturnButton.UseVisualStyleBackColor = true;
+            this.learn_ReturnButton.Click += new System.EventHandler(this.learn_ReturnButton_Click);
+            // 
+            // startButtonsPanel
+            // 
+            this.startButtonsPanel.Controls.Add(this.quitButton);
+            this.startButtonsPanel.Controls.Add(this.gameNameLabel);
+            this.startButtonsPanel.Controls.Add(this.quickplayButton);
+            this.startButtonsPanel.Controls.Add(this.learnButton);
+            this.startButtonsPanel.Location = new System.Drawing.Point(281, 42);
+            this.startButtonsPanel.Name = "startButtonsPanel";
+            this.startButtonsPanel.Size = new System.Drawing.Size(274, 300);
+            this.startButtonsPanel.TabIndex = 6;
+            this.startButtonsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.startButtonsPanel_Paint);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,21 +594,25 @@
             this.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.Text = "Geography Game";
             this.mainTabControl.ResumeLayout(false);
+            this.leaderboardTab.ResumeLayout(false);
             this.mainMenuTab.ResumeLayout(false);
-            this.mainMenuTab.PerformLayout();
             this.quickPlayPanel.ResumeLayout(false);
             this.quickPlayPanel.PerformLayout();
+            this.learnPanel.ResumeLayout(false);
+            this.learnPanel.PerformLayout();
             this.loginTab.ResumeLayout(false);
-            this.loginPanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.signUpPlanel.ResumeLayout(false);
             this.signupPasswordPanel.ResumeLayout(false);
             this.signupPasswordPanel.PerformLayout();
             this.signupUsernamePanel.ResumeLayout(false);
             this.signupUsernamePanel.PerformLayout();
+            this.loginPanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.startButtonsPanel.ResumeLayout(false);
+            this.startButtonsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -609,6 +663,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox signupUsernameBox;
         private System.Windows.Forms.Button userLoginButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button learn_ReturnButton;
+        private System.Windows.Forms.Panel startButtonsPanel;
     }
 }
 

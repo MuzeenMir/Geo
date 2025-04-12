@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Geo
 {
@@ -16,6 +10,8 @@ namespace Geo
 
     public partial class mainForm : Form
     {
+        private readonly string csvFilePath = "C:\\Users\\MirMu\\source\\repos\\Geo\\Geo\\Resources\\userCreds.csv";
+        private bool loggedOn = false;
         private Timer colorChangeTimer;
         private Random random;
         public mainForm()
@@ -23,6 +19,7 @@ namespace Geo
             InitializeComponent();
             InitializeUI();
             InitializeColorChangeTimer();
+            mainTabControl.SelectedTab = mainMenuTab;
         }
 
         private void InitializeUI()
@@ -30,7 +27,7 @@ namespace Geo
             quickPlayPanel.Visible = false;
             loginPanel.Visible = false;
             signUpPlanel.Visible = false;
-            loginPanel.Visible = false;
+            learnPanel.Visible = false;
             userLoginButton.Visible = false;
             saveSignupInfoButton.Visible = false;
         }
@@ -50,17 +47,26 @@ namespace Geo
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void learnButton_Click(object sender, EventArgs e)
         {
-            mainTabControl.SelectedTab = loginTab;
+            if (loggedOn == true)
+            {
+                learnPanel.Visible = true;
+                startButtonsPanel.Visible = false;
+            }
+            else
+            {
+                mainTabControl.SelectedTab = loginTab;
+            }
         }
 
         private void quickplayButton_Click(object sender, EventArgs e)
         {
             quickPlayPanel.Visible = true;
+            startButtonsPanel.Visible = false;
         }
 
         private void quitButton_Click(object sender, EventArgs e)
@@ -77,12 +83,12 @@ namespace Geo
 
         private void gameNameLabel_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void quickPlayPanel_Paint(object sender, PaintEventArgs e)
         {
-            quickPlayPanel.BackColor = Color.FromArgb(128, 128 , 128 , 128);
+            quickPlayPanel.BackColor = Color.FromArgb(128, 128, 128, 128);
         }
 
         private void learnPanel_Paint(object sender, PaintEventArgs e)
@@ -92,28 +98,29 @@ namespace Geo
 
         private void mapModeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void quizModeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void quickPlay_PlayButton_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
         private void quickPlay_ReturnButton_Click(object sender, EventArgs e)
         {
             quickPlayPanel.Visible = false;
+            startButtonsPanel.Visible = true;
         }
 
         private void loginPanel_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void logiin_LoginButton_Click(object sender, EventArgs e)
@@ -175,17 +182,38 @@ namespace Geo
 
         private void saveSignupInfoButton_Click(object sender, EventArgs e)
         {
-            string filePath = "C:\\Users\\MirMu\\source\\repos\\Geo\\Geo\\Resources\\userCreds.csv";
             if (string.IsNullOrWhiteSpace(signupUsernameBox.Text) || string.IsNullOrWhiteSpace(signupPasswordBox.Text))
             {
                 MessageBox.Show("Please enter a username and password.");
                 return;
             }
+
+            string username = signupUsernameBox.Text.Trim();
+            string password = signupPasswordBox.Text.Trim();
+
+            bool isDuplicate = CheckForDuplicates(username);
+            if (isDuplicate)
+            {
+                MessageBox.Show("Username or email already exists.");
+                return;
+            }
+
             string csvLine = $"{signupUsernameBox.Text},{signupPasswordBox.Text}";
 
             try
             {
-                File.AppendAllText(filePath, csvLine + Environment.NewLine);
+                using (StreamWriter writer = new StreamWriter(csvFilePath, true)) // Append mode
+                {
+                    // Write header if file is empty/new
+                    if (new FileInfo(csvFilePath).Length == 0)
+                    {
+                        writer.WriteLine("Username,Password");
+                    }
+
+                    // Write user data (automatically adds a new line)
+                    writer.WriteLine($"{username},{password}");
+                }
+
                 MessageBox.Show("User information saved successfully.");
                 signupUsernameBox.Clear();
                 signupPasswordBox.Clear();
@@ -198,7 +226,6 @@ namespace Geo
 
         private void userLoginButton_Click(object sender, EventArgs e)
         {
-            string filePath = "C:\\Users\\MirMu\\source\\repos\\Geo\\Geo\\Resources\\userCreds.csv";
             if (string.IsNullOrWhiteSpace(usernameBox.Text) || string.IsNullOrWhiteSpace(passwordBox.Text))
             {
                 MessageBox.Show("Please enter a username and password.");
@@ -210,9 +237,9 @@ namespace Geo
 
             try
             {
-                if (File.Exists(filePath))
+                if (File.Exists(csvFilePath))
                 {
-                    var lines = File.ReadAllLines(filePath);
+                    var lines = File.ReadAllLines(csvFilePath);
                     userFound = lines.Any(line => line.Trim() == enteredCredentials);
                 }
 
@@ -221,6 +248,7 @@ namespace Geo
                     MessageBox.Show("Login successful!");
                     usernameBox.Clear();
                     passwordBox.Clear();
+                    loggedOn = true;
                 }
                 else
                 {
@@ -234,6 +262,56 @@ namespace Geo
         }
 
         private void loginTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool CheckForDuplicates(string username)
+        {
+            if (!File.Exists(csvFilePath))
+            {
+                // No existing users, so no duplicates
+                return false;
+            }
+
+            using (StreamReader reader = new StreamReader(csvFilePath))
+            {
+                // Skip header line
+                reader.ReadLine();
+
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] fields = line.Split(',');
+                    if (fields.Length >= 2)
+                    {
+                        string existingUsername = fields[0].Trim();
+
+                        // Case-insensitive comparison
+                        if (existingUsername.Equals(username, StringComparison.OrdinalIgnoreCase))
+                        {
+                            return true; // Duplicate found
+                        }
+                    }
+                }
+            }
+
+            return false; // No duplicates
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            leaderboard leaderboardForm = new leaderboard();
+            leaderboardForm.Show();
+        }
+
+        private void learn_ReturnButton_Click(object sender, EventArgs e)
+        {
+            learnPanel.Visible = false;
+            startButtonsPanel.Visible = true;
+        }
+
+        private void startButtonsPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
