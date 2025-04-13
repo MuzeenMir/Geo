@@ -76,7 +76,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Level = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainTabControl.SuspendLayout();
             this.mainMenuTab.SuspendLayout();
             this.startButtonsPanel.SuspendLayout();
@@ -605,30 +605,32 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameColumn,
-            this.Score});
-            this.dataGridView1.Location = new System.Drawing.Point(462, 251);
+            this.Level});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(660, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(1578, 803);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // NameColumn
             // 
+            this.NameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NameColumn.HeaderText = "Name";
             this.NameColumn.MinimumWidth = 10;
             this.NameColumn.Name = "NameColumn";
-            this.NameColumn.Width = 200;
+            this.NameColumn.ReadOnly = true;
             // 
-            // Score
+            // Level
             // 
-            this.Score.HeaderText = "Score";
-            this.Score.MinimumWidth = 10;
-            this.Score.Name = "Score";
-            this.Score.Width = 200;
+            this.Level.HeaderText = "Score";
+            this.Level.MinimumWidth = 10;
+            this.Level.Name = "Level";
+            this.Level.ReadOnly = true;
+            this.Level.Width = 200;
             // 
             // mainForm
             // 
@@ -720,7 +722,7 @@
         private System.Windows.Forms.Panel startButtonsPanel;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Score;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Level;
     }
 }
 
