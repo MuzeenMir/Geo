@@ -299,12 +299,6 @@ namespace Geo
             return false; // No duplicates
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            leaderboard leaderboardForm = new leaderboard();
-            leaderboardForm.Show();
-        }
-
         private void learn_ReturnButton_Click(object sender, EventArgs e)
         {
             learnPanel.Visible = false;
@@ -312,6 +306,11 @@ namespace Geo
         }
 
         private void startButtonsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

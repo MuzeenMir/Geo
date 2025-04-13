@@ -308,7 +308,7 @@
             this.settingsTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.settingsTab.Size = new System.Drawing.Size(1584, 810);
+            this.settingsTab.Size = new System.Drawing.Size(1584, 809);
             this.settingsTab.TabIndex = 3;
             this.settingsTab.Text = "Settings";
             this.settingsTab.UseVisualStyleBackColor = true;
@@ -323,7 +323,7 @@
             this.loginTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loginTab.Name = "loginTab";
             this.loginTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.loginTab.Size = new System.Drawing.Size(1584, 810);
+            this.loginTab.Size = new System.Drawing.Size(1584, 809);
             this.loginTab.TabIndex = 4;
             this.loginTab.Text = "Login";
             this.loginTab.UseVisualStyleBackColor = true;
@@ -361,7 +361,7 @@
             this.loginPanel.Location = new System.Drawing.Point(2, 2);
             this.loginPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(1580, 806);
+            this.loginPanel.Size = new System.Drawing.Size(1580, 805);
             this.loginPanel.TabIndex = 2;
             this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
             // 
@@ -460,7 +460,7 @@
             this.signUpPlanel.Location = new System.Drawing.Point(2, 2);
             this.signUpPlanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.signUpPlanel.Name = "signUpPlanel";
-            this.signUpPlanel.Size = new System.Drawing.Size(1580, 806);
+            this.signUpPlanel.Size = new System.Drawing.Size(1580, 805);
             this.signUpPlanel.TabIndex = 3;
             this.signUpPlanel.Paint += new System.Windows.Forms.PaintEventHandler(this.signUpPlanel_Paint);
             // 
@@ -600,6 +600,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameColumn,
@@ -607,10 +609,12 @@
             this.dataGridView1.Location = new System.Drawing.Point(462, 251);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(660, 306);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // NameColumn
             // 
