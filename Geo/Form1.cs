@@ -14,6 +14,9 @@ namespace Geo
         private bool loggedOn = false;
         private Timer colorChangeTimer;
         private Random random;
+
+        DB usersDB = new DB();
+
         public mainForm()
         {
             InitializeComponent();
@@ -198,21 +201,9 @@ namespace Geo
                 return;
             }
 
-            string csvLine = $"{signupUsernameBox.Text},{signupPasswordBox.Text}";
-
             try
             {
-                using (StreamWriter writer = new StreamWriter(csvFilePath, true)) // Append mode
-                {
-                    // Write header if file is empty/new
-                    if (new FileInfo(csvFilePath).Length == 0)
-                    {
-                        writer.WriteLine("Username,Password");
-                    }
-
-                    // Write user data (automatically adds a new line)
-                    writer.WriteLine($"{username},{password}");
-                }
+                usersDB.Add_user(username, password);
 
                 MessageBox.Show("User information saved successfully.");
                 signupUsernameBox.Clear();
