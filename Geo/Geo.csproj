@@ -66,6 +66,12 @@
     <Compile Include="quizMode.Designer.cs">
       <DependentUpon>quizMode.cs</DependentUpon>
     </Compile>
+    <Compile Include="quizModeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="quizModeUC.Designer.cs">
+      <DependentUpon>quizModeUC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="quizMode.resx">
       <DependentUpon>quizMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quizModeUC.resx">
+      <DependentUpon>quizModeUC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
