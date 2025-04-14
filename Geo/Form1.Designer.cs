@@ -75,6 +75,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.learn_ReturnButton = new System.Windows.Forms.Button();
             this.startButtonsPanel = new System.Windows.Forms.Panel();
+            this.loginLabel = new System.Windows.Forms.Label();
+            this.signupLabel = new System.Windows.Forms.Label();
             this.mainTabControl.SuspendLayout();
             this.leaderboardTab.SuspendLayout();
             this.mainMenuTab.SuspendLayout();
@@ -131,9 +133,9 @@
             // 
             this.mainMenuTab.BackgroundImage = global::Geo.Properties.Resources.wrld_21;
             this.mainMenuTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.mainMenuTab.Controls.Add(this.startButtonsPanel);
             this.mainMenuTab.Controls.Add(this.quickPlayPanel);
             this.mainMenuTab.Controls.Add(this.learnPanel);
+            this.mainMenuTab.Controls.Add(this.startButtonsPanel);
             this.mainMenuTab.Location = new System.Drawing.Point(4, 25);
             this.mainMenuTab.Name = "mainMenuTab";
             this.mainMenuTab.Padding = new System.Windows.Forms.Padding(3);
@@ -288,8 +290,8 @@
             // 
             this.loginTab.Controls.Add(this.login_SignUpButton);
             this.loginTab.Controls.Add(this.logiin_LoginButton);
-            this.loginTab.Controls.Add(this.loginPanel);
             this.loginTab.Controls.Add(this.signUpPlanel);
+            this.loginTab.Controls.Add(this.loginPanel);
             this.loginTab.Location = new System.Drawing.Point(4, 25);
             this.loginTab.Margin = new System.Windows.Forms.Padding(2);
             this.loginTab.Name = "loginTab";
@@ -322,6 +324,7 @@
             // 
             // signUpPlanel
             // 
+            this.signUpPlanel.Controls.Add(this.signupLabel);
             this.signUpPlanel.Controls.Add(this.saveSignupInfoButton);
             this.signUpPlanel.Controls.Add(this.signupReturnButton);
             this.signUpPlanel.Controls.Add(this.signupPasswordPanel);
@@ -412,6 +415,7 @@
             // 
             // loginPanel
             // 
+            this.loginPanel.Controls.Add(this.loginLabel);
             this.loginPanel.Controls.Add(this.userLoginButton);
             this.loginPanel.Controls.Add(this.login_returnButton);
             this.loginPanel.Controls.Add(this.panel2);
@@ -580,6 +584,24 @@
             this.startButtonsPanel.TabIndex = 6;
             this.startButtonsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.startButtonsPanel_Paint);
             // 
+            // loginLabel
+            // 
+            this.loginLabel.AutoSize = true;
+            this.loginLabel.Location = new System.Drawing.Point(346, 28);
+            this.loginLabel.Name = "loginLabel";
+            this.loginLabel.Size = new System.Drawing.Size(86, 16);
+            this.loginLabel.TabIndex = 8;
+            this.loginLabel.Text = "LogIn Page";
+            // 
+            // signupLabel
+            // 
+            this.signupLabel.AutoSize = true;
+            this.signupLabel.Location = new System.Drawing.Point(346, 28);
+            this.signupLabel.Name = "signupLabel";
+            this.signupLabel.Size = new System.Drawing.Size(62, 16);
+            this.signupLabel.TabIndex = 12;
+            this.signupLabel.Text = "Sign Up";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,11 +624,13 @@
             this.learnPanel.PerformLayout();
             this.loginTab.ResumeLayout(false);
             this.signUpPlanel.ResumeLayout(false);
+            this.signUpPlanel.PerformLayout();
             this.signupPasswordPanel.ResumeLayout(false);
             this.signupPasswordPanel.PerformLayout();
             this.signupUsernamePanel.ResumeLayout(false);
             this.signupUsernamePanel.PerformLayout();
             this.loginPanel.ResumeLayout(false);
+            this.loginPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -667,6 +691,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button learn_ReturnButton;
         private System.Windows.Forms.Panel startButtonsPanel;
+        private System.Windows.Forms.Label signupLabel;
+        private System.Windows.Forms.Label loginLabel;
     }
 }
 

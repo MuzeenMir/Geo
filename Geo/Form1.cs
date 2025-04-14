@@ -14,15 +14,13 @@ namespace Geo
         private bool loggedOn = false;
         private Timer colorChangeTimer;
         private Random random;
-
-        DB usersDB = new DB();
-
         public mainForm()
         {
             InitializeComponent();
             InitializeUI();
             InitializeColorChangeTimer();
             mainTabControl.SelectedTab = mainMenuTab;
+            this.DoubleBuffered = true; 
         }
 
         private void InitializeUI()
@@ -55,21 +53,35 @@ namespace Geo
 
         private void learnButton_Click(object sender, EventArgs e)
         {
-            if (loggedOn == true)
+            try
             {
-                learnPanel.Visible = true;
-                startButtonsPanel.Visible = false;
+                if (loggedOn == true)
+                {
+                    learnPanel.Visible = true;
+                    startButtonsPanel.Visible = false;
+                }
+                else
+                {
+                    mainTabControl.SelectedTab = loginTab;
+                }
             }
-            else
+            finally
             {
-                mainTabControl.SelectedTab = loginTab;
+                this.ResumeLayout(true);
             }
         }
 
         private void quickplayButton_Click(object sender, EventArgs e)
         {
-            quickPlayPanel.Visible = true;
-            startButtonsPanel.Visible = false;
+            try
+            {
+                quickPlayPanel.Visible = true;
+                startButtonsPanel.Visible = false;
+            }
+            finally
+            {
+                this.ResumeLayout(true);
+            }
         }
 
         private void quitButton_Click(object sender, EventArgs e)
@@ -96,7 +108,7 @@ namespace Geo
 
         private void learnPanel_Paint(object sender, PaintEventArgs e)
         {
-
+            learnPanel.BackColor = Color.FromArgb(128, 128, 128, 128);
         }
 
         private void mapModeRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -111,14 +123,21 @@ namespace Geo
 
         private void quickPlay_PlayButton_Click(object sender, EventArgs e)
         {
-
-
+            quizMode quizModeForm = new quizMode();
+            quizModeForm.Show();
         }
 
         private void quickPlay_ReturnButton_Click(object sender, EventArgs e)
         {
-            quickPlayPanel.Visible = false;
-            startButtonsPanel.Visible = true;
+            try
+            {
+                quickPlayPanel.Visible = false;
+                startButtonsPanel.Visible = true;
+            }
+            finally
+            {
+                this.ResumeLayout(true);
+            }
         }
 
         private void loginPanel_Paint(object sender, PaintEventArgs e)
@@ -128,18 +147,32 @@ namespace Geo
 
         private void logiin_LoginButton_Click(object sender, EventArgs e)
         {
-            loginPanel.Visible = true;
-            logiin_LoginButton.Visible = false;
-            login_SignUpButton.Visible = false;
-            userLoginButton.Visible = true;
+            try
+            {
+                loginPanel.Visible = true;
+                logiin_LoginButton.Visible = false;
+                login_SignUpButton.Visible = false;
+                userLoginButton.Visible = true;
+            }
+            finally
+            {
+                this.ResumeLayout(true);
+            }
         }
 
         private void login_SignUpButton_Click(object sender, EventArgs e)
         {
-            logiin_LoginButton.Visible = false;
-            login_SignUpButton.Visible = false;
-            signUpPlanel.Visible = true;
-            saveSignupInfoButton.Visible = true;
+            try
+            {
+                logiin_LoginButton.Visible = false;
+                login_SignUpButton.Visible = false;
+                signUpPlanel.Visible = true;
+                saveSignupInfoButton.Visible = true;
+            }
+            finally
+            {
+                this.ResumeLayout(true);
+            }
         }
 
         private void signUpPlanel_Paint(object sender, PaintEventArgs e)
@@ -149,10 +182,17 @@ namespace Geo
 
         private void login_returnButton_Click(object sender, EventArgs e)
         {
-            loginPanel.Visible = false;
-            logiin_LoginButton.Visible = true;
-            login_SignUpButton.Visible = true;
-            userLoginButton.Visible = false;
+            try
+            {
+                loginPanel.Visible = false;
+                logiin_LoginButton.Visible = true;
+                login_SignUpButton.Visible = true;
+                userLoginButton.Visible = false;
+            }
+            finally
+            {
+                this.ResumeLayout(true);
+            }
         }
 
         private void usernameBox_TextChanged(object sender, EventArgs e)
@@ -167,10 +207,18 @@ namespace Geo
 
         private void signupReturnButton_Click(object sender, EventArgs e)
         {
-            signUpPlanel.Visible = false;
-            logiin_LoginButton.Visible = true;
-            login_SignUpButton.Visible = true;
-            saveSignupInfoButton.Visible = false;
+            try
+            {
+                signUpPlanel.Visible = false;
+                loginPanel.Visible = true;
+                logiin_LoginButton.Visible = false;
+                login_SignUpButton.Visible = false;
+                userLoginButton.Visible = true;
+            }
+            finally
+            {
+                this.ResumeLayout(true);
+            }
         }
 
         private void signupUsernameBox_TextChanged(object sender, EventArgs e)
@@ -197,13 +245,25 @@ namespace Geo
             bool isDuplicate = CheckForDuplicates(username);
             if (isDuplicate)
             {
-                MessageBox.Show("Username or email already exists.");
+                MessageBox.Show("Username already exists.");
                 return;
             }
 
+            string csvLine = $"{signupUsernameBox.Text},{signupPasswordBox.Text}";
+
             try
             {
-                usersDB.Add_user(username, password);
+                using (StreamWriter writer = new StreamWriter(csvFilePath, true)) // Append mode
+                {
+                    // Write header if file is empty/new
+                    if (new FileInfo(csvFilePath).Length == 0)
+                    {
+                        writer.WriteLine("Username,Password");
+                    }
+
+                    // Write user data (automatically adds a new line)
+                    writer.WriteLine($"{username},{password}");
+                }
 
                 MessageBox.Show("User information saved successfully.");
                 signupUsernameBox.Clear();
@@ -240,6 +300,7 @@ namespace Geo
                     usernameBox.Clear();
                     passwordBox.Clear();
                     loggedOn = true;
+                    mainTabControl.SelectedTab = mainMenuTab;
                 }
                 else
                 {
