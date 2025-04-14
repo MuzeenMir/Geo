@@ -66,6 +66,12 @@
     <Compile Include="quizMode.Designer.cs">
       <DependentUpon>quizMode.cs</DependentUpon>
     </Compile>
+    <Compile Include="quizModeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="quizModeUC.Designer.cs">
+      <DependentUpon>quizModeUC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,9 +88,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="quizMode.resx">
       <DependentUpon>quizMode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="quizModeUC.resx">
+      <DependentUpon>quizModeUC.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> parent of 5f9a6fe (Added the DB code for the login screen to add a user.)
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
