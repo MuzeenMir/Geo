@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.mainTabControl = new System.Windows.Forms.TabControl();
-            this.leaderboardTab = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.mainMenuTab = new System.Windows.Forms.TabPage();
             this.quickPlayPanel = new System.Windows.Forms.Panel();
             this.quickPlay_ReturnButton = new System.Windows.Forms.Button();
@@ -38,16 +36,22 @@
             this.quizModeRadioButton = new System.Windows.Forms.RadioButton();
             this.mapModeRadioButton = new System.Windows.Forms.RadioButton();
             this.learnPanel = new System.Windows.Forms.Panel();
-            this.gameNameLabel = new System.Windows.Forms.Label();
+            this.learn_ReturnButton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.startButtonsPanel = new System.Windows.Forms.Panel();
             this.quitButton = new System.Windows.Forms.Button();
+            this.gameNameLabel = new System.Windows.Forms.Label();
             this.quickplayButton = new System.Windows.Forms.Button();
             this.learnButton = new System.Windows.Forms.Button();
             this.groupsTab = new System.Windows.Forms.TabPage();
+            this.leaderboardTab = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.settingsTab = new System.Windows.Forms.TabPage();
             this.loginTab = new System.Windows.Forms.TabPage();
             this.login_SignUpButton = new System.Windows.Forms.Button();
             this.logiin_LoginButton = new System.Windows.Forms.Button();
             this.signUpPlanel = new System.Windows.Forms.Panel();
+            this.signupLabel = new System.Windows.Forms.Label();
             this.saveSignupInfoButton = new System.Windows.Forms.Button();
             this.signupReturnButton = new System.Windows.Forms.Button();
             this.signupPasswordPanel = new System.Windows.Forms.Panel();
@@ -57,6 +61,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.signupUsernameBox = new System.Windows.Forms.TextBox();
             this.loginPanel = new System.Windows.Forms.Panel();
+            this.loginLabel = new System.Windows.Forms.Label();
             this.userLoginButton = new System.Windows.Forms.Button();
             this.login_returnButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -72,16 +77,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.learn_ReturnButton = new System.Windows.Forms.Button();
-            this.startButtonsPanel = new System.Windows.Forms.Panel();
-            this.loginLabel = new System.Windows.Forms.Label();
-            this.signupLabel = new System.Windows.Forms.Label();
             this.mainTabControl.SuspendLayout();
-            this.leaderboardTab.SuspendLayout();
             this.mainMenuTab.SuspendLayout();
             this.quickPlayPanel.SuspendLayout();
             this.learnPanel.SuspendLayout();
+            this.startButtonsPanel.SuspendLayout();
+            this.leaderboardTab.SuspendLayout();
             this.loginTab.SuspendLayout();
             this.signUpPlanel.SuspendLayout();
             this.signupPasswordPanel.SuspendLayout();
@@ -89,7 +90,6 @@
             this.loginPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.startButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTabControl
@@ -107,35 +107,13 @@
             this.mainTabControl.Size = new System.Drawing.Size(800, 448);
             this.mainTabControl.TabIndex = 0;
             // 
-            // leaderboardTab
-            // 
-            this.leaderboardTab.Controls.Add(this.button1);
-            this.leaderboardTab.Location = new System.Drawing.Point(4, 25);
-            this.leaderboardTab.Margin = new System.Windows.Forms.Padding(2);
-            this.leaderboardTab.Name = "leaderboardTab";
-            this.leaderboardTab.Padding = new System.Windows.Forms.Padding(1);
-            this.leaderboardTab.Size = new System.Drawing.Size(792, 419);
-            this.leaderboardTab.TabIndex = 2;
-            this.leaderboardTab.Text = "Leaderboard";
-            this.leaderboardTab.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(329, 169);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // mainMenuTab
             // 
             this.mainMenuTab.BackgroundImage = global::Geo.Properties.Resources.wrld_21;
             this.mainMenuTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainMenuTab.Controls.Add(this.startButtonsPanel);
             this.mainMenuTab.Controls.Add(this.quickPlayPanel);
             this.mainMenuTab.Controls.Add(this.learnPanel);
-            this.mainMenuTab.Controls.Add(this.startButtonsPanel);
             this.mainMenuTab.Location = new System.Drawing.Point(4, 25);
             this.mainMenuTab.Name = "mainMenuTab";
             this.mainMenuTab.Padding = new System.Windows.Forms.Padding(3);
@@ -219,17 +197,36 @@
             this.learnPanel.TabIndex = 4;
             this.learnPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.learnPanel_Paint);
             // 
-            // gameNameLabel
+            // learn_ReturnButton
             // 
-            this.gameNameLabel.AutoSize = true;
-            this.gameNameLabel.Font = new System.Drawing.Font("Perpetua", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameNameLabel.Location = new System.Drawing.Point(1, 0);
-            this.gameNameLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.gameNameLabel.Name = "gameNameLabel";
-            this.gameNameLabel.Size = new System.Drawing.Size(269, 42);
-            this.gameNameLabel.TabIndex = 3;
-            this.gameNameLabel.Text = "Geography Game";
-            this.gameNameLabel.Click += new System.EventHandler(this.gameNameLabel_Click);
+            this.learn_ReturnButton.Location = new System.Drawing.Point(708, 3);
+            this.learn_ReturnButton.Name = "learn_ReturnButton";
+            this.learn_ReturnButton.Size = new System.Drawing.Size(75, 23);
+            this.learn_ReturnButton.TabIndex = 1;
+            this.learn_ReturnButton.Text = "Return";
+            this.learn_ReturnButton.UseVisualStyleBackColor = true;
+            this.learn_ReturnButton.Click += new System.EventHandler(this.learn_ReturnButton_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 16);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "learn panel";
+            // 
+            // startButtonsPanel
+            // 
+            this.startButtonsPanel.Controls.Add(this.quitButton);
+            this.startButtonsPanel.Controls.Add(this.gameNameLabel);
+            this.startButtonsPanel.Controls.Add(this.quickplayButton);
+            this.startButtonsPanel.Controls.Add(this.learnButton);
+            this.startButtonsPanel.Location = new System.Drawing.Point(281, 42);
+            this.startButtonsPanel.Name = "startButtonsPanel";
+            this.startButtonsPanel.Size = new System.Drawing.Size(274, 300);
+            this.startButtonsPanel.TabIndex = 6;
+            this.startButtonsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.startButtonsPanel_Paint);
             // 
             // quitButton
             // 
@@ -241,6 +238,18 @@
             this.quitButton.Text = "Quit";
             this.quitButton.UseVisualStyleBackColor = true;
             this.quitButton.Click += new System.EventHandler(this.quitButton_Click);
+            // 
+            // gameNameLabel
+            // 
+            this.gameNameLabel.AutoSize = true;
+            this.gameNameLabel.Font = new System.Drawing.Font("Perpetua", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameNameLabel.Location = new System.Drawing.Point(1, 0);
+            this.gameNameLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.gameNameLabel.Name = "gameNameLabel";
+            this.gameNameLabel.Size = new System.Drawing.Size(269, 42);
+            this.gameNameLabel.TabIndex = 3;
+            this.gameNameLabel.Text = "Geography Game";
+            this.gameNameLabel.Click += new System.EventHandler(this.gameNameLabel_Click);
             // 
             // quickplayButton
             // 
@@ -274,6 +283,28 @@
             this.groupsTab.TabIndex = 1;
             this.groupsTab.Text = "Groups";
             this.groupsTab.UseVisualStyleBackColor = true;
+            // 
+            // leaderboardTab
+            // 
+            this.leaderboardTab.Controls.Add(this.button1);
+            this.leaderboardTab.Location = new System.Drawing.Point(4, 25);
+            this.leaderboardTab.Margin = new System.Windows.Forms.Padding(2);
+            this.leaderboardTab.Name = "leaderboardTab";
+            this.leaderboardTab.Padding = new System.Windows.Forms.Padding(1);
+            this.leaderboardTab.Size = new System.Drawing.Size(792, 419);
+            this.leaderboardTab.TabIndex = 2;
+            this.leaderboardTab.Text = "Leaderboard";
+            this.leaderboardTab.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(329, 169);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // settingsTab
             // 
@@ -335,6 +366,15 @@
             this.signUpPlanel.Size = new System.Drawing.Size(790, 417);
             this.signUpPlanel.TabIndex = 3;
             this.signUpPlanel.Paint += new System.Windows.Forms.PaintEventHandler(this.signUpPlanel_Paint);
+            // 
+            // signupLabel
+            // 
+            this.signupLabel.AutoSize = true;
+            this.signupLabel.Location = new System.Drawing.Point(346, 28);
+            this.signupLabel.Name = "signupLabel";
+            this.signupLabel.Size = new System.Drawing.Size(62, 16);
+            this.signupLabel.TabIndex = 12;
+            this.signupLabel.Text = "Sign Up";
             // 
             // saveSignupInfoButton
             // 
@@ -426,6 +466,15 @@
             this.loginPanel.Size = new System.Drawing.Size(790, 417);
             this.loginPanel.TabIndex = 2;
             this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
+            // 
+            // loginLabel
+            // 
+            this.loginLabel.AutoSize = true;
+            this.loginLabel.Location = new System.Drawing.Point(346, 28);
+            this.loginLabel.Name = "loginLabel";
+            this.loginLabel.Size = new System.Drawing.Size(86, 16);
+            this.loginLabel.TabIndex = 8;
+            this.loginLabel.Text = "LogIn Page";
             // 
             // userLoginButton
             // 
@@ -553,55 +602,6 @@
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 16);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "learn panel";
-            // 
-            // learn_ReturnButton
-            // 
-            this.learn_ReturnButton.Location = new System.Drawing.Point(708, 3);
-            this.learn_ReturnButton.Name = "learn_ReturnButton";
-            this.learn_ReturnButton.Size = new System.Drawing.Size(75, 23);
-            this.learn_ReturnButton.TabIndex = 1;
-            this.learn_ReturnButton.Text = "Return";
-            this.learn_ReturnButton.UseVisualStyleBackColor = true;
-            this.learn_ReturnButton.Click += new System.EventHandler(this.learn_ReturnButton_Click);
-            // 
-            // startButtonsPanel
-            // 
-            this.startButtonsPanel.Controls.Add(this.quitButton);
-            this.startButtonsPanel.Controls.Add(this.gameNameLabel);
-            this.startButtonsPanel.Controls.Add(this.quickplayButton);
-            this.startButtonsPanel.Controls.Add(this.learnButton);
-            this.startButtonsPanel.Location = new System.Drawing.Point(281, 42);
-            this.startButtonsPanel.Name = "startButtonsPanel";
-            this.startButtonsPanel.Size = new System.Drawing.Size(274, 300);
-            this.startButtonsPanel.TabIndex = 6;
-            this.startButtonsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.startButtonsPanel_Paint);
-            // 
-            // loginLabel
-            // 
-            this.loginLabel.AutoSize = true;
-            this.loginLabel.Location = new System.Drawing.Point(346, 28);
-            this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(86, 16);
-            this.loginLabel.TabIndex = 8;
-            this.loginLabel.Text = "LogIn Page";
-            // 
-            // signupLabel
-            // 
-            this.signupLabel.AutoSize = true;
-            this.signupLabel.Location = new System.Drawing.Point(346, 28);
-            this.signupLabel.Name = "signupLabel";
-            this.signupLabel.Size = new System.Drawing.Size(62, 16);
-            this.signupLabel.TabIndex = 12;
-            this.signupLabel.Text = "Sign Up";
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -616,12 +616,14 @@
             this.Padding = new System.Windows.Forms.Padding(0, 1, 0, 1);
             this.Text = "Geography Game";
             this.mainTabControl.ResumeLayout(false);
-            this.leaderboardTab.ResumeLayout(false);
             this.mainMenuTab.ResumeLayout(false);
             this.quickPlayPanel.ResumeLayout(false);
             this.quickPlayPanel.PerformLayout();
             this.learnPanel.ResumeLayout(false);
             this.learnPanel.PerformLayout();
+            this.startButtonsPanel.ResumeLayout(false);
+            this.startButtonsPanel.PerformLayout();
+            this.leaderboardTab.ResumeLayout(false);
             this.loginTab.ResumeLayout(false);
             this.signUpPlanel.ResumeLayout(false);
             this.signUpPlanel.PerformLayout();
@@ -635,8 +637,6 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.startButtonsPanel.ResumeLayout(false);
-            this.startButtonsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
