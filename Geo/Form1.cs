@@ -14,6 +14,9 @@ namespace Geo
         private bool loggedOn = false;
         private Timer colorChangeTimer;
         private Random random;
+
+        DB userInfo = new DB();
+
         public mainForm()
 
         {
@@ -249,6 +252,7 @@ namespace Geo
                 MessageBox.Show("Username already exists.");
                 return;
             }
+
 
             string csvLine = $"{signupUsernameBox.Text},{signupPasswordBox.Text}";
 
