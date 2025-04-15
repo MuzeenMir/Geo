@@ -258,17 +258,18 @@ namespace Geo
 
             try
             {
-                using (StreamWriter writer = new StreamWriter(csvFilePath, true)) // Append mode
-                {
-                    // Write header if file is empty/new
-                    if (new FileInfo(csvFilePath).Length == 0)
-                    {
-                        writer.WriteLine("Username,Password");
-                    }
+                userInfo.Add_user(username, password);
+                //using (StreamWriter writer = new StreamWriter(csvFilePath, true)) // Append mode
+                //{
+                //    // Write header if file is empty/new
+                //    if (new FileInfo(csvFilePath).Length == 0)
+                //    {
+                //        writer.WriteLine("Username,Password");
+                //    }
 
-                    // Write user data (automatically adds a new line)
-                    writer.WriteLine($"{username},{password}");
-                }
+                //    // Write user data (automatically adds a new line)
+                //    writer.WriteLine($"{username},{password}");
+                //}
 
                 MessageBox.Show("User information saved successfully.");
                 signupUsernameBox.Clear();
