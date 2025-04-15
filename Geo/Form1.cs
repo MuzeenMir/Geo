@@ -15,6 +15,7 @@ namespace Geo
         private Timer colorChangeTimer;
         private Random random;
         public mainForm()
+
         {
             InitializeComponent();
             InitializeUI();
