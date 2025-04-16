@@ -78,6 +78,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainTabControl.SuspendLayout();
             this.mainMenuTab.SuspendLayout();
             this.startButtonsPanel.SuspendLayout();
@@ -91,6 +94,7 @@
             this.loginPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainTabControl
@@ -103,7 +107,7 @@
             this.mainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainTabControl.Location = new System.Drawing.Point(0, 2);
-            this.mainTabControl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mainTabControl.Margin = new System.Windows.Forms.Padding(6);
             this.mainTabControl.Name = "mainTabControl";
             this.mainTabControl.SelectedIndex = 0;
             this.mainTabControl.Size = new System.Drawing.Size(1600, 861);
@@ -117,9 +121,9 @@
             this.mainMenuTab.Controls.Add(this.quickPlayPanel);
             this.mainMenuTab.Controls.Add(this.learnPanel);
             this.mainMenuTab.Location = new System.Drawing.Point(8, 44);
-            this.mainMenuTab.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mainMenuTab.Margin = new System.Windows.Forms.Padding(6);
             this.mainMenuTab.Name = "mainMenuTab";
-            this.mainMenuTab.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mainMenuTab.Padding = new System.Windows.Forms.Padding(6);
             this.mainMenuTab.Size = new System.Drawing.Size(1584, 809);
             this.mainMenuTab.TabIndex = 0;
             this.mainMenuTab.Text = "Main Menu";
@@ -132,7 +136,7 @@
             this.startButtonsPanel.Controls.Add(this.quickplayButton);
             this.startButtonsPanel.Controls.Add(this.learnButton);
             this.startButtonsPanel.Location = new System.Drawing.Point(562, 81);
-            this.startButtonsPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.startButtonsPanel.Margin = new System.Windows.Forms.Padding(6);
             this.startButtonsPanel.Name = "startButtonsPanel";
             this.startButtonsPanel.Size = new System.Drawing.Size(548, 577);
             this.startButtonsPanel.TabIndex = 6;
@@ -141,7 +145,7 @@
             // quitButton
             // 
             this.quitButton.Location = new System.Drawing.Point(224, 402);
-            this.quitButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quitButton.Margin = new System.Windows.Forms.Padding(2);
             this.quitButton.Name = "quitButton";
             this.quitButton.Size = new System.Drawing.Size(138, 46);
             this.quitButton.TabIndex = 2;
@@ -164,7 +168,7 @@
             // quickplayButton
             // 
             this.quickplayButton.Location = new System.Drawing.Point(224, 256);
-            this.quickplayButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quickplayButton.Margin = new System.Windows.Forms.Padding(2);
             this.quickplayButton.Name = "quickplayButton";
             this.quickplayButton.Size = new System.Drawing.Size(138, 83);
             this.quickplayButton.TabIndex = 1;
@@ -175,7 +179,7 @@
             // learnButton
             // 
             this.learnButton.Location = new System.Drawing.Point(224, 137);
-            this.learnButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.learnButton.Margin = new System.Windows.Forms.Padding(2);
             this.learnButton.Name = "learnButton";
             this.learnButton.Size = new System.Drawing.Size(138, 52);
             this.learnButton.TabIndex = 0;
@@ -192,7 +196,7 @@
             this.quickPlayPanel.Controls.Add(this.mapModeRadioButton);
             this.quickPlayPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.quickPlayPanel.Location = new System.Drawing.Point(6, 6);
-            this.quickPlayPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quickPlayPanel.Margin = new System.Windows.Forms.Padding(2);
             this.quickPlayPanel.Name = "quickPlayPanel";
             this.quickPlayPanel.Size = new System.Drawing.Size(1572, 797);
             this.quickPlayPanel.TabIndex = 5;
@@ -201,7 +205,7 @@
             // quickPlay_ReturnButton
             // 
             this.quickPlay_ReturnButton.Location = new System.Drawing.Point(1424, 4);
-            this.quickPlay_ReturnButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quickPlay_ReturnButton.Margin = new System.Windows.Forms.Padding(4);
             this.quickPlay_ReturnButton.Name = "quickPlay_ReturnButton";
             this.quickPlay_ReturnButton.Size = new System.Drawing.Size(142, 44);
             this.quickPlay_ReturnButton.TabIndex = 3;
@@ -212,7 +216,7 @@
             // quickPlay_PlayButton
             // 
             this.quickPlay_PlayButton.Location = new System.Drawing.Point(722, 542);
-            this.quickPlay_PlayButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quickPlay_PlayButton.Margin = new System.Windows.Forms.Padding(2);
             this.quickPlay_PlayButton.Name = "quickPlay_PlayButton";
             this.quickPlay_PlayButton.Size = new System.Drawing.Size(120, 50);
             this.quickPlay_PlayButton.TabIndex = 2;
@@ -224,7 +228,7 @@
             // 
             this.quizModeRadioButton.AutoSize = true;
             this.quizModeRadioButton.Location = new System.Drawing.Point(1148, 171);
-            this.quizModeRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quizModeRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.quizModeRadioButton.Name = "quizModeRadioButton";
             this.quizModeRadioButton.Size = new System.Drawing.Size(177, 34);
             this.quizModeRadioButton.TabIndex = 1;
@@ -237,7 +241,7 @@
             // 
             this.mapModeRadioButton.AutoSize = true;
             this.mapModeRadioButton.Location = new System.Drawing.Point(238, 171);
-            this.mapModeRadioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mapModeRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.mapModeRadioButton.Name = "mapModeRadioButton";
             this.mapModeRadioButton.Size = new System.Drawing.Size(173, 34);
             this.mapModeRadioButton.TabIndex = 0;
@@ -252,7 +256,7 @@
             this.learnPanel.Controls.Add(this.label10);
             this.learnPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.learnPanel.Location = new System.Drawing.Point(6, 6);
-            this.learnPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.learnPanel.Margin = new System.Windows.Forms.Padding(2);
             this.learnPanel.Name = "learnPanel";
             this.learnPanel.Size = new System.Drawing.Size(1572, 797);
             this.learnPanel.TabIndex = 4;
@@ -261,7 +265,7 @@
             // learn_ReturnButton
             // 
             this.learn_ReturnButton.Location = new System.Drawing.Point(1416, 6);
-            this.learn_ReturnButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.learn_ReturnButton.Margin = new System.Windows.Forms.Padding(6);
             this.learn_ReturnButton.Name = "learn_ReturnButton";
             this.learn_ReturnButton.Size = new System.Drawing.Size(150, 44);
             this.learn_ReturnButton.TabIndex = 1;
@@ -282,22 +286,23 @@
             // groupsTab
             // 
             this.groupsTab.Location = new System.Drawing.Point(8, 44);
-            this.groupsTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupsTab.Margin = new System.Windows.Forms.Padding(4);
             this.groupsTab.Name = "groupsTab";
-            this.groupsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupsTab.Size = new System.Drawing.Size(1584, 810);
+            this.groupsTab.Padding = new System.Windows.Forms.Padding(2);
+            this.groupsTab.Size = new System.Drawing.Size(1584, 809);
             this.groupsTab.TabIndex = 1;
             this.groupsTab.Text = "Groups";
             this.groupsTab.UseVisualStyleBackColor = true;
             // 
             // leaderboardTab
             // 
+            this.leaderboardTab.Controls.Add(this.dataGridView1);
             this.leaderboardTab.Controls.Add(this.button1);
             this.leaderboardTab.Location = new System.Drawing.Point(8, 44);
-            this.leaderboardTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.leaderboardTab.Margin = new System.Windows.Forms.Padding(4);
             this.leaderboardTab.Name = "leaderboardTab";
-            this.leaderboardTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.leaderboardTab.Size = new System.Drawing.Size(1584, 810);
+            this.leaderboardTab.Padding = new System.Windows.Forms.Padding(2);
+            this.leaderboardTab.Size = new System.Drawing.Size(1584, 809);
             this.leaderboardTab.TabIndex = 2;
             this.leaderboardTab.Text = "Leaderboard";
             this.leaderboardTab.UseVisualStyleBackColor = true;
@@ -305,7 +310,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(658, 325);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 44);
             this.button1.TabIndex = 0;
@@ -316,10 +321,10 @@
             // settingsTab
             // 
             this.settingsTab.Location = new System.Drawing.Point(8, 44);
-            this.settingsTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.settingsTab.Margin = new System.Windows.Forms.Padding(4);
             this.settingsTab.Name = "settingsTab";
-            this.settingsTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.settingsTab.Size = new System.Drawing.Size(1584, 810);
+            this.settingsTab.Padding = new System.Windows.Forms.Padding(2);
+            this.settingsTab.Size = new System.Drawing.Size(1584, 809);
             this.settingsTab.TabIndex = 3;
             this.settingsTab.Text = "Settings";
             this.settingsTab.UseVisualStyleBackColor = true;
@@ -331,10 +336,10 @@
             this.loginTab.Controls.Add(this.signUpPlanel);
             this.loginTab.Controls.Add(this.loginPanel);
             this.loginTab.Location = new System.Drawing.Point(8, 44);
-            this.loginTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.loginTab.Margin = new System.Windows.Forms.Padding(4);
             this.loginTab.Name = "loginTab";
-            this.loginTab.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.loginTab.Size = new System.Drawing.Size(1584, 810);
+            this.loginTab.Padding = new System.Windows.Forms.Padding(2);
+            this.loginTab.Size = new System.Drawing.Size(1584, 809);
             this.loginTab.TabIndex = 4;
             this.loginTab.Text = "Login";
             this.loginTab.UseVisualStyleBackColor = true;
@@ -343,7 +348,7 @@
             // login_SignUpButton
             // 
             this.login_SignUpButton.Location = new System.Drawing.Point(694, 400);
-            this.login_SignUpButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.login_SignUpButton.Margin = new System.Windows.Forms.Padding(6);
             this.login_SignUpButton.Name = "login_SignUpButton";
             this.login_SignUpButton.Size = new System.Drawing.Size(150, 44);
             this.login_SignUpButton.TabIndex = 1;
@@ -354,7 +359,7 @@
             // logiin_LoginButton
             // 
             this.logiin_LoginButton.Location = new System.Drawing.Point(694, 219);
-            this.logiin_LoginButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.logiin_LoginButton.Margin = new System.Windows.Forms.Padding(6);
             this.logiin_LoginButton.Name = "logiin_LoginButton";
             this.logiin_LoginButton.Size = new System.Drawing.Size(150, 44);
             this.logiin_LoginButton.TabIndex = 0;
@@ -371,9 +376,9 @@
             this.signUpPlanel.Controls.Add(this.signupUsernamePanel);
             this.signUpPlanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.signUpPlanel.Location = new System.Drawing.Point(2, 2);
-            this.signUpPlanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.signUpPlanel.Margin = new System.Windows.Forms.Padding(6);
             this.signUpPlanel.Name = "signUpPlanel";
-            this.signUpPlanel.Size = new System.Drawing.Size(1580, 806);
+            this.signUpPlanel.Size = new System.Drawing.Size(1580, 805);
             this.signUpPlanel.TabIndex = 3;
             this.signUpPlanel.Paint += new System.Windows.Forms.PaintEventHandler(this.signUpPlanel_Paint);
             // 
@@ -390,7 +395,7 @@
             // saveSignupInfoButton
             // 
             this.saveSignupInfoButton.Location = new System.Drawing.Point(778, 644);
-            this.saveSignupInfoButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.saveSignupInfoButton.Margin = new System.Windows.Forms.Padding(6);
             this.saveSignupInfoButton.Name = "saveSignupInfoButton";
             this.saveSignupInfoButton.Size = new System.Drawing.Size(150, 44);
             this.saveSignupInfoButton.TabIndex = 11;
@@ -401,7 +406,7 @@
             // signupReturnButton
             // 
             this.signupReturnButton.Location = new System.Drawing.Point(1424, 6);
-            this.signupReturnButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.signupReturnButton.Margin = new System.Windows.Forms.Padding(6);
             this.signupReturnButton.Name = "signupReturnButton";
             this.signupReturnButton.Size = new System.Drawing.Size(150, 44);
             this.signupReturnButton.TabIndex = 10;
@@ -415,7 +420,7 @@
             this.signupPasswordPanel.Controls.Add(this.signupPasswordBox);
             this.signupPasswordPanel.Controls.Add(this.label8);
             this.signupPasswordPanel.Location = new System.Drawing.Point(300, 398);
-            this.signupPasswordPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.signupPasswordPanel.Margin = new System.Windows.Forms.Padding(6);
             this.signupPasswordPanel.Name = "signupPasswordPanel";
             this.signupPasswordPanel.Size = new System.Drawing.Size(1052, 150);
             this.signupPasswordPanel.TabIndex = 9;
@@ -424,7 +429,7 @@
             // 
             this.signupPasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupPasswordBox.Location = new System.Drawing.Point(252, 46);
-            this.signupPasswordBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.signupPasswordBox.Margin = new System.Windows.Forms.Padding(6);
             this.signupPasswordBox.Name = "signupPasswordBox";
             this.signupPasswordBox.Size = new System.Drawing.Size(654, 55);
             this.signupPasswordBox.TabIndex = 8;
@@ -447,7 +452,7 @@
             this.signupUsernamePanel.Controls.Add(this.label9);
             this.signupUsernamePanel.Controls.Add(this.signupUsernameBox);
             this.signupUsernamePanel.Location = new System.Drawing.Point(306, 135);
-            this.signupUsernamePanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.signupUsernamePanel.Margin = new System.Windows.Forms.Padding(6);
             this.signupUsernamePanel.Name = "signupUsernamePanel";
             this.signupUsernamePanel.Size = new System.Drawing.Size(1052, 150);
             this.signupUsernamePanel.TabIndex = 8;
@@ -466,7 +471,7 @@
             // 
             this.signupUsernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupUsernameBox.Location = new System.Drawing.Point(252, 44);
-            this.signupUsernameBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.signupUsernameBox.Margin = new System.Windows.Forms.Padding(6);
             this.signupUsernameBox.Name = "signupUsernameBox";
             this.signupUsernameBox.Size = new System.Drawing.Size(654, 55);
             this.signupUsernameBox.TabIndex = 7;
@@ -481,9 +486,9 @@
             this.loginPanel.Controls.Add(this.panel1);
             this.loginPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginPanel.Location = new System.Drawing.Point(2, 2);
-            this.loginPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.loginPanel.Margin = new System.Windows.Forms.Padding(6);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(1580, 806);
+            this.loginPanel.Size = new System.Drawing.Size(1580, 805);
             this.loginPanel.TabIndex = 2;
             this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
             // 
@@ -500,7 +505,7 @@
             // userLoginButton
             // 
             this.userLoginButton.Location = new System.Drawing.Point(778, 663);
-            this.userLoginButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.userLoginButton.Margin = new System.Windows.Forms.Padding(6);
             this.userLoginButton.Name = "userLoginButton";
             this.userLoginButton.Size = new System.Drawing.Size(150, 44);
             this.userLoginButton.TabIndex = 7;
@@ -511,7 +516,7 @@
             // login_returnButton
             // 
             this.login_returnButton.Location = new System.Drawing.Point(1424, 6);
-            this.login_returnButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.login_returnButton.Margin = new System.Windows.Forms.Padding(6);
             this.login_returnButton.Name = "login_returnButton";
             this.login_returnButton.Size = new System.Drawing.Size(150, 44);
             this.login_returnButton.TabIndex = 6;
@@ -525,7 +530,7 @@
             this.panel2.Controls.Add(this.passwordBox);
             this.panel2.Controls.Add(this.passwordLabel);
             this.panel2.Location = new System.Drawing.Point(300, 398);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1052, 150);
             this.panel2.TabIndex = 5;
@@ -534,7 +539,7 @@
             // 
             this.passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordBox.Location = new System.Drawing.Point(252, 46);
-            this.passwordBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.passwordBox.Margin = new System.Windows.Forms.Padding(6);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(654, 55);
             this.passwordBox.TabIndex = 8;
@@ -557,7 +562,7 @@
             this.panel1.Controls.Add(this.usernameLabel);
             this.panel1.Controls.Add(this.usernameBox);
             this.panel1.Location = new System.Drawing.Point(300, 129);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1052, 150);
             this.panel1.TabIndex = 4;
@@ -576,7 +581,7 @@
             // 
             this.usernameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameBox.Location = new System.Drawing.Point(252, 44);
-            this.usernameBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.usernameBox.Margin = new System.Windows.Forms.Padding(6);
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(654, 55);
             this.usernameBox.TabIndex = 7;
@@ -631,6 +636,35 @@
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NameColumn,
+            this.Score});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(1580, 805);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameColumn.HeaderText = "Name";
+            this.NameColumn.MinimumWidth = 10;
+            this.NameColumn.Name = "NameColumn";
+            // 
+            // Score
+            // 
+            this.Score.HeaderText = "Score";
+            this.Score.MinimumWidth = 10;
+            this.Score.Name = "Score";
+            this.Score.Width = 200;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -642,7 +676,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "mainForm";
             this.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.Text = "Geography Game";
@@ -668,6 +702,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -724,6 +759,9 @@
         private System.Windows.Forms.Panel startButtonsPanel;
         private System.Windows.Forms.Label signupLabel;
         private System.Windows.Forms.Label loginLabel;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score;
     }
 }
 
