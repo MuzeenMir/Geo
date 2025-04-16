@@ -283,7 +283,7 @@ namespace Geo
 
             try
             {
-                MessageBox.Show(userInfo.get_Urank(usernameBox.Text));
+                //MessageBox.Show(userInfo.get_Urank(usernameBox.Text));
                 if (File.Exists(csvFilePath))
                 {
                     var lines = File.ReadAllLines(csvFilePath);
