@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.Odbc;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 public class DB
 {
@@ -52,5 +53,22 @@ public class DB
             return -1;
         }
         return affectedRows;
+    }
+
+    public string get_Urank(string username)
+    {
+        string query = "SELECT Urank FROM users WHERE Uname = ?";
+        OdbcCommand command = new OdbcCommand(query, this.conn);
+
+        // Add the username to the prepared statement.
+        command.Parameters.AddWithValue("", username);
+
+        // Retrieve the data.
+        var reader = command.ExecuteReader();
+        if (reader.Read())
+        {
+            MessageBox.Show(reader.GetString(0));
+        }
+        return username;
     }
 }

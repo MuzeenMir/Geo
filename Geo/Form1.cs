@@ -259,17 +259,6 @@ namespace Geo
             try
             {
                 userInfo.Add_user(username, password);
-                //using (StreamWriter writer = new StreamWriter(csvFilePath, true)) // Append mode
-                //{
-                //    // Write header if file is empty/new
-                //    if (new FileInfo(csvFilePath).Length == 0)
-                //    {
-                //        writer.WriteLine("Username,Password");
-                //    }
-
-                //    // Write user data (automatically adds a new line)
-                //    writer.WriteLine($"{username},{password}");
-                //}
 
                 MessageBox.Show("User information saved successfully.");
                 signupUsernameBox.Clear();
@@ -294,6 +283,7 @@ namespace Geo
 
             try
             {
+                MessageBox.Show(userInfo.get_Urank(usernameBox.Text));
                 if (File.Exists(csvFilePath))
                 {
                     var lines = File.ReadAllLines(csvFilePath);
