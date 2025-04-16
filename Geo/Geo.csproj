@@ -52,6 +52,9 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>geo game icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -132,6 +135,9 @@
     <None Include="Resources\userCreds.csv" />
     <None Include="Resources\user_creds.json" />
     <None Include="Resources\wrld-21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="geo game icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
