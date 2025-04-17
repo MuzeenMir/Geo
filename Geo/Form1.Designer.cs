@@ -46,6 +46,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.groupsTab = new System.Windows.Forms.TabPage();
             this.leaderboardTab = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.settingsTab = new System.Windows.Forms.TabPage();
             this.loginTab = new System.Windows.Forms.TabPage();
@@ -78,15 +81,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainTabControl.SuspendLayout();
             this.mainMenuTab.SuspendLayout();
             this.startButtonsPanel.SuspendLayout();
             this.quickPlayPanel.SuspendLayout();
             this.learnPanel.SuspendLayout();
             this.leaderboardTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.loginTab.SuspendLayout();
             this.signUpPlanel.SuspendLayout();
             this.signupPasswordPanel.SuspendLayout();
@@ -94,7 +95,6 @@
             this.loginPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainTabControl
@@ -307,6 +307,35 @@
             this.leaderboardTab.Text = "Leaderboard";
             this.leaderboardTab.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NameColumn,
+            this.Score});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(1580, 805);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameColumn.HeaderText = "Name";
+            this.NameColumn.MinimumWidth = 10;
+            this.NameColumn.Name = "NameColumn";
+            // 
+            // Score
+            // 
+            this.Score.HeaderText = "Score";
+            this.Score.MinimumWidth = 10;
+            this.Score.Name = "Score";
+            this.Score.Width = 200;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(658, 325);
@@ -331,6 +360,8 @@
             // 
             // loginTab
             // 
+            this.loginTab.BackgroundImage = global::Geo.Properties.Resources.wrld_21;
+            this.loginTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.loginTab.Controls.Add(this.login_SignUpButton);
             this.loginTab.Controls.Add(this.logiin_LoginButton);
             this.loginTab.Controls.Add(this.signUpPlanel);
@@ -636,35 +667,6 @@
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NameColumn,
-            this.Score});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1580, 805);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // NameColumn
-            // 
-            this.NameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NameColumn.HeaderText = "Name";
-            this.NameColumn.MinimumWidth = 10;
-            this.NameColumn.Name = "NameColumn";
-            // 
-            // Score
-            // 
-            this.Score.HeaderText = "Score";
-            this.Score.MinimumWidth = 10;
-            this.Score.Name = "Score";
-            this.Score.Width = 200;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -689,6 +691,7 @@
             this.learnPanel.ResumeLayout(false);
             this.learnPanel.PerformLayout();
             this.leaderboardTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.loginTab.ResumeLayout(false);
             this.signUpPlanel.ResumeLayout(false);
             this.signUpPlanel.PerformLayout();
@@ -702,7 +705,6 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
