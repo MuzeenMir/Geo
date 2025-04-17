@@ -43,7 +43,7 @@
             // quickPlayQuicModeOptionOneButton
             // 
             this.quickPlayQuicModeOptionOneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuicModeOptionOneButton.Location = new System.Drawing.Point(238, 290);
+            this.quickPlayQuicModeOptionOneButton.Location = new System.Drawing.Point(198, 228);
             this.quickPlayQuicModeOptionOneButton.Name = "quickPlayQuicModeOptionOneButton";
             this.quickPlayQuicModeOptionOneButton.Size = new System.Drawing.Size(200, 35);
             this.quickPlayQuicModeOptionOneButton.TabIndex = 0;
@@ -53,7 +53,7 @@
             // quickPlayQuicModeOptionTwoButton
             // 
             this.quickPlayQuicModeOptionTwoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuicModeOptionTwoButton.Location = new System.Drawing.Point(533, 289);
+            this.quickPlayQuicModeOptionTwoButton.Location = new System.Drawing.Point(493, 227);
             this.quickPlayQuicModeOptionTwoButton.Name = "quickPlayQuicModeOptionTwoButton";
             this.quickPlayQuicModeOptionTwoButton.Size = new System.Drawing.Size(200, 35);
             this.quickPlayQuicModeOptionTwoButton.TabIndex = 1;
@@ -63,7 +63,7 @@
             // quickPlayQuicModeOptionThreeButton
             // 
             this.quickPlayQuicModeOptionThreeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuicModeOptionThreeButton.Location = new System.Drawing.Point(238, 390);
+            this.quickPlayQuicModeOptionThreeButton.Location = new System.Drawing.Point(198, 328);
             this.quickPlayQuicModeOptionThreeButton.Name = "quickPlayQuicModeOptionThreeButton";
             this.quickPlayQuicModeOptionThreeButton.Size = new System.Drawing.Size(200, 35);
             this.quickPlayQuicModeOptionThreeButton.TabIndex = 2;
@@ -73,7 +73,7 @@
             // quickPlayQuicModeOptionFourButton
             // 
             this.quickPlayQuicModeOptionFourButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuicModeOptionFourButton.Location = new System.Drawing.Point(533, 390);
+            this.quickPlayQuicModeOptionFourButton.Location = new System.Drawing.Point(493, 328);
             this.quickPlayQuicModeOptionFourButton.Name = "quickPlayQuicModeOptionFourButton";
             this.quickPlayQuicModeOptionFourButton.Size = new System.Drawing.Size(200, 35);
             this.quickPlayQuicModeOptionFourButton.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             this.quickPlayQuizModeQuestionLabel.AutoSize = true;
             this.quickPlayQuizModeQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeQuestionLabel.Location = new System.Drawing.Point(4, 156);
+            this.quickPlayQuizModeQuestionLabel.Location = new System.Drawing.Point(4, 126);
             this.quickPlayQuizModeQuestionLabel.Name = "quickPlayQuizModeQuestionLabel";
             this.quickPlayQuizModeQuestionLabel.Size = new System.Drawing.Size(99, 26);
             this.quickPlayQuizModeQuestionLabel.TabIndex = 4;
@@ -94,15 +94,16 @@
             // 
             this.quickPlayQuizModeQuestionBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.quickPlayQuizModeQuestionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeQuestionBox.Location = new System.Drawing.Point(108, 144);
+            this.quickPlayQuizModeQuestionBox.Location = new System.Drawing.Point(108, 114);
             this.quickPlayQuizModeQuestionBox.Name = "quickPlayQuizModeQuestionBox";
-            this.quickPlayQuizModeQuestionBox.Size = new System.Drawing.Size(775, 50);
+            this.quickPlayQuizModeQuestionBox.Size = new System.Drawing.Size(701, 89);
             this.quickPlayQuizModeQuestionBox.TabIndex = 5;
             this.quickPlayQuizModeQuestionBox.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.quickPlayQuizModeQuestionBox.Click += new System.EventHandler(this.quickPlayQuizModeQuestionBox_Click);
             // 
             // quickPlayQuizModeProgressBar
             // 
-            this.quickPlayQuizModeProgressBar.Location = new System.Drawing.Point(285, 534);
+            this.quickPlayQuizModeProgressBar.Location = new System.Drawing.Point(255, 408);
             this.quickPlayQuizModeProgressBar.Name = "quickPlayQuizModeProgressBar";
             this.quickPlayQuizModeProgressBar.Size = new System.Drawing.Size(370, 23);
             this.quickPlayQuizModeProgressBar.TabIndex = 6;
@@ -111,7 +112,7 @@
             // 
             this.quickPlayQuizModeScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.quickPlayQuizModeScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeScoreLabel.Location = new System.Drawing.Point(723, 534);
+            this.quickPlayQuizModeScoreLabel.Location = new System.Drawing.Point(660, 392);
             this.quickPlayQuizModeScoreLabel.Name = "quickPlayQuizModeScoreLabel";
             this.quickPlayQuizModeScoreLabel.Size = new System.Drawing.Size(149, 39);
             this.quickPlayQuizModeScoreLabel.TabIndex = 7;
@@ -122,7 +123,7 @@
             // 
             this.quickPlayQuizModeTimeLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.quickPlayQuizModeTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeTimeLabel.Location = new System.Drawing.Point(580, 14);
+            this.quickPlayQuizModeTimeLabel.Location = new System.Drawing.Point(517, 14);
             this.quickPlayQuizModeTimeLabel.Name = "quickPlayQuizModeTimeLabel";
             this.quickPlayQuizModeTimeLabel.Size = new System.Drawing.Size(292, 38);
             this.quickPlayQuizModeTimeLabel.TabIndex = 8;
@@ -133,7 +134,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(450, 512);
+            this.label1.Location = new System.Drawing.Point(411, 385);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 20);
             this.label1.TabIndex = 9;
@@ -156,7 +157,7 @@
             this.Controls.Add(this.quickPlayQuicModeOptionOneButton);
             this.Name = "quizModeUC";
             this.Padding = new System.Windows.Forms.Padding(1);
-            this.Size = new System.Drawing.Size(884, 615);
+            this.Size = new System.Drawing.Size(821, 481);
             this.ResumeLayout(false);
             this.PerformLayout();
 

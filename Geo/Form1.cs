@@ -10,7 +10,7 @@ namespace Geo
 
     public partial class mainForm : Form
     {
-        private readonly string csvFilePath = "C:\\Users\\MirMu\\source\\repos\\Geo\\Geo\\Resources\\userCreds.csv";
+        private readonly string csvFilePath = "..\\..\\Resources\\userCreds.csv";
         private bool loggedOn = false;
         private Timer colorChangeTimer;
         private Random random;

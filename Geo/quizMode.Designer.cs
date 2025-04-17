@@ -33,10 +33,14 @@
             // 
             // quizModeUC1
             // 
-            this.quizModeUC1.Location = new System.Drawing.Point(-1, -2);
+            this.quizModeUC1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.quizModeUC1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quizModeUC1.Location = new System.Drawing.Point(0, 0);
             this.quizModeUC1.Name = "quizModeUC1";
-            this.quizModeUC1.Size = new System.Drawing.Size(681, 355);
+            this.quizModeUC1.Padding = new System.Windows.Forms.Padding(1);
+            this.quizModeUC1.Size = new System.Drawing.Size(800, 450);
             this.quizModeUC1.TabIndex = 0;
+            this.quizModeUC1.Load += new System.EventHandler(this.quizModeUC1_Load);
             // 
             // quizMode
             // 
