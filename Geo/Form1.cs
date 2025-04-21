@@ -59,6 +59,22 @@ namespace Geo
                 quickPlay_ReturnButton.Left = quickPlayPanel.Width - quickPlay_ReturnButton.Width - padding;
                 quickPlay_ReturnButton.Top = padding;
             }
+
+            // Keeps the login_returnButton at the top right corner
+            if (loginPanel.Visible && login_returnButton != null)
+            {
+                const int padding = 10; // You can change this value
+                login_returnButton.Left = loginPanel.Width - login_returnButton.Width - padding;
+                login_returnButton.Top = padding;
+            }
+
+            // Keeps the signupReturnButton at the top right corner
+            if (signUpPlanel.Visible && signupReturnButton != null)
+            {
+                const int padding = 10; // You can change this value
+                signupReturnButton.Left = signUpPlanel.Width - signupReturnButton.Width - padding;
+                signupReturnButton.Top = padding;
+            }
         }
 
         private void CenterPanel(Panel panel)
@@ -204,6 +220,10 @@ namespace Geo
                 logiin_LoginButton.Visible = false;
                 login_SignUpButton.Visible = false;
                 userLoginButton.Visible = true;
+
+                const int padding = 10; // You can change this value
+                login_returnButton.Left = loginPanel.Width - login_returnButton.Width - padding;
+                login_returnButton.Top = padding;
             }
             finally
             {
@@ -219,6 +239,10 @@ namespace Geo
                 login_SignUpButton.Visible = false;
                 signUpPlanel.Visible = true;
                 saveSignupInfoButton.Visible = true;
+
+                const int padding = 10; // You can change this value
+                signupReturnButton.Left = signUpPlanel.Width - signupReturnButton.Width - padding;
+                signupReturnButton.Top = padding;
             }
             finally
             {
@@ -239,6 +263,9 @@ namespace Geo
                 logiin_LoginButton.Visible = true;
                 login_SignUpButton.Visible = true;
                 userLoginButton.Visible = false;
+
+                
+                    
             }
             finally
             {
