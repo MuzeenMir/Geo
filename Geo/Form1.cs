@@ -39,7 +39,7 @@ namespace Geo
             // Center startButtonsPanel on page load
             CenterPanel(startButtonsPanel);
 
-            // Add form resize handler only once
+            // Adds form resize handler only once
             this.Resize += Form_Resize;
         }
 
@@ -50,6 +50,14 @@ namespace Geo
             {
                 startButtonsPanel.Left = (this.ClientSize.Width - startButtonsPanel.Width) / 2;
                 startButtonsPanel.Top = (this.ClientSize.Height - startButtonsPanel.Height) / 2;
+            }
+
+            // Keeps the quickPlay_ReturnButton at the top right corner
+            if (quickPlayPanel.Visible && quickPlay_ReturnButton != null)
+            {
+                const int padding = 10; // You can change this value
+                quickPlay_ReturnButton.Left = quickPlayPanel.Width - quickPlay_ReturnButton.Width - padding;
+                quickPlay_ReturnButton.Top = padding;
             }
         }
 
@@ -111,6 +119,11 @@ namespace Geo
             {
                 quickPlayPanel.Visible = true;
                 startButtonsPanel.Visible = false;
+
+                // Position the return button in the top right
+                const int padding = 10;
+                quickPlay_ReturnButton.Left = quickPlayPanel.Width - quickPlay_ReturnButton.Width - padding;
+                quickPlay_ReturnButton.Top = padding;
             }
             finally
             {
