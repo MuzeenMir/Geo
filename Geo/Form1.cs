@@ -36,7 +36,7 @@ namespace Geo
             userLoginButton.Visible = false;
             saveSignupInfoButton.Visible = false;
 
-            // Center startButtonsPanel immediately
+            // Center startButtonsPanel on page load
             CenterPanel(startButtonsPanel);
 
             // Add form resize handler only once
@@ -51,6 +51,20 @@ namespace Geo
                 startButtonsPanel.Left = (this.ClientSize.Width - startButtonsPanel.Width) / 2;
                 startButtonsPanel.Top = (this.ClientSize.Height - startButtonsPanel.Height) / 2;
             }
+        }
+
+        private void CenterPanel(Panel panel)
+        {
+            // Calculate the center position
+            panel.Left = (this.ClientSize.Width - panel.Width) / 2;
+            panel.Top = (this.ClientSize.Height - panel.Height) / 2;
+
+            // Handle form resize to keep the panel centered
+            this.Resize += (sender, e) =>
+            {
+                panel.Left = (this.ClientSize.Width - panel.Width) / 2;
+                panel.Top = (this.ClientSize.Height - panel.Height) / 2;
+            };
         }
 
         private void InitializeColorChangeTimer()
@@ -136,25 +150,8 @@ namespace Geo
 
         }
 
-        private void quizMode_Load(object sender, EventArgs e)
-        {
-            // This method centers the startButtonsPanel horizontally and vertically
-            CenterPanel(startButtonsPanel);
-        }
 
-        private void CenterPanel(Panel panel)
-        {
-            // Calculate the center position
-            panel.Left = (this.ClientSize.Width - panel.Width) / 2;
-            panel.Top = (this.ClientSize.Height - panel.Height) / 2;
-
-            // Handle form resize to keep the panel centered
-            this.Resize += (sender, e) =>
-            {
-                panel.Left = (this.ClientSize.Width - panel.Width) / 2;
-                panel.Top = (this.ClientSize.Height - panel.Height) / 2;
-            };
-        }
+        
 
 
         private void quizModeRadioButton_CheckedChanged(object sender, EventArgs e)
