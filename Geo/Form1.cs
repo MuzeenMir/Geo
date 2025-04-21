@@ -35,6 +35,22 @@ namespace Geo
             learnPanel.Visible = false;
             userLoginButton.Visible = false;
             saveSignupInfoButton.Visible = false;
+
+            // Center startButtonsPanel immediately
+            CenterPanel(startButtonsPanel);
+
+            // Add form resize handler only once
+            this.Resize += Form_Resize;
+        }
+
+        private void Form_Resize(object sender, EventArgs e)
+        {
+            // Re-center the panel when the form is resized
+            if (startButtonsPanel.Visible)
+            {
+                startButtonsPanel.Left = (this.ClientSize.Width - startButtonsPanel.Width) / 2;
+                startButtonsPanel.Top = (this.ClientSize.Height - startButtonsPanel.Height) / 2;
+            }
         }
 
         private void InitializeColorChangeTimer()
@@ -119,6 +135,27 @@ namespace Geo
         {
 
         }
+
+        private void quizMode_Load(object sender, EventArgs e)
+        {
+            // This method centers the startButtonsPanel horizontally and vertically
+            CenterPanel(startButtonsPanel);
+        }
+
+        private void CenterPanel(Panel panel)
+        {
+            // Calculate the center position
+            panel.Left = (this.ClientSize.Width - panel.Width) / 2;
+            panel.Top = (this.ClientSize.Height - panel.Height) / 2;
+
+            // Handle form resize to keep the panel centered
+            this.Resize += (sender, e) =>
+            {
+                panel.Left = (this.ClientSize.Width - panel.Width) / 2;
+                panel.Top = (this.ClientSize.Height - panel.Height) / 2;
+            };
+        }
+
 
         private void quizModeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
