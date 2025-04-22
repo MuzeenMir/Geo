@@ -156,7 +156,19 @@ namespace Geo
         private void quickPlay_PlayButton_Click(object sender, EventArgs e)
         {
             quizMode quizModeForm = new quizMode();
-            quizModeForm.Show();
+            if (quizModeRadioButton.Checked)
+            {
+                quizModeForm.Show();
+            }
+            else if (mapModeRadioButton.Checked)
+            {
+                // Add logic for map mode if needed
+            }
+            else
+            {
+                MessageBox.Show("Please select a game mode.");
+                return;
+            }
         }
 
         private void quickPlay_ReturnButton_Click(object sender, EventArgs e)

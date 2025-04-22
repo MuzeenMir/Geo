@@ -14,7 +14,7 @@ namespace Geo
         private Question currentQuestion;
         private int initialQuestionCount;
         private int score = 0;
-        private int timelimit = 10; // 5 minutes in seconds
+        private int timelimit = 300; // 5 minutes in seconds
 
         public quizModeUC()
         {
@@ -55,7 +55,7 @@ namespace Geo
             }
             catch (Exception ex)
             {
-                // MessageBox.Show($"Error loading questions: {ex.Message}");
+                MessageBox.Show($"Error loading questions: {ex.Message}");
             }
         }
 
@@ -63,7 +63,8 @@ namespace Geo
         {
             if (questionPool == null || questionPool.Count == 0)
             {
-                MessageBox.Show("Quiz completed! Final score: " + score);
+                quizTimer.Stop();
+                MessageBox.Show("Quiz completed! Final score: " + score + "\n" + $"Time Taken: {(300 - timelimit) / 60}m {(300 - timelimit) % 60}s");
                 return;
             }
 
