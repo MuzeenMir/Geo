@@ -55,7 +55,8 @@ namespace Geo
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading questions: {ex.Message}");
+                // MessageBox.Show($"Error loading questions: {ex.Message}");
+
             }
         }
 

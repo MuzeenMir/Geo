@@ -155,7 +155,7 @@ namespace Geo
 
         private void quickPlay_PlayButton_Click(object sender, EventArgs e)
         {
-            quizMode quizModeForm = new quizMode();
+            quickQuizMode quizModeForm = new quickQuizMode();
             if (quizModeRadioButton.Checked)
             {
                 quizModeForm.Show();

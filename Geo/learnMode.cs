@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Geo
 {
-    public partial class quickQuizMode : Form
+    public partial class learnMode : Form
     {
-        public quickQuizMode()
+        public learnMode()
         {
             InitializeComponent();
-        }
-
-        private void quickQuizMode_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void quickQuizModeUC1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
