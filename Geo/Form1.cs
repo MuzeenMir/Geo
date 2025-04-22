@@ -144,10 +144,6 @@ namespace Geo
 
         }
 
-
-        
-
-
         private void quizModeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
 
