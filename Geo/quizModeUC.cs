@@ -14,18 +14,31 @@ namespace Geo
         private Question currentQuestion;
         private int initialQuestionCount;
         private int score = 0;
+        private int timelimit = 10; // 5 minutes in seconds
 
         public quizModeUC()
         {
             InitializeComponent();
             LoadQuestions();
+
             // Wire up option button click events
             quickPlayQuicModeOptionOneButton.Click += OptionButton_Click;
             quickPlayQuicModeOptionTwoButton.Click += OptionButton_Click;
             quickPlayQuicModeOptionThreeButton.Click += OptionButton_Click;
             quickPlayQuicModeOptionFourButton.Click += OptionButton_Click;
-            // Load first question
-            LoadNextQuestion();
+
+            // Only load the first question if the question pool is not empty
+            if (questionPool != null && questionPool.Count > 0)
+            {
+                LoadNextQuestion();
+            }
+
+            quickPlayQuizModeQuestionBox.Visible = false;
+            quickPlayQuicModeOptionOneButton.Visible = false;
+            quickPlayQuicModeOptionTwoButton.Visible = false;
+            quickPlayQuicModeOptionThreeButton.Visible = false;
+            quickPlayQuicModeOptionFourButton.Visible = false;
+            quizTimer.Stop();
         }
 
         private void LoadQuestions()
@@ -42,7 +55,7 @@ namespace Geo
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading questions: {ex.Message}");
+                // MessageBox.Show($"Error loading questions: {ex.Message}");
             }
         }
 
@@ -93,6 +106,41 @@ namespace Geo
         private void quickPlayQuizModeQuestionBox_Click(object sender, EventArgs e)
         {
             LoadNextQuestion();
+        }
+
+        private void quizTimer_Tick(object sender, EventArgs e)
+        {
+            if (timelimit > 0)
+            {
+
+                timelimit--;
+                quickPlayQuizModeTimeLabel.Text = $"Time Left: {timelimit / 60}m {timelimit % 60}s";
+            }
+            else
+            {
+                quizTimer.Stop();
+                MessageBox.Show("Time's up! Final score: " + score);
+                quickPlayQuizModeQuestionBox.Enabled = false;
+                quickPlayQuicModeOptionOneButton.Enabled = false;
+                quickPlayQuicModeOptionTwoButton.Enabled = false;
+                quickPlayQuicModeOptionThreeButton.Enabled = false;
+                quickPlayQuicModeOptionFourButton.Enabled = false;
+            }
+        }
+
+        private void quickPlayQuizModeTimeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quizModeStartButton_Click(object sender, EventArgs e)
+        {
+            quickPlayQuicModeOptionOneButton.Visible = true;
+            quickPlayQuicModeOptionTwoButton.Visible = true;
+            quickPlayQuicModeOptionThreeButton.Visible = true;
+            quickPlayQuicModeOptionFourButton.Visible = true;
+            quickPlayQuizModeQuestionBox.Visible = true;
+            quizTimer.Start();
         }
     }
 

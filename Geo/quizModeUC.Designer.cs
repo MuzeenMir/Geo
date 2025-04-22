@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.quickPlayQuicModeOptionOneButton = new System.Windows.Forms.Button();
             this.quickPlayQuicModeOptionTwoButton = new System.Windows.Forms.Button();
             this.quickPlayQuicModeOptionThreeButton = new System.Windows.Forms.Button();
@@ -38,6 +39,8 @@
             this.quickPlayQuizModeScoreLabel = new System.Windows.Forms.Label();
             this.quickPlayQuizModeTimeLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.quizTimer = new System.Windows.Forms.Timer(this.components);
+            this.quizModeStartButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // quickPlayQuicModeOptionOneButton
@@ -84,7 +87,7 @@
             // 
             this.quickPlayQuizModeQuestionLabel.AutoSize = true;
             this.quickPlayQuizModeQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeQuestionLabel.Location = new System.Drawing.Point(4, 126);
+            this.quickPlayQuizModeQuestionLabel.Location = new System.Drawing.Point(384, 85);
             this.quickPlayQuizModeQuestionLabel.Name = "quickPlayQuizModeQuestionLabel";
             this.quickPlayQuizModeQuestionLabel.Size = new System.Drawing.Size(99, 26);
             this.quickPlayQuizModeQuestionLabel.TabIndex = 4;
@@ -92,13 +95,17 @@
             // 
             // quickPlayQuizModeQuestionBox
             // 
-            this.quickPlayQuizModeQuestionBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.quickPlayQuizModeQuestionBox.AutoSize = true;
+            this.quickPlayQuizModeQuestionBox.BackColor = System.Drawing.Color.White;
             this.quickPlayQuizModeQuestionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeQuestionBox.Location = new System.Drawing.Point(108, 114);
+            this.quickPlayQuizModeQuestionBox.Location = new System.Drawing.Point(4, 130);
+            this.quickPlayQuizModeQuestionBox.MaximumSize = new System.Drawing.Size(800, 52);
+            this.quickPlayQuizModeQuestionBox.MinimumSize = new System.Drawing.Size(47, 26);
             this.quickPlayQuizModeQuestionBox.Name = "quickPlayQuizModeQuestionBox";
-            this.quickPlayQuizModeQuestionBox.Size = new System.Drawing.Size(701, 89);
+            this.quickPlayQuizModeQuestionBox.Size = new System.Drawing.Size(47, 26);
             this.quickPlayQuizModeQuestionBox.TabIndex = 5;
-            this.quickPlayQuizModeQuestionBox.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.quickPlayQuizModeQuestionBox.Text = "test";
+            this.quickPlayQuizModeQuestionBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.quickPlayQuizModeQuestionBox.Click += new System.EventHandler(this.quickPlayQuizModeQuestionBox_Click);
             // 
             // quickPlayQuizModeProgressBar
@@ -112,9 +119,9 @@
             // 
             this.quickPlayQuizModeScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.quickPlayQuizModeScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeScoreLabel.Location = new System.Drawing.Point(660, 392);
+            this.quickPlayQuizModeScoreLabel.Location = new System.Drawing.Point(690, 392);
             this.quickPlayQuizModeScoreLabel.Name = "quickPlayQuizModeScoreLabel";
-            this.quickPlayQuizModeScoreLabel.Size = new System.Drawing.Size(149, 39);
+            this.quickPlayQuizModeScoreLabel.Size = new System.Drawing.Size(119, 39);
             this.quickPlayQuizModeScoreLabel.TabIndex = 7;
             this.quickPlayQuizModeScoreLabel.Text = "Score:";
             this.quickPlayQuizModeScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,12 +130,13 @@
             // 
             this.quickPlayQuizModeTimeLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.quickPlayQuizModeTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeTimeLabel.Location = new System.Drawing.Point(517, 14);
+            this.quickPlayQuizModeTimeLabel.Location = new System.Drawing.Point(606, 14);
             this.quickPlayQuizModeTimeLabel.Name = "quickPlayQuizModeTimeLabel";
-            this.quickPlayQuizModeTimeLabel.Size = new System.Drawing.Size(292, 38);
+            this.quickPlayQuizModeTimeLabel.Size = new System.Drawing.Size(203, 38);
             this.quickPlayQuizModeTimeLabel.TabIndex = 8;
             this.quickPlayQuizModeTimeLabel.Text = "Time Left:";
             this.quickPlayQuizModeTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.quickPlayQuizModeTimeLabel.Click += new System.EventHandler(this.quickPlayQuizModeTimeLabel_Click);
             // 
             // label1
             // 
@@ -140,11 +148,29 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Progress";
             // 
+            // quizTimer
+            // 
+            this.quizTimer.Enabled = true;
+            this.quizTimer.Interval = 1000;
+            this.quizTimer.Tick += new System.EventHandler(this.quizTimer_Tick);
+            // 
+            // quizModeStartButton
+            // 
+            this.quizModeStartButton.Location = new System.Drawing.Point(83, 28);
+            this.quizModeStartButton.Name = "quizModeStartButton";
+            this.quizModeStartButton.Size = new System.Drawing.Size(75, 23);
+            this.quizModeStartButton.TabIndex = 10;
+            this.quizModeStartButton.Text = "Start";
+            this.quizModeStartButton.UseVisualStyleBackColor = true;
+            this.quizModeStartButton.Click += new System.EventHandler(this.quizModeStartButton_Click);
+            // 
             // quizModeUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.quizModeStartButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.quickPlayQuizModeTimeLabel);
             this.Controls.Add(this.quickPlayQuizModeScoreLabel);
@@ -175,5 +201,7 @@
         private System.Windows.Forms.Label quickPlayQuizModeScoreLabel;
         private System.Windows.Forms.Label quickPlayQuizModeTimeLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer quizTimer;
+        private System.Windows.Forms.Button quizModeStartButton;
     }
 }
