@@ -24,7 +24,25 @@ namespace Geo
             InitializeUI();
             InitializeColorChangeTimer();
             mainTabControl.SelectedTab = mainMenuTab;
-            this.DoubleBuffered = true; 
+            this.DoubleBuffered = true;
+            EnableDoubleBufferingForAll(this);
+        }
+
+        // Enable double buffering for all controls in the form to prevent flickering 
+        private void EnableDoubleBufferingForAll(Control control)
+        {
+            foreach (Control childControl in control.Controls)
+            {
+                // Enable double buffering using reflection for each control
+                typeof(Control).InvokeMember("DoubleBuffered",
+                    System.Reflection.BindingFlags.NonPublic |
+                    System.Reflection.BindingFlags.Instance |
+                    System.Reflection.BindingFlags.SetProperty,
+                    null, childControl, new object[] { true });
+
+                // Recursively apply to child controls
+                EnableDoubleBufferingForAll(childControl);
+            }
         }
 
         private void InitializeUI()
