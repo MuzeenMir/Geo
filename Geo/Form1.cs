@@ -101,7 +101,7 @@ namespace Geo
         }
         private void ColorChangeTimer_Tick(object sender, EventArgs e)
         {
-            gameNameLabel.ForeColor = Color.FromArgb(random.Next(256), random.Next(256), random.Next(256));
+            geoGameNameLabel.ForeColor = Color.FromArgb(random.Next(192), random.Next(192), random.Next(192));
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
@@ -111,57 +111,22 @@ namespace Geo
 
         private void learnButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (loggedOn == true)
-                {
-                    learnPanel.Visible = true;
-                    startButtonsPanel.Visible = false;
-                }
-                else
-                {
-                    mainTabControl.SelectedTab = loginTab;
-                }
-            }
-            finally
-            {
-                this.ResumeLayout(true);
-            }
+            // unused and not needed
         }
 
         private void quickplayButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                quickPlayPanel.Visible = true;
-                startButtonsPanel.Visible = false;
-
-                // Position the return button in the top right
-                const int padding = 10;
-                quickPlay_ReturnButton.Left = quickPlayPanel.Width - quickPlay_ReturnButton.Width - padding;
-                quickPlay_ReturnButton.Top = padding;
-            }
-            finally
-            {
-                this.ResumeLayout(true);
-            }
+            // unused and not needed
         }
 
         private void quitButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = new DialogResult();
-
-            dialog = MessageBox.Show("Do you want to close?", "Alert!", MessageBoxButtons.YesNo);
-
-            if (dialog == DialogResult.Yes)
-            {
-                System.Environment.Exit(1);
-            }
+            // unused and not needed
         }
 
         private void gameNameLabel_Click(object sender, EventArgs e)
         {
-
+            // unused and not needed
         }
 
         private void quickPlayPanel_Paint(object sender, PaintEventArgs e)
@@ -436,6 +401,61 @@ namespace Geo
         private void startButtonsPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void geoGameNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void learnModeButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (loggedOn == true)
+                {
+                    learnPanel.Visible = true;
+                    startButtonsPanel.Visible = false;
+                }
+                else
+                {
+                    mainTabControl.SelectedTab = loginTab;
+                }
+            }
+            finally
+            {
+                this.ResumeLayout(true);
+            }
+        }
+
+        private void quickPlayModeButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                quickPlayPanel.Visible = true;
+                startButtonsPanel.Visible = false;
+
+                // Position the return button in the top right
+                const int padding = 10;
+                quickPlay_ReturnButton.Left = quickPlayPanel.Width - quickPlay_ReturnButton.Width - padding;
+                quickPlay_ReturnButton.Top = padding;
+            }
+            finally
+            {
+                this.ResumeLayout(true);
+            }
+        }
+
+        private void quitGameButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = new DialogResult();
+
+            dialog = MessageBox.Show("Do you want to close?", "Alert!", MessageBoxButtons.YesNo);
+
+            if (dialog == DialogResult.Yes)
+            {
+                System.Environment.Exit(1);
+            }
         }
     }
 }
