@@ -243,8 +243,8 @@ namespace Geo
                 return;
             }
 
-            string username = signupUsernameBox.Text.Trim();
-            string password = signupPasswordBox.Text.Trim();
+            string username = signupUsernameBox.Text.Trim().ToLower();
+            string password = signupPasswordBox.Text.Trim().ToLower();
 
             bool isDuplicate = CheckForDuplicates(username);
             if (isDuplicate)
@@ -259,7 +259,6 @@ namespace Geo
             try
             {
                 userInfo.Add_user(username, password);
-
                 MessageBox.Show("User information saved successfully.");
                 signupUsernameBox.Clear();
                 signupPasswordBox.Clear();
@@ -283,12 +282,7 @@ namespace Geo
 
             try
             {
-                //MessageBox.Show(userInfo.get_Urank(usernameBox.Text));
-                if (File.Exists(csvFilePath))
-                {
-                    var lines = File.ReadAllLines(csvFilePath);
-                    userFound = lines.Any(line => line.Trim() == enteredCredentials);
-                }
+                userFound = userInfo.Check_Password(usernameBox.Text.Trim().ToLower(), passwordBox.Text);
 
                 if (userFound)
                 {
