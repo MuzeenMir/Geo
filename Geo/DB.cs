@@ -9,7 +9,7 @@ using Org.BouncyCastle.Crypto.Generators;
 
 public class DB
 {
-    string connString = "Driver={MySQL ODBC 9.2 Unicode Driver};Server=10.32.196.53;Port=3306;Database=userinfo;Uid=kaden;Pwd=HelloThere...";
+    string connString = "Driver={MySQL ODBC 8.0 Unicode Driver};Server=10.32.196.53;Port=3306;Database=userinfo;Uid=kaden;Pwd=HelloThere...";
     const string stringDefault = "";
     HashSet<string> accesibleColumns = new HashSet<string> { "Id", "Uname", "Urank", "Points", "Role" };
     Dictionary<string, int> validRoles = new Dictionary<string, int> { { "student", 0 }, { "teacher", 1 } };
@@ -62,11 +62,11 @@ public class DB
         command.Parameters.AddWithValue("Points", 0);
         command.Parameters.AddWithValue("Role", 0);
 
-        command.ExecuteNonQuery();
+        affectedRows = command.ExecuteNonQuery();
         this.conn.Close();
         if (affectedRows <= 0)
         {
-            throw new Exception("Error adding user");
+            throw new Exception();
         }
         return affectedRows;
     }
