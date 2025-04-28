@@ -59,6 +59,8 @@ namespace Geo
 
             // Adds form resize handler only once
             this.Resize += Form_Resize;
+
+            Form_Resize(this, EventArgs.Empty);
         }
 
         private void Form_Resize(object sender, EventArgs e)
@@ -494,10 +496,8 @@ namespace Geo
                 quickPlayPanel.Visible = true;
                 startButtonsPanel.Visible = false;
 
-                // Position the return button in the top right
-                const int padding = 10;
-                quickPlay_ReturnButton.Left = quickPlayPanel.Width - quickPlay_ReturnButton.Width - padding;
-                quickPlay_ReturnButton.Top = padding;
+                // Call Form_Resize to position all controls properly
+                Form_Resize(this, EventArgs.Empty);
             }
             finally
             {
