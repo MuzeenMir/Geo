@@ -9,7 +9,7 @@ using Org.BouncyCastle.Crypto.Generators;
 
 public class DB
 {
-    string connString = "Driver={MySQL ODBC 8.0 Unicode Driver};Server=10.32.196.53;Port=3306;Database=userinfo;Uid=kaden;Pwd=HelloThere...";
+    string connString = "Driver={MySQL ODBC 8.0 Unicode Driver};Server=10.32.196.53;Port=3306;Database=userinfo;Uid=api;Pwd=KentuckyDirby528";
     const string stringDefault = "";
     HashSet<string> accesibleColumns = new HashSet<string> { "Id", "Uname", "Urank", "Points", "Role" };
     Dictionary<string, int> validRoles = new Dictionary<string, int> { { "student", 0 }, { "teacher", 1 } };
@@ -129,7 +129,10 @@ public class DB
     public bool Set_Uname(string currUsrName, string newUsrName)
     {
         // If the old username does not exist, break.
-        this.Check_Username(currUsrName);
+        if (!this.Check_Username(currUsrName))
+        {
+            throw new ArgumentException("Old username does not exist");
+        }
 
         // If the new username exists, break.
         if (this.Get_Accessible_Field("Uname", "Uname", newUsrName) != stringDefault)
@@ -171,8 +174,11 @@ public class DB
      */
     public bool Set_Urank(string usrName, string rank)
     {
-        // If the old username does not exist, break.
-        this.Check_Username(usrName);
+        // If the username does not exist, break.
+        if (!this.Check_Username(usrName))
+        {
+            throw new ArgumentException("Old username does not exist");
+        }
 
         string query = "UPDATE users SET Urank = ? WHERE Uname = ?";
         OdbcCommand command = new OdbcCommand(query, this.conn);
@@ -208,7 +214,11 @@ public class DB
      */
     public bool Set_Points(int points, string usrName)
     {
-        this.Check_Username(usrName);
+        // If the username does not exist, break.
+        if (!this.Check_Username(usrName))
+        {
+            throw new ArgumentException("Old username does not exist");
+        }
         string query = "UPDATE users SET Points = ? WHERE Uname = ?";
         OdbcCommand command = new OdbcCommand(query, this.conn);
 
@@ -248,7 +258,11 @@ public class DB
         {
             throw new ArgumentException("Cannot add negative number to the score.");
         }
-        this.Check_Username(usrName);
+        // If the username does not exist, break.
+        if (!this.Check_Username(usrName))
+        {
+            throw new ArgumentException("Old username does not exist");
+        }
 
         string temp = this.Get_Accessible_Field("Points", "Uname", usrName);
         int totalPoints = int.Parse(temp) + pointsToAdd;
@@ -288,8 +302,11 @@ public class DB
      */
     public bool Set_Role(string role, string usrName)
     {
-        // If the old username does not exist, break.
-        this.Check_Username(usrName);
+        // If the username does not exist, break.
+        if (!this.Check_Username(usrName))
+        {
+            throw new ArgumentException("Old username does not exist");
+        }
 
         // If the role is invalid, break.
         if (validRoles.ContainsKey(role.ToLower()) != true)
@@ -371,9 +388,12 @@ public class DB
      */
     public bool Change_Password(string usrName, string currPassword, string newPassword)
     {
-        this.Check_Username(usrName);
-
-        if(Check_Password(usrName, currPassword))
+        // If the username does not exist, break.
+        if (!this.Check_Username(usrName))
+        {
+            throw new ArgumentException("Old username does not exist");
+        }
+        if (Check_Password(usrName, currPassword))
         {
             string query = "UPDATE users SET Password = ? WHERE Uname = ?";
             OdbcCommand command = new OdbcCommand(query, this.conn);
@@ -420,10 +440,10 @@ public class DB
      */
     private bool Check_Username(string username)
     {
-        // If the old username does not exist, break.
+        // If the old username does not exist, return false
         if (this.Get_Accessible_Field("Uname", "Uname", username) == stringDefault)
         {
-            throw new ArgumentException("User does not exist");
+            return false;
         }
         return true;
     }
