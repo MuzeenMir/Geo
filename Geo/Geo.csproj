@@ -184,6 +184,7 @@
   <ItemGroup>
     <None Include="Resources\userCreds.csv" />
     <None Include="Resources\user_creds.json" />
+    <None Include="Resources\welcomeMessage.json" />
     <None Include="Resources\wrld-21.png" />
   </ItemGroup>
   <ItemGroup>

@@ -38,6 +38,8 @@ namespace Geo
             quickPlayQuicModeOptionTwoButton.Visible = false;
             quickPlayQuicModeOptionThreeButton.Visible = false;
             quickPlayQuicModeOptionFourButton.Visible = false;
+            quickPlayQuizModeQuestionLabel.Visible = false;
+            quizModeStartButton.Enabled = false;
             quizTimer.Stop();
         }
 
@@ -142,7 +144,76 @@ namespace Geo
             quickPlayQuicModeOptionThreeButton.Visible = true;
             quickPlayQuicModeOptionFourButton.Visible = true;
             quickPlayQuizModeQuestionBox.Visible = true;
+            quickPlayQuizModeQuestionLabel.Visible = true;
+
             quizTimer.Start();
+        }
+
+        private void quizMode10CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (quizMode10CheckBox.Checked)
+            {
+                quizMode20CheckBox.Checked = false;
+                quizMode30CheckBox.Checked = false;
+                quizModeMaxCheckBox.Checked = false;
+                initialQuestionCount = 10;
+                quickPlayQuizModeProgressBar.Maximum = initialQuestionCount;
+                quizModeStartButton.Enabled = true;
+            }
+            else
+            {
+                quizModeStartButton.Enabled = false;
+            }
+        }
+
+        private void quizMode20CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (quizMode20CheckBox.Checked)
+            {
+                quizMode10CheckBox.Checked = false;
+                quizMode30CheckBox.Checked = false;
+                quizModeMaxCheckBox.Checked = false;
+                initialQuestionCount = 20;
+                quickPlayQuizModeProgressBar.Maximum = initialQuestionCount;
+                quizModeStartButton.Enabled = true;
+            }
+            else
+            {
+                quizModeStartButton.Enabled = false;
+            }
+        }
+
+        private void quizMode30CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (quizMode30CheckBox.Checked)
+            {
+                quizMode10CheckBox.Checked = false;
+                quizMode20CheckBox.Checked = false;
+                quizModeMaxCheckBox.Checked = false;
+                initialQuestionCount = 30;
+                quickPlayQuizModeProgressBar.Maximum = initialQuestionCount;
+                quizModeStartButton.Enabled = true;
+            }
+            else
+            {
+                quizModeStartButton.Enabled = false;
+            }
+        }
+
+        private void quizModeMaxCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(quizModeMaxCheckBox.Checked)
+            {
+                quizMode10CheckBox.Checked = false;
+                quizMode20CheckBox.Checked = false;
+                quizMode30CheckBox.Checked = false;
+                initialQuestionCount = questionPool.Count;
+                quizModeStartButton.Enabled = true;
+            }
+            else
+            {
+                quizModeStartButton.Enabled = false;
+            }
         }
     }
 

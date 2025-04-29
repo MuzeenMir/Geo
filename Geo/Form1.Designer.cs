@@ -31,11 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.mainMenuTab = new System.Windows.Forms.TabPage();
-            this.startButtonsPanel = new System.Windows.Forms.Panel();
-            this.geoGameNameLabel = new System.Windows.Forms.Label();
-            this.quitGameButton = new System.Windows.Forms.Button();
-            this.quickPlayModeButton = new System.Windows.Forms.Button();
-            this.learnModeButton = new System.Windows.Forms.Button();
             this.quickPlayPanel = new System.Windows.Forms.Panel();
             this.quickPlay_ReturnButton = new System.Windows.Forms.Button();
             this.quickPlay_PlayButton = new System.Windows.Forms.Button();
@@ -44,6 +39,11 @@
             this.learnPanel = new System.Windows.Forms.Panel();
             this.learn_ReturnButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.startButtonsPanel = new System.Windows.Forms.Panel();
+            this.geoGameNameLabel = new System.Windows.Forms.Label();
+            this.quitGameButton = new System.Windows.Forms.Button();
+            this.quickPlayModeButton = new System.Windows.Forms.Button();
+            this.learnModeButton = new System.Windows.Forms.Button();
             this.groupsTab = new System.Windows.Forms.TabPage();
             this.leaderboardTab = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -85,11 +85,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.welcomeMessageLabel = new System.Windows.Forms.Label();
             this.mainTabControl.SuspendLayout();
             this.mainMenuTab.SuspendLayout();
-            this.startButtonsPanel.SuspendLayout();
             this.quickPlayPanel.SuspendLayout();
             this.learnPanel.SuspendLayout();
+            this.startButtonsPanel.SuspendLayout();
             this.leaderboardTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.loginTab.SuspendLayout();
@@ -120,9 +121,9 @@
             // 
             this.mainMenuTab.BackgroundImage = global::Geo.Properties.Resources.wrld_21;
             this.mainMenuTab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainMenuTab.Controls.Add(this.startButtonsPanel);
             this.mainMenuTab.Controls.Add(this.quickPlayPanel);
             this.mainMenuTab.Controls.Add(this.learnPanel);
-            this.mainMenuTab.Controls.Add(this.startButtonsPanel);
             this.mainMenuTab.Location = new System.Drawing.Point(4, 25);
             this.mainMenuTab.Name = "mainMenuTab";
             this.mainMenuTab.Padding = new System.Windows.Forms.Padding(3);
@@ -130,63 +131,6 @@
             this.mainMenuTab.TabIndex = 0;
             this.mainMenuTab.Text = "Main Menu";
             this.mainMenuTab.UseVisualStyleBackColor = true;
-            // 
-            // startButtonsPanel
-            // 
-            this.startButtonsPanel.Controls.Add(this.geoGameNameLabel);
-            this.startButtonsPanel.Controls.Add(this.quitGameButton);
-            this.startButtonsPanel.Controls.Add(this.quickPlayModeButton);
-            this.startButtonsPanel.Controls.Add(this.learnModeButton);
-            this.startButtonsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.startButtonsPanel.Location = new System.Drawing.Point(3, 3);
-            this.startButtonsPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.startButtonsPanel.Name = "startButtonsPanel";
-            this.startButtonsPanel.Size = new System.Drawing.Size(786, 413);
-            this.startButtonsPanel.TabIndex = 0;
-            // 
-            // geoGameNameLabel
-            // 
-            this.geoGameNameLabel.AutoSize = true;
-            this.geoGameNameLabel.Font = new System.Drawing.Font("Old English Text MT", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.geoGameNameLabel.Location = new System.Drawing.Point(246, 67);
-            this.geoGameNameLabel.Name = "geoGameNameLabel";
-            this.geoGameNameLabel.Size = new System.Drawing.Size(363, 57);
-            this.geoGameNameLabel.TabIndex = 3;
-            this.geoGameNameLabel.Text = "Geography game";
-            this.geoGameNameLabel.Click += new System.EventHandler(this.geoGameNameLabel_Click);
-            // 
-            // quitGameButton
-            // 
-            this.quitGameButton.AutoSize = true;
-            this.quitGameButton.Location = new System.Drawing.Point(397, 326);
-            this.quitGameButton.Name = "quitGameButton";
-            this.quitGameButton.Size = new System.Drawing.Size(75, 26);
-            this.quitGameButton.TabIndex = 2;
-            this.quitGameButton.Text = "Quit";
-            this.quitGameButton.UseVisualStyleBackColor = true;
-            this.quitGameButton.Click += new System.EventHandler(this.quitGameButton_Click);
-            // 
-            // quickPlayModeButton
-            // 
-            this.quickPlayModeButton.AutoSize = true;
-            this.quickPlayModeButton.Location = new System.Drawing.Point(387, 228);
-            this.quickPlayModeButton.Name = "quickPlayModeButton";
-            this.quickPlayModeButton.Size = new System.Drawing.Size(91, 26);
-            this.quickPlayModeButton.TabIndex = 1;
-            this.quickPlayModeButton.Text = "Quick Play";
-            this.quickPlayModeButton.UseVisualStyleBackColor = true;
-            this.quickPlayModeButton.Click += new System.EventHandler(this.quickPlayModeButton_Click);
-            // 
-            // learnModeButton
-            // 
-            this.learnModeButton.AutoSize = true;
-            this.learnModeButton.Location = new System.Drawing.Point(385, 145);
-            this.learnModeButton.Name = "learnModeButton";
-            this.learnModeButton.Size = new System.Drawing.Size(99, 26);
-            this.learnModeButton.TabIndex = 0;
-            this.learnModeButton.Text = "Learn Mode";
-            this.learnModeButton.UseVisualStyleBackColor = true;
-            this.learnModeButton.Click += new System.EventHandler(this.learnModeButton_Click);
             // 
             // quickPlayPanel
             // 
@@ -281,6 +225,64 @@
             this.label10.Size = new System.Drawing.Size(85, 16);
             this.label10.TabIndex = 0;
             this.label10.Text = "learn panel";
+            // 
+            // startButtonsPanel
+            // 
+            this.startButtonsPanel.Controls.Add(this.welcomeMessageLabel);
+            this.startButtonsPanel.Controls.Add(this.geoGameNameLabel);
+            this.startButtonsPanel.Controls.Add(this.quitGameButton);
+            this.startButtonsPanel.Controls.Add(this.quickPlayModeButton);
+            this.startButtonsPanel.Controls.Add(this.learnModeButton);
+            this.startButtonsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startButtonsPanel.Location = new System.Drawing.Point(3, 3);
+            this.startButtonsPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.startButtonsPanel.Name = "startButtonsPanel";
+            this.startButtonsPanel.Size = new System.Drawing.Size(786, 413);
+            this.startButtonsPanel.TabIndex = 0;
+            // 
+            // geoGameNameLabel
+            // 
+            this.geoGameNameLabel.AutoSize = true;
+            this.geoGameNameLabel.Font = new System.Drawing.Font("Old English Text MT", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.geoGameNameLabel.Location = new System.Drawing.Point(246, 67);
+            this.geoGameNameLabel.Name = "geoGameNameLabel";
+            this.geoGameNameLabel.Size = new System.Drawing.Size(363, 57);
+            this.geoGameNameLabel.TabIndex = 3;
+            this.geoGameNameLabel.Text = "Geography game";
+            this.geoGameNameLabel.Click += new System.EventHandler(this.geoGameNameLabel_Click);
+            // 
+            // quitGameButton
+            // 
+            this.quitGameButton.AutoSize = true;
+            this.quitGameButton.Location = new System.Drawing.Point(397, 326);
+            this.quitGameButton.Name = "quitGameButton";
+            this.quitGameButton.Size = new System.Drawing.Size(75, 26);
+            this.quitGameButton.TabIndex = 2;
+            this.quitGameButton.Text = "Quit";
+            this.quitGameButton.UseVisualStyleBackColor = true;
+            this.quitGameButton.Click += new System.EventHandler(this.quitGameButton_Click);
+            // 
+            // quickPlayModeButton
+            // 
+            this.quickPlayModeButton.AutoSize = true;
+            this.quickPlayModeButton.Location = new System.Drawing.Point(387, 228);
+            this.quickPlayModeButton.Name = "quickPlayModeButton";
+            this.quickPlayModeButton.Size = new System.Drawing.Size(91, 26);
+            this.quickPlayModeButton.TabIndex = 1;
+            this.quickPlayModeButton.Text = "Quick Play";
+            this.quickPlayModeButton.UseVisualStyleBackColor = true;
+            this.quickPlayModeButton.Click += new System.EventHandler(this.quickPlayModeButton_Click);
+            // 
+            // learnModeButton
+            // 
+            this.learnModeButton.AutoSize = true;
+            this.learnModeButton.Location = new System.Drawing.Point(385, 145);
+            this.learnModeButton.Name = "learnModeButton";
+            this.learnModeButton.Size = new System.Drawing.Size(99, 26);
+            this.learnModeButton.TabIndex = 0;
+            this.learnModeButton.Text = "Learn Mode";
+            this.learnModeButton.UseVisualStyleBackColor = true;
+            this.learnModeButton.Click += new System.EventHandler(this.learnModeButton_Click);
             // 
             // groupsTab
             // 
@@ -671,6 +673,16 @@
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
+            // welcomeMessageLabel
+            // 
+            this.welcomeMessageLabel.AutoSize = true;
+            this.welcomeMessageLabel.Location = new System.Drawing.Point(216, 214);
+            this.welcomeMessageLabel.Name = "welcomeMessageLabel";
+            this.welcomeMessageLabel.Size = new System.Drawing.Size(58, 16);
+            this.welcomeMessageLabel.TabIndex = 4;
+            this.welcomeMessageLabel.Text = "label11";
+            this.welcomeMessageLabel.Click += new System.EventHandler(this.welcomeMessageLabel_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -687,12 +699,12 @@
             this.Text = "Geography Game";
             this.mainTabControl.ResumeLayout(false);
             this.mainMenuTab.ResumeLayout(false);
-            this.startButtonsPanel.ResumeLayout(false);
-            this.startButtonsPanel.PerformLayout();
             this.quickPlayPanel.ResumeLayout(false);
             this.quickPlayPanel.PerformLayout();
             this.learnPanel.ResumeLayout(false);
             this.learnPanel.PerformLayout();
+            this.startButtonsPanel.ResumeLayout(false);
+            this.startButtonsPanel.PerformLayout();
             this.leaderboardTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.loginTab.ResumeLayout(false);
@@ -771,6 +783,7 @@
         private System.Windows.Forms.Button quitGameButton;
         private System.Windows.Forms.Button quickPlayModeButton;
         private System.Windows.Forms.Button learnModeButton;
+        private System.Windows.Forms.Label welcomeMessageLabel;
     }
 }
 
