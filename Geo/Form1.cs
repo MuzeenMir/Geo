@@ -59,41 +59,81 @@ namespace Geo
 
             // Adds form resize handler only once
             this.Resize += Form_Resize;
+
+            Form_Resize(this, EventArgs.Empty);
         }
 
         private void Form_Resize(object sender, EventArgs e)
         {
-            // Re-center the panel when the form is resized
-            if (startButtonsPanel.Visible)
+            // Iterate through all controls in the form
+            foreach (Control control in this.Controls)
             {
-                startButtonsPanel.Left = (this.ClientSize.Width - startButtonsPanel.Width) / 2;
-                startButtonsPanel.Top = (this.ClientSize.Height - startButtonsPanel.Height) / 2;
+                // Check if the control is a Panel and is visible
+                if (control is Panel panel && panel.Visible)
+                {
+                    CenterPanel(panel);
+                }
             }
 
-            // Keeps the quickPlay_ReturnButton at the top right corner
+            // Keep the return buttons at the top-right corner
+            const int padding = 10;
+            const int verticalSpacing = 15; // Space between stacked elements
+
             if (quickPlayPanel.Visible && quickPlay_ReturnButton != null)
             {
-                const int padding = 10; // You can change this value
+                // Return button always at top-right
                 quickPlay_ReturnButton.Left = quickPlayPanel.Width - quickPlay_ReturnButton.Width - padding;
                 quickPlay_ReturnButton.Top = padding;
+
+                // Calculate vertical center point for the stacked menu
+                int centerY = quickPlayPanel.Height / 2;
+                int totalStackHeight = 0;
+
+                // Calculate total height of stacked elements
+                if (mapModeRadioButton != null) totalStackHeight += mapModeRadioButton.Height;
+                if (quizModeRadioButton != null) totalStackHeight += quizModeRadioButton.Height + verticalSpacing;
+                if (quickPlay_PlayButton != null) totalStackHeight += quickPlay_PlayButton.Height + verticalSpacing;
+
+                // Start Y position for the first element in stack
+                int currentY = centerY - (totalStackHeight / 2);
+
+                // Position radio buttons in a stacked menu
+                if (mapModeRadioButton != null)
+                {
+                    mapModeRadioButton.Left = (quickPlayPanel.Width - mapModeRadioButton.Width) / 2;
+                    mapModeRadioButton.Top = currentY;
+                    currentY += mapModeRadioButton.Height + verticalSpacing;
+                }
+
+                if (quizModeRadioButton != null)
+                {
+                    quizModeRadioButton.Left = (quickPlayPanel.Width - quizModeRadioButton.Width) / 2;
+                    quizModeRadioButton.Top = currentY;
+                    currentY += quizModeRadioButton.Height + verticalSpacing;
+                }
+
+                // Position the Play button at the bottom of the stack
+                if (quickPlay_PlayButton != null)
+                {
+                    quickPlay_PlayButton.Left = (quickPlayPanel.Width - quickPlay_PlayButton.Width) / 2;
+                    quickPlay_PlayButton.Top = currentY;
+                }
             }
 
-            // Keeps the login_returnButton at the top right corner
             if (loginPanel.Visible && login_returnButton != null)
             {
-                const int padding = 10; // You can change this value
                 login_returnButton.Left = loginPanel.Width - login_returnButton.Width - padding;
                 login_returnButton.Top = padding;
             }
 
-            // Keeps the signupReturnButton at the top right corner
             if (signUpPlanel.Visible && signupReturnButton != null)
             {
-                const int padding = 10; // You can change this value
                 signupReturnButton.Left = signUpPlanel.Width - signupReturnButton.Width - padding;
                 signupReturnButton.Top = padding;
             }
         }
+
+
 
         private void CenterPanel(Panel panel)
         {
@@ -101,12 +141,6 @@ namespace Geo
             panel.Left = (this.ClientSize.Width - panel.Width) / 2;
             panel.Top = (this.ClientSize.Height - panel.Height) / 2;
 
-            // Handle form resize to keep the panel centered
-            this.Resize += (sender, e) =>
-            {
-                panel.Left = (this.ClientSize.Width - panel.Width) / 2;
-                panel.Top = (this.ClientSize.Height - panel.Height) / 2;
-            };
         }
 
         private void InitializeColorChangeTimer()
@@ -462,10 +496,8 @@ namespace Geo
                 quickPlayPanel.Visible = true;
                 startButtonsPanel.Visible = false;
 
-                // Position the return button in the top right
-                const int padding = 10;
-                quickPlay_ReturnButton.Left = quickPlayPanel.Width - quickPlay_ReturnButton.Width - padding;
-                quickPlay_ReturnButton.Top = padding;
+                // Call Form_Resize to position all controls properly
+                Form_Resize(this, EventArgs.Empty);
             }
             finally
             {
