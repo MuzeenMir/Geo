@@ -9,7 +9,7 @@ public class DB
     OdbcConnection conn;
     public DB()
     {
-        string connString = "Driver={MySQL ODBC 9.2 Unicode Driver};Server=localhost;Port=3307;Database=userinfo;Uid=root;Pwd=password";//"DSN=usersDBSys;User ID=root; Password=password;";//"Driver={MySQL ODBC 9.2 Unicode Driver};Server=localhost;Port=3307;Database=userinfo;Uid=root;Pwd=password";
+        string connString = "Driver={MySQL ODBC 8.0 Unicode Driver};Server=localhost;Port=3307;Database=userinfo;Uid=root;Pwd=password";//"DSN=usersDBSys;User ID=root; Password=password;";//"Driver={MySQL ODBC 9.2 Unicode Driver};Server=localhost;Port=3307;Database=userinfo;Uid=root;Pwd=password";
         // To use this function I had to execute dotnet add package System.Data.Odbc in the project directory
         this.conn = new System.Data.Odbc.OdbcConnection(connString);
         try
