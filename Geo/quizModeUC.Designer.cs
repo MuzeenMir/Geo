@@ -51,9 +51,10 @@
             // quickPlayQuicModeOptionOneButton
             // 
             this.quickPlayQuicModeOptionOneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuicModeOptionOneButton.Location = new System.Drawing.Point(198, 228);
+            this.quickPlayQuicModeOptionOneButton.Location = new System.Drawing.Point(396, 438);
+            this.quickPlayQuicModeOptionOneButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quickPlayQuicModeOptionOneButton.Name = "quickPlayQuicModeOptionOneButton";
-            this.quickPlayQuicModeOptionOneButton.Size = new System.Drawing.Size(200, 35);
+            this.quickPlayQuicModeOptionOneButton.Size = new System.Drawing.Size(400, 67);
             this.quickPlayQuicModeOptionOneButton.TabIndex = 0;
             this.quickPlayQuicModeOptionOneButton.Text = "button1";
             this.quickPlayQuicModeOptionOneButton.UseVisualStyleBackColor = true;
@@ -61,9 +62,10 @@
             // quickPlayQuicModeOptionTwoButton
             // 
             this.quickPlayQuicModeOptionTwoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuicModeOptionTwoButton.Location = new System.Drawing.Point(493, 227);
+            this.quickPlayQuicModeOptionTwoButton.Location = new System.Drawing.Point(986, 437);
+            this.quickPlayQuicModeOptionTwoButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quickPlayQuicModeOptionTwoButton.Name = "quickPlayQuicModeOptionTwoButton";
-            this.quickPlayQuicModeOptionTwoButton.Size = new System.Drawing.Size(200, 35);
+            this.quickPlayQuicModeOptionTwoButton.Size = new System.Drawing.Size(400, 67);
             this.quickPlayQuicModeOptionTwoButton.TabIndex = 1;
             this.quickPlayQuicModeOptionTwoButton.Text = "button2";
             this.quickPlayQuicModeOptionTwoButton.UseVisualStyleBackColor = true;
@@ -71,9 +73,10 @@
             // quickPlayQuicModeOptionThreeButton
             // 
             this.quickPlayQuicModeOptionThreeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuicModeOptionThreeButton.Location = new System.Drawing.Point(198, 328);
+            this.quickPlayQuicModeOptionThreeButton.Location = new System.Drawing.Point(396, 631);
+            this.quickPlayQuicModeOptionThreeButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quickPlayQuicModeOptionThreeButton.Name = "quickPlayQuicModeOptionThreeButton";
-            this.quickPlayQuicModeOptionThreeButton.Size = new System.Drawing.Size(200, 35);
+            this.quickPlayQuicModeOptionThreeButton.Size = new System.Drawing.Size(400, 67);
             this.quickPlayQuicModeOptionThreeButton.TabIndex = 2;
             this.quickPlayQuicModeOptionThreeButton.Text = "button3";
             this.quickPlayQuicModeOptionThreeButton.UseVisualStyleBackColor = true;
@@ -81,9 +84,10 @@
             // quickPlayQuicModeOptionFourButton
             // 
             this.quickPlayQuicModeOptionFourButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuicModeOptionFourButton.Location = new System.Drawing.Point(493, 328);
+            this.quickPlayQuicModeOptionFourButton.Location = new System.Drawing.Point(986, 631);
+            this.quickPlayQuicModeOptionFourButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quickPlayQuicModeOptionFourButton.Name = "quickPlayQuicModeOptionFourButton";
-            this.quickPlayQuicModeOptionFourButton.Size = new System.Drawing.Size(200, 35);
+            this.quickPlayQuicModeOptionFourButton.Size = new System.Drawing.Size(400, 67);
             this.quickPlayQuicModeOptionFourButton.TabIndex = 3;
             this.quickPlayQuicModeOptionFourButton.Text = "button4";
             this.quickPlayQuicModeOptionFourButton.UseVisualStyleBackColor = true;
@@ -92,9 +96,10 @@
             // 
             this.quickPlayQuizModeQuestionLabel.AutoSize = true;
             this.quickPlayQuizModeQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeQuestionLabel.Location = new System.Drawing.Point(384, 85);
+            this.quickPlayQuizModeQuestionLabel.Location = new System.Drawing.Point(768, 163);
+            this.quickPlayQuizModeQuestionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.quickPlayQuizModeQuestionLabel.Name = "quickPlayQuizModeQuestionLabel";
-            this.quickPlayQuizModeQuestionLabel.Size = new System.Drawing.Size(99, 26);
+            this.quickPlayQuizModeQuestionLabel.Size = new System.Drawing.Size(195, 51);
             this.quickPlayQuizModeQuestionLabel.TabIndex = 4;
             this.quickPlayQuizModeQuestionLabel.Text = "Question";
             // 
@@ -103,11 +108,12 @@
             this.quickPlayQuizModeQuestionBox.AutoSize = true;
             this.quickPlayQuizModeQuestionBox.BackColor = System.Drawing.Color.White;
             this.quickPlayQuizModeQuestionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeQuestionBox.Location = new System.Drawing.Point(4, 130);
-            this.quickPlayQuizModeQuestionBox.MaximumSize = new System.Drawing.Size(800, 52);
-            this.quickPlayQuizModeQuestionBox.MinimumSize = new System.Drawing.Size(47, 26);
+            this.quickPlayQuizModeQuestionBox.Location = new System.Drawing.Point(8, 250);
+            this.quickPlayQuizModeQuestionBox.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.quickPlayQuizModeQuestionBox.MaximumSize = new System.Drawing.Size(1600, 100);
+            this.quickPlayQuizModeQuestionBox.MinimumSize = new System.Drawing.Size(94, 50);
             this.quickPlayQuizModeQuestionBox.Name = "quickPlayQuizModeQuestionBox";
-            this.quickPlayQuizModeQuestionBox.Size = new System.Drawing.Size(47, 26);
+            this.quickPlayQuizModeQuestionBox.Size = new System.Drawing.Size(94, 51);
             this.quickPlayQuizModeQuestionBox.TabIndex = 5;
             this.quickPlayQuizModeQuestionBox.Text = "test";
             this.quickPlayQuizModeQuestionBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,18 +121,20 @@
             // 
             // quickPlayQuizModeProgressBar
             // 
-            this.quickPlayQuizModeProgressBar.Location = new System.Drawing.Point(255, 408);
+            this.quickPlayQuizModeProgressBar.Location = new System.Drawing.Point(510, 785);
+            this.quickPlayQuizModeProgressBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quickPlayQuizModeProgressBar.Name = "quickPlayQuizModeProgressBar";
-            this.quickPlayQuizModeProgressBar.Size = new System.Drawing.Size(370, 23);
+            this.quickPlayQuizModeProgressBar.Size = new System.Drawing.Size(740, 44);
             this.quickPlayQuizModeProgressBar.TabIndex = 6;
             // 
             // quickPlayQuizModeScoreLabel
             // 
             this.quickPlayQuizModeScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.quickPlayQuizModeScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeScoreLabel.Location = new System.Drawing.Point(690, 392);
+            this.quickPlayQuizModeScoreLabel.Location = new System.Drawing.Point(1380, 754);
+            this.quickPlayQuizModeScoreLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.quickPlayQuizModeScoreLabel.Name = "quickPlayQuizModeScoreLabel";
-            this.quickPlayQuizModeScoreLabel.Size = new System.Drawing.Size(119, 39);
+            this.quickPlayQuizModeScoreLabel.Size = new System.Drawing.Size(238, 75);
             this.quickPlayQuizModeScoreLabel.TabIndex = 7;
             this.quickPlayQuizModeScoreLabel.Text = "Score:";
             this.quickPlayQuizModeScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,9 +143,10 @@
             // 
             this.quickPlayQuizModeTimeLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.quickPlayQuizModeTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeTimeLabel.Location = new System.Drawing.Point(606, 14);
+            this.quickPlayQuizModeTimeLabel.Location = new System.Drawing.Point(1212, 27);
+            this.quickPlayQuizModeTimeLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.quickPlayQuizModeTimeLabel.Name = "quickPlayQuizModeTimeLabel";
-            this.quickPlayQuizModeTimeLabel.Size = new System.Drawing.Size(203, 38);
+            this.quickPlayQuizModeTimeLabel.Size = new System.Drawing.Size(406, 73);
             this.quickPlayQuizModeTimeLabel.TabIndex = 8;
             this.quickPlayQuizModeTimeLabel.Text = "Time Left:";
             this.quickPlayQuizModeTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,9 +156,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(411, 385);
+            this.label1.Location = new System.Drawing.Point(822, 740);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.Size = new System.Drawing.Size(145, 37);
             this.label1.TabIndex = 9;
             this.label1.Text = "Progress";
             // 
@@ -161,9 +171,10 @@
             // 
             // quizModeStartButton
             // 
-            this.quizModeStartButton.Location = new System.Drawing.Point(44, 29);
+            this.quizModeStartButton.Location = new System.Drawing.Point(88, 56);
+            this.quizModeStartButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quizModeStartButton.Name = "quizModeStartButton";
-            this.quizModeStartButton.Size = new System.Drawing.Size(75, 23);
+            this.quizModeStartButton.Size = new System.Drawing.Size(150, 44);
             this.quizModeStartButton.TabIndex = 10;
             this.quizModeStartButton.Text = "Start";
             this.quizModeStartButton.UseVisualStyleBackColor = true;
@@ -172,10 +183,11 @@
             // quizMode10CheckBox
             // 
             this.quizMode10CheckBox.AutoSize = true;
-            this.quizMode10CheckBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quizMode10CheckBox.Location = new System.Drawing.Point(60, 260);
+            this.quizMode10CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quizMode10CheckBox.Location = new System.Drawing.Point(120, 500);
+            this.quizMode10CheckBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quizMode10CheckBox.Name = "quizMode10CheckBox";
-            this.quizMode10CheckBox.Size = new System.Drawing.Size(132, 22);
+            this.quizMode10CheckBox.Size = new System.Drawing.Size(270, 41);
             this.quizMode10CheckBox.TabIndex = 11;
             this.quizMode10CheckBox.Text = "Ten Questions";
             this.quizMode10CheckBox.UseVisualStyleBackColor = true;
@@ -184,10 +196,11 @@
             // quizMode20CheckBox
             // 
             this.quizMode20CheckBox.AutoSize = true;
-            this.quizMode20CheckBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quizMode20CheckBox.Location = new System.Drawing.Point(223, 260);
+            this.quizMode20CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quizMode20CheckBox.Location = new System.Drawing.Point(446, 500);
+            this.quizMode20CheckBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quizMode20CheckBox.Name = "quizMode20CheckBox";
-            this.quizMode20CheckBox.Size = new System.Drawing.Size(155, 22);
+            this.quizMode20CheckBox.Size = new System.Drawing.Size(313, 41);
             this.quizMode20CheckBox.TabIndex = 12;
             this.quizMode20CheckBox.Text = "Twenty questions";
             this.quizMode20CheckBox.UseVisualStyleBackColor = true;
@@ -196,10 +209,11 @@
             // quizMode30CheckBox
             // 
             this.quizMode30CheckBox.AutoSize = true;
-            this.quizMode30CheckBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quizMode30CheckBox.Location = new System.Drawing.Point(426, 260);
+            this.quizMode30CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quizMode30CheckBox.Location = new System.Drawing.Point(852, 500);
+            this.quizMode30CheckBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quizMode30CheckBox.Name = "quizMode30CheckBox";
-            this.quizMode30CheckBox.Size = new System.Drawing.Size(152, 22);
+            this.quizMode30CheckBox.Size = new System.Drawing.Size(298, 41);
             this.quizMode30CheckBox.TabIndex = 13;
             this.quizMode30CheckBox.Text = "Thirty Questions";
             this.quizMode30CheckBox.UseVisualStyleBackColor = true;
@@ -208,10 +222,11 @@
             // quizModeMaxCheckBox
             // 
             this.quizModeMaxCheckBox.AutoSize = true;
-            this.quizModeMaxCheckBox.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quizModeMaxCheckBox.Location = new System.Drawing.Point(628, 260);
+            this.quizModeMaxCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quizModeMaxCheckBox.Location = new System.Drawing.Point(1256, 500);
+            this.quizModeMaxCheckBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.quizModeMaxCheckBox.Name = "quizModeMaxCheckBox";
-            this.quizModeMaxCheckBox.Size = new System.Drawing.Size(134, 22);
+            this.quizModeMaxCheckBox.Size = new System.Drawing.Size(267, 41);
             this.quizModeMaxCheckBox.TabIndex = 14;
             this.quizModeMaxCheckBox.Text = "Max questions";
             this.quizModeMaxCheckBox.UseVisualStyleBackColor = true;
@@ -220,16 +235,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(338, 130);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(676, 250);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(214, 29);
+            this.label2.Size = new System.Drawing.Size(416, 63);
             this.label2.TabIndex = 15;
             this.label2.Text = "Select Difficulty";
             // 
             // quizModeUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
@@ -249,9 +265,10 @@
             this.Controls.Add(this.quickPlayQuicModeOptionThreeButton);
             this.Controls.Add(this.quickPlayQuicModeOptionTwoButton);
             this.Controls.Add(this.quickPlayQuicModeOptionOneButton);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "quizModeUC";
-            this.Padding = new System.Windows.Forms.Padding(1);
-            this.Size = new System.Drawing.Size(821, 481);
+            this.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Size = new System.Drawing.Size(1642, 925);
             this.ResumeLayout(false);
             this.PerformLayout();
 
