@@ -63,10 +63,10 @@
         {
             "number": 7,
             "question": "Which country has the most time zones?",
-            "opt1": "United States?",
+            "opt1": "United States",
             "opt2": "China",
-            "opt3": "France,",
-            "opt4": "United Kingdom,",
+            "opt3": "France",
+            "opt4": "United Kingdom",
             "answer": "France"
         },
 
