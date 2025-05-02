@@ -283,7 +283,24 @@ namespace Geo
 
         private void click_result_btn_Click(object sender, EventArgs e)
         {
+            if (currentQuestion == null) return;
 
+            string selectedAnswer = click_result_btn.Text.Trim();
+            string correctAnswer = currentQuestion.Answer.Trim();
+
+            if (selectedAnswer.Equals(correctAnswer, StringComparison.OrdinalIgnoreCase))
+            {
+                score++;
+                quickPlayMapModeScoreLabel.Text = $"Score: {score}";
+            }
+
+            questionPool.Remove(currentQuestion);
+
+            //quickPlayQuizModeProgressBar.Value = initialQuestionCount - questionPool.Count;
+            answeredQuestionCount++;
+            quickPlayMapModeProgressBar.Value = Math.Min(answeredQuestionCount, quickPlayMapModeProgressBar.Maximum);
+
+            LoadNextQuestion();
         }
     }
 }
