@@ -42,6 +42,8 @@ namespace Geo
             this.progress_label = new System.Windows.Forms.Label();
             this.quickPlayMapModeProgressBar = new System.Windows.Forms.ProgressBar();
             this.click_result_btn = new System.Windows.Forms.Button();
+            this.quickPlayMapModeQuestionLabel = new System.Windows.Forms.Label();
+            this.quickPlayMapModeQuestionBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,8 +183,35 @@ namespace Geo
             this.click_result_btn.Name = "click_result_btn";
             this.click_result_btn.Size = new System.Drawing.Size(405, 82);
             this.click_result_btn.TabIndex = 26;
-            this.click_result_btn.Text = "Start";
+            this.click_result_btn.Text = "Click on the map to pick an answer!";
             this.click_result_btn.UseVisualStyleBackColor = true;
+            this.click_result_btn.Click += new System.EventHandler(this.click_result_btn_Click);
+            // 
+            // quickPlayMapModeQuestionLabel
+            // 
+            this.quickPlayMapModeQuestionLabel.AutoSize = true;
+            this.quickPlayMapModeQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quickPlayMapModeQuestionLabel.Location = new System.Drawing.Point(990, 148);
+            this.quickPlayMapModeQuestionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.quickPlayMapModeQuestionLabel.Name = "quickPlayMapModeQuestionLabel";
+            this.quickPlayMapModeQuestionLabel.Size = new System.Drawing.Size(245, 61);
+            this.quickPlayMapModeQuestionLabel.TabIndex = 27;
+            this.quickPlayMapModeQuestionLabel.Text = "Question";
+            // 
+            // quickPlayMapModeQuestionBox
+            // 
+            this.quickPlayMapModeQuestionBox.AutoSize = true;
+            this.quickPlayMapModeQuestionBox.BackColor = System.Drawing.Color.White;
+            this.quickPlayMapModeQuestionBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quickPlayMapModeQuestionBox.Location = new System.Drawing.Point(1002, 238);
+            this.quickPlayMapModeQuestionBox.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.quickPlayMapModeQuestionBox.MaximumSize = new System.Drawing.Size(1600, 100);
+            this.quickPlayMapModeQuestionBox.MinimumSize = new System.Drawing.Size(94, 50);
+            this.quickPlayMapModeQuestionBox.Name = "quickPlayMapModeQuestionBox";
+            this.quickPlayMapModeQuestionBox.Size = new System.Drawing.Size(94, 51);
+            this.quickPlayMapModeQuestionBox.TabIndex = 28;
+            this.quickPlayMapModeQuestionBox.Text = "test";
+            this.quickPlayMapModeQuestionBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mapModeUC
             // 
@@ -190,6 +219,8 @@ namespace Geo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.quickPlayMapModeQuestionBox);
+            this.Controls.Add(this.quickPlayMapModeQuestionLabel);
             this.Controls.Add(this.click_result_btn);
             this.Controls.Add(this.progress_label);
             this.Controls.Add(this.quickPlayMapModeProgressBar);
@@ -226,5 +257,7 @@ namespace Geo
         private System.Windows.Forms.Label progress_label;
         private System.Windows.Forms.ProgressBar quickPlayMapModeProgressBar;
         private System.Windows.Forms.Button click_result_btn;
+        private System.Windows.Forms.Label quickPlayMapModeQuestionLabel;
+        private System.Windows.Forms.Label quickPlayMapModeQuestionBox;
     }
 }

@@ -262,13 +262,15 @@ namespace Geo
         private void quickPlay_PlayButton_Click(object sender, EventArgs e)
         {
             quickQuizMode quizModeForm = new quickQuizMode();
+            TestingForm mapModeForm = new TestingForm();
+
             if (quizModeRadioButton.Checked)
             {
                 quizModeForm.Show();
             }
             else if (mapModeRadioButton.Checked)
             {
-                // Add logic for map mode if needed
+                mapModeForm.Show();
             }
             else
             {

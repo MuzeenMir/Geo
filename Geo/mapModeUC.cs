@@ -16,6 +16,7 @@ using Geo.Properties;
 using Microsoft.Web.WebView2.Core;
 using Newtonsoft.Json;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static Mysqlx.Notice.Frame.Types;
 
 namespace Geo
 {
@@ -23,6 +24,9 @@ namespace Geo
     {
         private List<Question> questionPool;
         private int initialQuestionCount;
+        private int score = 0;
+        private Question currentQuestion;
+        private int answeredQuestionCount;
 
         public mapModeUC()
         {
@@ -36,10 +40,18 @@ namespace Geo
             quickPlayMapModeTimeLabel.Visible = false;
             quickPlayMapModeScoreLabel.Visible = false;
             quickPlayMapModeProgressBar.Visible = false;
+            quickPlayMapModeQuestionBox.Visible = false;
+            quickPlayMapModeQuestionLabel.Visible = false;
             progress_label.Visible = false;
             click_result_btn.Visible = false;
 
             mapModeStartButton.Enabled = false;
+
+            // Only load the first question if the question pool is not empty
+            if (questionPool != null && questionPool.Count > 0)
+            {
+                LoadNextQuestion();
+            }
             webView21.Dock = DockStyle.Left;
             webView21.Width = this.Width / 2;
             //this.Load += mapModeUC_Load;
@@ -69,6 +81,29 @@ namespace Geo
             }
         }
 
+        private void LoadNextQuestion()
+        {
+            if (answeredQuestionCount >= initialQuestionCount)
+            {
+                //quizTimer.Stop();
+                MessageBox.Show("Quiz completed! Final score: " + score + "\n");
+                return;
+            }
+            if (questionPool == null || questionPool.Count == 0)
+            {
+                //quizTimer.Stop();
+                //MessageBox.Show("Quiz completed! Final score: " + score + "\n" + $"Time Taken: {(300 - timelimit) / 60}m {(300 - timelimit) % 60}s");
+                return;
+            }
+
+            Random random = new Random();
+            int randomIndex = random.Next(0, questionPool.Count);
+            currentQuestion = questionPool[randomIndex];
+            //DisplayQuestion(currentQuestion);
+            quickPlayMapModeQuestionBox.Text = currentQuestion.QuestionText;
+        }
+
+
         // Helper method to robustly detect design mode.
         private bool IsInDesignMode()
         {
@@ -81,13 +116,31 @@ namespace Geo
             try
             {
                 await webView21.EnsureCoreWebView2Async(null);
-                //string htmlFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "map.html");
-                string htmlFilePath = "C:\\Users\\franc\\Source\\Repos\\Geo\\Geo\\Resources\\map.html";
-                if (!File.Exists(htmlFilePath))
+                // Subscribe to the WebMessageReceived event.
+                webView21.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
+                //string htmlFilePath = "C:\\Users\\franc\\Source\\Repos\\Geo\\Geo\\Resources\\map.html";
+                string htmlFilePath = null;
+                string[] possiblePaths = new string[]
+                {
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "map.html"),
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..","..", "Resources", "map.html"),
+                    Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..","..","..", "Resources", "map.html"),
+                };
+
+                foreach (string path in possiblePaths)
+                {
+                    if (File.Exists(path))
+                    {
+                        htmlFilePath = path;
+                        break;
+                    }
+                }
+                if (htmlFilePath == null)
                 {
                     MessageBox.Show("HTML file not found: " + htmlFilePath);
                     return;
                 }
+
                 string fileUri = new Uri(htmlFilePath).AbsoluteUri;
 
                 // Optionally navigate to your HTML file.
@@ -115,6 +168,8 @@ namespace Geo
             mapModeMaxCheckBox.Left = (int)(this.Width * 0.65);
             mapModeStartButton.Left = (int)(this.Width * 0.65);
             click_result_btn.Left = (int)(this.Width * 0.65);
+            quickPlayMapModeQuestionLabel.Left = (int)(this.Width * 0.65);
+            quickPlayMapModeQuestionBox.Left = (int)(this.Width * 0.65);
 
             quickPlayMapModeTimeLabel.Left = this.Width - quickPlayMapModeTimeLabel.Width - 10;
             quickPlayMapModeTimeLabel.Top = 10;
@@ -133,10 +188,10 @@ namespace Geo
         private void CoreWebView2_WebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
         {
             // Retrieve the JSON message sent from the JavaScript code.
-            string json = e.WebMessageAsJson;
+            string myjson = e.WebMessageAsJson;
 
             // Deserialize the JSON to extract the coordinates (using Newtonsoft.Json).
-            dynamic data = JsonConvert.DeserializeObject(json);
+            dynamic data = JsonConvert.DeserializeObject(myjson);
             string s = data.n;
 
             // Now you have the click coordinates; for example, you can update your UI or display them.
@@ -200,7 +255,8 @@ namespace Geo
                     break;
 
             }
-            
+            quickPlayMapModeProgressBar.Maximum = initialQuestionCount;
+
         }
 
         private void progress_label_Click(object sender, EventArgs e)
@@ -221,6 +277,13 @@ namespace Geo
             quickPlayMapModeProgressBar.Visible = true;
             progress_label.Visible = true;
             click_result_btn.Visible = true;
+            quickPlayMapModeQuestionBox.Visible = true;
+            quickPlayMapModeQuestionLabel.Visible = true;
+        }
+
+        private void click_result_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
