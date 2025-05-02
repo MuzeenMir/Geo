@@ -80,7 +80,9 @@ namespace Geo
                 dataGridView1.Columns.Add("Username", "Username");
                 dataGridView1.Columns.Add("Points", "Points");
                 dataGridView1.Columns.Add("Level", "Level");
-               
+
+                dataGridView1.Columns["Username"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
 
 
 
@@ -579,6 +581,11 @@ namespace Geo
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
