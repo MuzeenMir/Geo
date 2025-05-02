@@ -66,6 +66,14 @@ namespace Geo
 
         private void LoadNextQuestion()
         {
+            // Stop if user answered enough questions based on what they selected
+            if (answeredQuestionCount >= initialQuestionCount)
+            {
+                quizTimer.Stop();
+                MessageBox.Show("Quiz completed! Final score: " + score + "\n" + $"Time Taken: {(300 - timelimit) / 60}m {(300 - timelimit) % 60}s");
+                return;
+            }
+
             if (questionPool == null || questionPool.Count == 0)
             {
                 quizTimer.Stop();
@@ -106,7 +114,7 @@ namespace Geo
 
             //quickPlayQuizModeProgressBar.Value = initialQuestionCount - questionPool.Count;
             answeredQuestionCount++;
-            quickPlayQuizModeProgressBar.Value = answeredQuestionCount;
+            quickPlayQuizModeProgressBar.Value = Math.Min(answeredQuestionCount, quickPlayQuizModeProgressBar.Maximum);
 
             LoadNextQuestion();
         }
