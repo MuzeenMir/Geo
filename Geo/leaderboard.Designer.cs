@@ -1,4 +1,7 @@
-﻿namespace Geo
+﻿using System;
+using System.Windows.Forms;
+
+namespace Geo
 {
     partial class leaderboard
     {
@@ -40,13 +43,13 @@
             this.NameColumn,
             this.Score});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1546, 726);
+            this.dataGridView1.Size = new System.Drawing.Size(1031, 464);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // NameColumn
             // 
@@ -64,14 +67,13 @@
             // 
             // leaderboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1558, 738);
+            this.ClientSize = new System.Drawing.Size(1039, 472);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "leaderboard";
-            this.Padding = new System.Windows.Forms.Padding(6);
+            this.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Text = "leaderboard";
             this.Load += new System.EventHandler(this.leaderboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -79,6 +81,10 @@
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameColumn;
