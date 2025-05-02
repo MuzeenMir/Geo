@@ -587,5 +587,35 @@ namespace Geo
         {
 
         }
+
+        private void learnMapModeRadio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void learnQuizRadio_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void learnPlayButton_Click(object sender, EventArgs e)
+        {
+            quickQuizMode quizModeForm = new quickQuizMode();
+            TestingForm mapModeForm = new TestingForm();
+
+            if (learnQuizRadio.Checked)
+            {
+                quizModeForm.Show();
+            }
+            else if (learnMapModeRadio.Checked)
+            {
+                mapModeForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a game mode.");
+                return;
+            }
+        }
     }
 }
