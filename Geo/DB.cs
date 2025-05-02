@@ -445,6 +445,37 @@ public class DB
         {
             return false;
         }
-        return true;
+       return true;
+    }
+
+    public string[,] Get_Leaderboard()
+    {
+        string[,] ldrBoard = new string[10,3];
+        int ldrBoardSize = 10;
+
+        Check_Conn_State();
+        string query = $"SELECT Uname, Points, Urank FROM users ORDER BY Points DESC, Urank DESC, Uname ASC LIMIT 10";
+        OdbcCommand command = new OdbcCommand(query, this.conn);
+
+        // Retrieve the data.
+        var reader = command.ExecuteReader();
+        int i = 0;
+        int unameInd = 0;
+        int pointsInd = 1;
+        int uRankInd = 2;
+        try
+        {
+            while (reader.Read())
+            {
+                ldrBoard[i, unameInd] = reader.GetString(unameInd);
+                ldrBoard[i, pointsInd] = reader.GetString(pointsInd);
+                ldrBoard[i, uRankInd] = reader.GetString(uRankInd);
+                i++;
+            }
+        }
+        catch (Exception e) {
+            MessageBox.Show("ERROR in pulling the leaderboard fcn" + e.Message);
+        }
+        return ldrBoard;
     }
 }
