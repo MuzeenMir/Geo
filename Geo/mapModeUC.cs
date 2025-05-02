@@ -8,20 +8,33 @@ using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Geo.Properties;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Geo
 {
     public partial class mapModeUC : UserControl
     {
+        private List<Question> questionPool;
         private int initialQuestionCount;
 
         public mapModeUC()
         {
 
             InitializeComponent();
+            LoadQuestions();
+            this.mapMode10CheckBox.CheckedChanged += QuestionCheckBox_CheckedChanged;
+            this.mapMode20CheckBox.CheckedChanged += QuestionCheckBox_CheckedChanged;
+            this.mapMode30CheckBox.CheckedChanged += QuestionCheckBox_CheckedChanged;
+            this.mapModeMaxCheckBox.CheckedChanged += QuestionCheckBox_CheckedChanged;
+            //quickPlayMapModeTimeLabel.Visible = false;
+            //quickPlayMapModeScoreLabel.Visible = false;
+            //quickPlayMapModeProgressBar.Visible = false;
+            //progress_label.Visible = false;
+
             mapModeStartButton.Enabled = false;
             webView21.Dock = DockStyle.Left;
             webView21.Width = this.Width / 2;
@@ -30,6 +43,25 @@ namespace Geo
             if (!this.IsInDesignMode())
             {
                 mapModeUC_Load();
+            }
+        }
+
+        private void LoadQuestions()
+        {
+            try
+            {
+                string jsonFilePath = "..\\..\\Resources\\geoQuestions.json";
+                string jsonData = File.ReadAllText(jsonFilePath);
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                var questionData = JsonSerializer.Deserialize<QuestionData>(jsonData, options);
+                questionPool = questionData?.QuestionList ?? new List<Question>();
+                initialQuestionCount = questionPool.Count;
+                quickPlayMapModeProgressBar.Maximum = initialQuestionCount;
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show($"Error loading questions: {ex.Message}");
+
             }
         }
 
@@ -78,6 +110,14 @@ namespace Geo
             mapMode30CheckBox.Left = (int)(this.Width * 0.65);
             mapModeMaxCheckBox.Left = (int)(this.Width * 0.65);
             mapModeStartButton.Left = (int)(this.Width * 0.65);
+
+            quickPlayMapModeTimeLabel.Left = this.Width - quickPlayMapModeTimeLabel.Width - 10;
+            quickPlayMapModeTimeLabel.Top = 10;
+            quickPlayMapModeScoreLabel.Left = this.Width - quickPlayMapModeScoreLabel.Width - 10;
+            quickPlayMapModeScoreLabel.Top = this.Height - quickPlayMapModeScoreLabel.Height - 50;
+
+            quickPlayMapModeProgressBar.Left = (int)(this.Width * 0.65);
+            progress_label.Left = (int)(quickPlayMapModeProgressBar.Left + (quickPlayMapModeProgressBar.Width / 2) - (progress_label.Width / 2));
         }
 
         private void webView21_Click(object sender, EventArgs e)
@@ -142,6 +182,11 @@ namespace Geo
 
             }
             
+        }
+
+        private void progress_label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

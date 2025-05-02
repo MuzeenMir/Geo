@@ -37,7 +37,11 @@ namespace Geo
             this.mapMode30CheckBox = new System.Windows.Forms.CheckBox();
             this.mapModeMaxCheckBox = new System.Windows.Forms.CheckBox();
             this.mapModeStartButton = new System.Windows.Forms.Button();
-            this.quickPlayQuizModeScoreLabel = new System.Windows.Forms.Label();
+            this.quickPlayMapModeScoreLabel = new System.Windows.Forms.Label();
+            this.quickPlayMapModeTimeLabel = new System.Windows.Forms.Label();
+            this.progress_label = new System.Windows.Forms.Label();
+            this.quickPlayMapModeProgressBar = new System.Windows.Forms.ProgressBar();
+            this.click_result_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,10 +51,10 @@ namespace Geo
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView21.Dock = System.Windows.Forms.DockStyle.Left;
-            this.webView21.Location = new System.Drawing.Point(2, 2);
+            this.webView21.Location = new System.Drawing.Point(0, 0);
             this.webView21.Name = "webView21";
             this.webView21.Padding = new System.Windows.Forms.Padding(1);
-            this.webView21.Size = new System.Drawing.Size(765, 921);
+            this.webView21.Size = new System.Drawing.Size(765, 841);
             this.webView21.TabIndex = 0;
             this.webView21.Visible = false;
             this.webView21.ZoomFactor = 1D;
@@ -61,7 +65,7 @@ namespace Geo
             this.select_difficulty_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.select_difficulty_lbl.AutoSize = true;
             this.select_difficulty_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.select_difficulty_lbl.Location = new System.Drawing.Point(1000, 150);
+            this.select_difficulty_lbl.Location = new System.Drawing.Point(990, 148);
             this.select_difficulty_lbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.select_difficulty_lbl.Name = "select_difficulty_lbl";
             this.select_difficulty_lbl.Size = new System.Drawing.Size(416, 63);
@@ -72,7 +76,7 @@ namespace Geo
             // 
             this.mapMode10CheckBox.AutoSize = true;
             this.mapMode10CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mapMode10CheckBox.Location = new System.Drawing.Point(1011, 240);
+            this.mapMode10CheckBox.Location = new System.Drawing.Point(1009, 238);
             this.mapMode10CheckBox.Margin = new System.Windows.Forms.Padding(6);
             this.mapMode10CheckBox.Name = "mapMode10CheckBox";
             this.mapMode10CheckBox.Size = new System.Drawing.Size(270, 41);
@@ -84,7 +88,7 @@ namespace Geo
             // 
             this.mapMode20CheckBox.AutoSize = true;
             this.mapMode20CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mapMode20CheckBox.Location = new System.Drawing.Point(1011, 293);
+            this.mapMode20CheckBox.Location = new System.Drawing.Point(1009, 291);
             this.mapMode20CheckBox.Margin = new System.Windows.Forms.Padding(6);
             this.mapMode20CheckBox.Name = "mapMode20CheckBox";
             this.mapMode20CheckBox.Size = new System.Drawing.Size(320, 41);
@@ -96,7 +100,7 @@ namespace Geo
             // 
             this.mapMode30CheckBox.AutoSize = true;
             this.mapMode30CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mapMode30CheckBox.Location = new System.Drawing.Point(1011, 346);
+            this.mapMode30CheckBox.Location = new System.Drawing.Point(1009, 344);
             this.mapMode30CheckBox.Margin = new System.Windows.Forms.Padding(6);
             this.mapMode30CheckBox.Name = "mapMode30CheckBox";
             this.mapMode30CheckBox.Size = new System.Drawing.Size(298, 41);
@@ -108,7 +112,7 @@ namespace Geo
             // 
             this.mapModeMaxCheckBox.AutoSize = true;
             this.mapModeMaxCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mapModeMaxCheckBox.Location = new System.Drawing.Point(1011, 399);
+            this.mapModeMaxCheckBox.Location = new System.Drawing.Point(1009, 397);
             this.mapModeMaxCheckBox.Margin = new System.Windows.Forms.Padding(6);
             this.mapModeMaxCheckBox.Name = "mapModeMaxCheckBox";
             this.mapModeMaxCheckBox.Size = new System.Drawing.Size(267, 41);
@@ -126,23 +130,71 @@ namespace Geo
             this.mapModeStartButton.Text = "Start";
             this.mapModeStartButton.UseVisualStyleBackColor = true;
             // 
-            // quickPlayQuizModeScoreLabel
+            // quickPlayMapModeScoreLabel
             // 
-            this.quickPlayQuizModeScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.quickPlayQuizModeScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickPlayQuizModeScoreLabel.Location = new System.Drawing.Point(1380, 754);
-            this.quickPlayQuizModeScoreLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.quickPlayQuizModeScoreLabel.Name = "quickPlayQuizModeScoreLabel";
-            this.quickPlayQuizModeScoreLabel.Size = new System.Drawing.Size(238, 75);
-            this.quickPlayQuizModeScoreLabel.TabIndex = 22;
-            this.quickPlayQuizModeScoreLabel.Text = "Score:";
-            this.quickPlayQuizModeScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.quickPlayMapModeScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.quickPlayMapModeScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quickPlayMapModeScoreLabel.Location = new System.Drawing.Point(1272, 698);
+            this.quickPlayMapModeScoreLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.quickPlayMapModeScoreLabel.Name = "quickPlayMapModeScoreLabel";
+            this.quickPlayMapModeScoreLabel.Size = new System.Drawing.Size(238, 75);
+            this.quickPlayMapModeScoreLabel.TabIndex = 22;
+            this.quickPlayMapModeScoreLabel.Text = "Score:";
+            this.quickPlayMapModeScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // quickPlayMapModeTimeLabel
+            // 
+            this.quickPlayMapModeTimeLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.quickPlayMapModeTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quickPlayMapModeTimeLabel.Location = new System.Drawing.Point(1104, 2);
+            this.quickPlayMapModeTimeLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.quickPlayMapModeTimeLabel.Name = "quickPlayMapModeTimeLabel";
+            this.quickPlayMapModeTimeLabel.Size = new System.Drawing.Size(406, 73);
+            this.quickPlayMapModeTimeLabel.TabIndex = 23;
+            this.quickPlayMapModeTimeLabel.Text = "Time Left:";
+            this.quickPlayMapModeTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // progress_label
+            // 
+            this.progress_label.AutoSize = true;
+            this.progress_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_label.Location = new System.Drawing.Point(1106, 661);
+            this.progress_label.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.progress_label.Name = "progress_label";
+            this.progress_label.Size = new System.Drawing.Size(145, 37);
+            this.progress_label.TabIndex = 25;
+            this.progress_label.Text = "Progress";
+            this.progress_label.Click += new System.EventHandler(this.progress_label_Click);
+            // 
+            // quickPlayMapModeProgressBar
+            // 
+            this.quickPlayMapModeProgressBar.Location = new System.Drawing.Point(873, 791);
+            this.quickPlayMapModeProgressBar.Margin = new System.Windows.Forms.Padding(6);
+            this.quickPlayMapModeProgressBar.Name = "quickPlayMapModeProgressBar";
+            this.quickPlayMapModeProgressBar.Size = new System.Drawing.Size(639, 44);
+            this.quickPlayMapModeProgressBar.TabIndex = 24;
+            // 
+            // click_result_btn
+            // 
+            this.click_result_btn.Location = new System.Drawing.Point(1011, 505);
+            this.click_result_btn.Margin = new System.Windows.Forms.Padding(6);
+            this.click_result_btn.Name = "click_result_btn";
+            this.click_result_btn.Size = new System.Drawing.Size(405, 82);
+            this.click_result_btn.TabIndex = 26;
+            this.click_result_btn.Text = "Start";
+            this.click_result_btn.UseVisualStyleBackColor = true;
             // 
             // mapModeUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.quickPlayQuizModeScoreLabel);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Controls.Add(this.click_result_btn);
+            this.Controls.Add(this.progress_label);
+            this.Controls.Add(this.quickPlayMapModeProgressBar);
+            this.Controls.Add(this.quickPlayMapModeTimeLabel);
+            this.Controls.Add(this.quickPlayMapModeScoreLabel);
             this.Controls.Add(this.mapModeStartButton);
             this.Controls.Add(this.mapModeMaxCheckBox);
             this.Controls.Add(this.mapMode30CheckBox);
@@ -150,10 +202,9 @@ namespace Geo
             this.Controls.Add(this.mapMode10CheckBox);
             this.Controls.Add(this.select_difficulty_lbl);
             this.Controls.Add(this.webView21);
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "mapModeUC";
-            this.Padding = new System.Windows.Forms.Padding(2);
-            this.Size = new System.Drawing.Size(1642, 925);
+            this.Size = new System.Drawing.Size(1630, 841);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,6 +221,10 @@ namespace Geo
         private System.Windows.Forms.CheckBox mapMode30CheckBox;
         private System.Windows.Forms.CheckBox mapModeMaxCheckBox;
         private System.Windows.Forms.Button mapModeStartButton;
-        private System.Windows.Forms.Label quickPlayQuizModeScoreLabel;
+        private System.Windows.Forms.Label quickPlayMapModeScoreLabel;
+        private System.Windows.Forms.Label quickPlayMapModeTimeLabel;
+        private System.Windows.Forms.Label progress_label;
+        private System.Windows.Forms.ProgressBar quickPlayMapModeProgressBar;
+        private System.Windows.Forms.Button click_result_btn;
     }
 }
