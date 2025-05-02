@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,9 +16,15 @@ namespace Geo
 {
     public partial class mapModeUC : UserControl
     {
+        private int initialQuestionCount;
+
         public mapModeUC()
         {
+
             InitializeComponent();
+            mapModeStartButton.Enabled = false;
+            webView21.Dock = DockStyle.Left;
+            webView21.Width = this.Width / 2;
             //this.Load += mapModeUC_Load;
             // Avoid initializing WebView2 if in design mode.
             if (!this.IsInDesignMode())
@@ -59,7 +67,81 @@ namespace Geo
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            this.Width = this.Parent?.Width / 2 ?? this.Width;
+
+            if (webView21 != null)
+            {
+                webView21.Width = this.Width / 2;
+            }
+            select_difficulty_lbl.Left = (int)(this.Width * 0.65);
+            mapMode10CheckBox.Left = (int)(this.Width * 0.65);
+            mapMode20CheckBox.Left = (int)(this.Width * 0.65);
+            mapMode30CheckBox.Left = (int)(this.Width * 0.65);
+            mapModeMaxCheckBox.Left = (int)(this.Width * 0.65);
+            mapModeStartButton.Left = (int)(this.Width * 0.65);
+        }
+
+        private void webView21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuestionCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkedBox = sender as CheckBox;
+
+            if (!checkedBox.Checked)
+            {
+                // Check if at least one checkbox is still checked
+                bool anyChecked = false;
+                foreach (Control control in this.Controls)
+                {
+                    if (control is CheckBox cb && cb.Checked)
+                    {
+                        anyChecked = true;
+                        break;
+                    }
+                }
+
+                // If none are checked, prevent unchecking this one
+                if (!anyChecked)
+                {
+                    checkedBox.Checked = true;
+                }
+
+                
+            }
+            else
+            {
+                mapModeStartButton.Enabled = true;
+                // Uncheck all other checkboxes when one is checked
+                foreach (Control control in this.Controls)
+                {
+                    if (control is CheckBox cb && cb != checkedBox)
+                    {
+                        cb.Checked = false;
+                    }
+                }
+            }
+            
+            switch (checkedBox.Name)
+            {
+                case "mapMode10CheckBox":
+                    initialQuestionCount = 10;
+                    break;
+                case "mapMode20CheckBox":
+                    initialQuestionCount = 20;
+                    break;
+                case "mapMode30CheckBox":
+                    initialQuestionCount = 30;
+                    break;
+                case "mapModeMaxCheckBox":
+                    initialQuestionCount = 50;
+                    break;
+                default:
+                    break;
+
+            }
+            
         }
     }
 }

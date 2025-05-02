@@ -33,12 +33,13 @@
             // 
             // mapModeUC1
             // 
-            this.mapModeUC1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mapModeUC1.AutoSize = true;
+            this.mapModeUC1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mapModeUC1.Location = new System.Drawing.Point(0, 0);
             this.mapModeUC1.Margin = new System.Windows.Forms.Padding(6);
             this.mapModeUC1.Name = "mapModeUC1";
             this.mapModeUC1.Padding = new System.Windows.Forms.Padding(2);
-            this.mapModeUC1.Size = new System.Drawing.Size(779, 869);
+            this.mapModeUC1.Size = new System.Drawing.Size(1604, 869);
             this.mapModeUC1.TabIndex = 0;
             // 
             // TestingForm
@@ -51,6 +52,7 @@
             this.Name = "TestingForm";
             this.Text = "TestingForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
