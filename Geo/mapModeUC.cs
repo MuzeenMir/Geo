@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Geo.Properties;
 
 namespace Geo
 {
@@ -16,24 +17,49 @@ namespace Geo
         public mapModeUC()
         {
             InitializeComponent();
-            this.Load += mapModeUC_Load;
+            //this.Load += mapModeUC_Load;
+            // Avoid initializing WebView2 if in design mode.
+            if (!this.IsInDesignMode())
+            {
+                mapModeUC_Load();
+            }
         }
 
-        private async void mapModeUC_Load(object sender, EventArgs e)
+        // Helper method to robustly detect design mode.
+        private bool IsInDesignMode()
         {
-            await webView21.EnsureCoreWebView2Async(null);
-            //string htmlFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "map.html");
-            string htmlFilePath = "..\\..\\Resources\\map.html";
-            if (!File.Exists(htmlFilePath))
+            return (System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime) ||
+                   (this.Site != null && this.Site.DesignMode);
+        }
+
+        private async void mapModeUC_Load()
+        {
+            try
             {
-                MessageBox.Show("HTML file not found: " + htmlFilePath);
-                return;
+                await webView21.EnsureCoreWebView2Async(null);
+                //string htmlFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "map.html");
+                string htmlFilePath = "C:\\Users\\franc\\Source\\Repos\\Geo\\Geo\\Resources\\map.html";
+                if (!File.Exists(htmlFilePath))
+                {
+                    MessageBox.Show("HTML file not found: " + htmlFilePath);
+                    return;
+                }
+                string fileUri = new Uri(htmlFilePath).AbsoluteUri;
+
+                // Optionally navigate to your HTML file.
+                webView21.CoreWebView2.Navigate(fileUri);
             }
-            string fileUri = new Uri(htmlFilePath).AbsoluteUri;
+            catch(Exception ex)
+            {
+                MessageBox.Show("WebView2 User Control initialization failed: " + ex.Message);
+            }
 
-            // Optionally navigate to your HTML file.
-            webView21.CoreWebView2.Navigate(fileUri);
+        }
 
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            this.Width = this.Parent?.Width / 2 ?? this.Width;
         }
     }
 }

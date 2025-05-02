@@ -33,19 +33,21 @@
             // 
             // mapModeUC1
             // 
-            this.mapModeUC1.Location = new System.Drawing.Point(15, 25);
+            this.mapModeUC1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mapModeUC1.Location = new System.Drawing.Point(0, 0);
             this.mapModeUC1.Margin = new System.Windows.Forms.Padding(6);
             this.mapModeUC1.Name = "mapModeUC1";
             this.mapModeUC1.Padding = new System.Windows.Forms.Padding(2);
-            this.mapModeUC1.Size = new System.Drawing.Size(1642, 925);
+            this.mapModeUC1.Size = new System.Drawing.Size(779, 869);
             this.mapModeUC1.TabIndex = 0;
             // 
             // TestingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1945, 1058);
+            this.ClientSize = new System.Drawing.Size(1604, 869);
             this.Controls.Add(this.mapModeUC1);
+            this.DoubleBuffered = true;
             this.Name = "TestingForm";
             this.Text = "TestingForm";
             this.ResumeLayout(false);
