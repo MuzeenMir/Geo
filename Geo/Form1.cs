@@ -60,7 +60,65 @@ namespace Geo
             // Adds form resize handler only once
             this.Resize += Form_Resize;
 
+            // Load leaderboard data into dataGridView1
+            LoadLeaderboardData();
+
             Form_Resize(this, EventArgs.Empty);
+        }
+
+        // This loads leaderboard data and display sit in the Leaderboard
+        private void LoadLeaderboardData()
+        {
+            try
+            {
+                // Clear any existing columns and rows
+                dataGridView1.Columns.Clear();
+                dataGridView1.Rows.Clear();
+
+                // Configure DataGridView columns
+                dataGridView1.Columns.Add("Rank", "Rank");
+                dataGridView1.Columns.Add("Username", "Username");
+                dataGridView1.Columns.Add("Points", "Points");
+                dataGridView1.Columns.Add("Level", "Level");
+               
+
+
+
+                // Get leaderboard data from database
+                string[,] leaderboardData = userInfo.Get_Leaderboard();
+                if (leaderboardData == null)
+                {
+                    MessageBox.Show("No leaderboard data available.");
+                    return;
+                }
+
+                Console.Write(leaderboardData);
+
+                // Add data to DataGridView
+                for (int i = 0; i < 10; i++)
+                {
+                    // Check if we have data for this row
+                    if (leaderboardData[i, 0] != null)
+                    {
+                        // Create row with rank (i+1), username, points, and level
+                        dataGridView1.Rows.Add(
+                            (i + 1).ToString(),
+                            leaderboardData[i, 0], // Username
+                            leaderboardData[i, 1], // Points
+                            leaderboardData[i, 2]  // Rank
+                        );
+                    }
+                }
+
+                // Adjust column widths for better display
+                dataGridView1.AutoResizeColumns();
+                dataGridView1.Dock = DockStyle.Fill;
+            }
+            catch (Exception ex)
+            {
+                // Log the error but don't show a message box during initialization
+                Console.WriteLine($"Error loading leaderboard: {ex.Message}");
+            }
         }
 
         private void Form_Resize(object sender, EventArgs e)
@@ -514,6 +572,11 @@ namespace Geo
         private void welcomeMessageLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }

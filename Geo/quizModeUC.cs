@@ -13,6 +13,7 @@ namespace Geo
         private List<Question> questionPool;
         private Question currentQuestion;
         private int initialQuestionCount;
+        private int answeredQuestionCount;
         private int score = 0;
         private int timelimit = 300; // 5 minutes in seconds
 
@@ -41,6 +42,7 @@ namespace Geo
             quickPlayQuizModeQuestionLabel.Visible = false;
             quizModeStartButton.Enabled = false;
             quizTimer.Stop();
+            answeredQuestionCount = 0;
         }
 
         private void LoadQuestions()
@@ -102,7 +104,9 @@ namespace Geo
 
             questionPool.Remove(currentQuestion);
 
-            quickPlayQuizModeProgressBar.Value = initialQuestionCount - questionPool.Count;
+            //quickPlayQuizModeProgressBar.Value = initialQuestionCount - questionPool.Count;
+            answeredQuestionCount++;
+            quickPlayQuizModeProgressBar.Value = answeredQuestionCount;
 
             LoadNextQuestion();
         }
@@ -145,6 +149,12 @@ namespace Geo
             quickPlayQuicModeOptionFourButton.Visible = true;
             quickPlayQuizModeQuestionBox.Visible = true;
             quickPlayQuizModeQuestionLabel.Visible = true;
+
+            label2.Visible = false;
+            quizMode10CheckBox.Visible = false;
+            quizMode20CheckBox.Visible = false;
+            quizMode30CheckBox.Visible = false;
+            quizModeMaxCheckBox.Visible = false;
 
             quizTimer.Start();
         }
