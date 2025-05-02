@@ -9,9 +9,12 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Geo.Properties;
+using Microsoft.Web.WebView2.Core;
+using Newtonsoft.Json;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Geo
@@ -30,10 +33,11 @@ namespace Geo
             this.mapMode20CheckBox.CheckedChanged += QuestionCheckBox_CheckedChanged;
             this.mapMode30CheckBox.CheckedChanged += QuestionCheckBox_CheckedChanged;
             this.mapModeMaxCheckBox.CheckedChanged += QuestionCheckBox_CheckedChanged;
-            //quickPlayMapModeTimeLabel.Visible = false;
-            //quickPlayMapModeScoreLabel.Visible = false;
-            //quickPlayMapModeProgressBar.Visible = false;
-            //progress_label.Visible = false;
+            quickPlayMapModeTimeLabel.Visible = false;
+            quickPlayMapModeScoreLabel.Visible = false;
+            quickPlayMapModeProgressBar.Visible = false;
+            progress_label.Visible = false;
+            click_result_btn.Visible = false;
 
             mapModeStartButton.Enabled = false;
             webView21.Dock = DockStyle.Left;
@@ -53,7 +57,7 @@ namespace Geo
                 string jsonFilePath = "..\\..\\Resources\\geoQuestions.json";
                 string jsonData = File.ReadAllText(jsonFilePath);
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                var questionData = JsonSerializer.Deserialize<QuestionData>(jsonData, options);
+                var questionData = System.Text.Json.JsonSerializer.Deserialize<QuestionData>(jsonData, options);
                 questionPool = questionData?.QuestionList ?? new List<Question>();
                 initialQuestionCount = questionPool.Count;
                 quickPlayMapModeProgressBar.Maximum = initialQuestionCount;
@@ -110,6 +114,7 @@ namespace Geo
             mapMode30CheckBox.Left = (int)(this.Width * 0.65);
             mapModeMaxCheckBox.Left = (int)(this.Width * 0.65);
             mapModeStartButton.Left = (int)(this.Width * 0.65);
+            click_result_btn.Left = (int)(this.Width * 0.65);
 
             quickPlayMapModeTimeLabel.Left = this.Width - quickPlayMapModeTimeLabel.Width - 10;
             quickPlayMapModeTimeLabel.Top = 10;
@@ -123,6 +128,20 @@ namespace Geo
         private void webView21_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CoreWebView2_WebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
+        {
+            // Retrieve the JSON message sent from the JavaScript code.
+            string json = e.WebMessageAsJson;
+
+            // Deserialize the JSON to extract the coordinates (using Newtonsoft.Json).
+            dynamic data = JsonConvert.DeserializeObject(json);
+            string s = data.n;
+
+            // Now you have the click coordinates; for example, you can update your UI or display them.
+            //MessageBox.Show($"Got the message: " + s);
+            click_result_btn.Text = s;
         }
 
         private void QuestionCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -187,6 +206,21 @@ namespace Geo
         private void progress_label_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mapModeStartButton_Click(object sender, EventArgs e)
+        {
+            mapMode10CheckBox.Visible = false;
+            mapMode20CheckBox.Visible = false;
+            mapMode30CheckBox.Visible = false;
+            mapModeMaxCheckBox.Visible = false;
+            mapModeStartButton.Visible = false;
+            select_difficulty_lbl.Visible = false;
+            quickPlayMapModeTimeLabel.Visible = true;
+            quickPlayMapModeScoreLabel.Visible = true;
+            quickPlayMapModeProgressBar.Visible = true;
+            progress_label.Visible = true;
+            click_result_btn.Visible = true;
         }
     }
 }

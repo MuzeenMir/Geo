@@ -56,7 +56,6 @@ namespace Geo
             this.webView21.Padding = new System.Windows.Forms.Padding(1);
             this.webView21.Size = new System.Drawing.Size(765, 841);
             this.webView21.TabIndex = 0;
-            this.webView21.Visible = false;
             this.webView21.ZoomFactor = 1D;
             this.webView21.Click += new System.EventHandler(this.webView21_Click);
             // 
@@ -129,6 +128,7 @@ namespace Geo
             this.mapModeStartButton.TabIndex = 21;
             this.mapModeStartButton.Text = "Start";
             this.mapModeStartButton.UseVisualStyleBackColor = true;
+            this.mapModeStartButton.Click += new System.EventHandler(this.mapModeStartButton_Click);
             // 
             // quickPlayMapModeScoreLabel
             // 
