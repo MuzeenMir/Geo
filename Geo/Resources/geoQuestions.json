@@ -1,304 +1,505 @@
 {
-  "questionList": [
-    {
-      "number": 1,
-      "question": "Which country has the largest proven oil reserves? (2025)",
-      "opt1": "United States",
-      "opt2": "Qatar",
-      "opt3": "Venezuela",
-      "opt4": "Egypt",
-      "answer": "Venezuela"
-    },
+    "questionList": [
+        {
+            "number": 1,
+            "question": "Which country has the largest proven oil reserves? (2025)",
+            "opt1": "United States",
+            "opt2": "Qatar",
+            "opt3": "Venezuela",
+            "opt4": "Egypt",
+            "answer": "Venezuela"
+        },
 
-    {
-      "number": 2,
-      "question": "Which country has the world's coldest continually inhabited community?",
-      "opt1": "Greenland",
-      "opt2": "Sweden",
-      "opt3": "Iceland",
-      "opt4": "Russia",
-      "answer": "Russia"
-    },
+        {
+            "number": 2,
+            "question": "Which country has the world's coldest continually inhabited community?",
+            "opt1": "Greenland",
+            "opt2": "Sweden",
+            "opt3": "Iceland",
+            "opt4": "Russia",
+            "answer": "Russia"
+        },
 
-    {
-      "number": 3,
-      "question": "What is Africa's most populated country?",
-      "opt1": "South Africa",
-      "opt2": "Ghana",
-      "opt3": "Nigeria",
-      "opt4": "Morocco",
-      "answer": "Nigeria"
-    },
+        {
+            "number": 3,
+            "question": "What is Africa's most populated country?",
+            "opt1": "South Africa",
+            "opt2": "Ghana",
+            "opt3": "Nigeria",
+            "opt4": "Morocco",
+            "answer": "Nigeria"
+        },
 
-    {
-      "number": 4,
-      "question": "Where is K2, Earth's second highest peak?",
-      "opt1": "Pakistan",
-      "opt2": "United States",
-      "opt3": "Nepal",
-      "opt4": "Russia",
-      "answer": "Pakistan"
-    },
+        {
+            "number": 4,
+            "question": "Where is K2, Earth's second highest peak?",
+            "opt1": "Pakistan",
+            "opt2": "United States",
+            "opt3": "Nepal",
+            "opt4": "Russia",
+            "answer": "Pakistan"
+        },
 
-    {
-      "number": 5,
-      "question": "Easter Island is a territory of which country?",
-      "opt1": "New Zealand",
-      "opt2": "Papua New Guinea",
-      "opt3": "Chile",
-      "opt4": "Ecuador",
-      "answer": "Chile"
-    },
+        {
+            "number": 5,
+            "question": "Easter Island is a territory of which country?",
+            "opt1": "New Zealand",
+            "opt2": "Papua New Guinea",
+            "opt3": "Chile",
+            "opt4": "Ecuador",
+            "answer": "Chile"
+        },
 
-    {
-      "number": 6,
-      "question": "Which country has the world's highest percentage of Buddhists?",
-      "opt1": "Cambodia",
-      "opt2": "Philippines",
-      "opt3": "South Korea",
-      "opt4": "India",
-      "answer": "Cambodia"
-    },
+        {
+            "number": 6,
+            "question": "Which country has the world's highest percentage of Buddhists?",
+            "opt1": "Cambodia",
+            "opt2": "Philippines",
+            "opt3": "South Korea",
+            "opt4": "India",
+            "answer": "Cambodia"
+        },
 
-    {
-      "number": 7,
-      "question": "Which country has the most time zones?",
-      "opt1": "United States?",
-      "opt2": "China",
-      "opt3": "France,",
-      "opt4": "United Kingdom,",
-      "answer": "France"
-    },
+        {
+            "number": 7,
+            "question": "Which country has the most time zones?",
+            "opt1": "United States?",
+            "opt2": "China",
+            "opt3": "France,",
+            "opt4": "United Kingdom,",
+            "answer": "France"
+        },
 
-    {
-      "number": 8,
-      "question": "Which country is the only native habitat of the lemur?",
-      "opt1": "Madagascar",
-      "opt2": "Tanzania",
-      "opt3": "India",
-      "opt4": "Mozambique",
-      "answer": "Madagascar"
-    },
+        {
+            "number": 8,
+            "question": "Which country is the only native habitat of the lemur?",
+            "opt1": "Madagascar",
+            "opt2": "Tanzania",
+            "opt3": "India",
+            "opt4": "Mozambique",
+            "answer": "Madagascar"
+        },
 
-    {
-      "number": 9,
-      "question": "What is considered to be the newest country? (2025)",
-      "opt1": "Montenegro",
-      "opt2": "Belarus",
-      "opt3": "South Sudan",
-      "opt4": "Sierra Leone",
-      "answer": "South Sudan"
-    },
+        {
+            "number": 9,
+            "question": "What is considered to be the newest country? (2025)",
+            "opt1": "Montenegro",
+            "opt2": "Belarus",
+            "opt3": "South Sudan",
+            "opt4": "Sierra Leone",
+            "answer": "South Sudan"
+        },
 
-    {
-      "number": 10,
-      "question": "Which country has the most companies with the largest international revenue?",
-      "opt1": "China",
-      "opt2": "Saudi Arabia",
-      "opt3": "Qatar",
-      "opt4": "United States",
-      "answer": "United States"
-    },
+        {
+            "number": 10,
+            "question": "Which country has the most companies with the largest international revenue?",
+            "opt1": "China",
+            "opt2": "Saudi Arabia",
+            "opt3": "Qatar",
+            "opt4": "United States",
+            "answer": "United States"
+        },
 
-    {
-      "number": 11,
-      "question": "Which country has the world's longest coastline?",
-      "opt1": "United States",
-      "opt2": "Russia",
-      "opt3": "Canada",
-      "opt4": "Austrailia",
-      "answer": "Canada"
-    },
+        {
+            "number": 11,
+            "question": "Which country has the world's longest coastline?",
+            "opt1": "United States",
+            "opt2": "Russia",
+            "opt3": "Canada",
+            "opt4": "Austrailia",
+            "answer": "Canada"
+        },
 
-    {
-      "number": 12,
-      "question": "The Great Barrier Reef, the world's largest coral reef system, is closest to which country?",
-      "opt1": "Indonesia",
-      "opt2": "Philippines",
-      "opt3": "Russia",
-      "opt4": "Austrailia",
-      "answer": "Austrailia"
-    },
+        {
+            "number": 12,
+            "question": "The Great Barrier Reef, the world's largest coral reef system, is closest to which country?",
+            "opt1": "Indonesia",
+            "opt2": "Philippines",
+            "opt3": "Russia",
+            "opt4": "Austrailia",
+            "answer": "Austrailia"
+        },
 
-    {
-      "number": 13,
-      "question": "Of the options, which country is smallest in total territory?",
-      "opt1": "Monaco",
-      "opt2": "Vatican City",
-      "opt3": "Nauru",
-      "opt4": "Tuvalu",
-      "answer": "Vatican City"
-    },
+        {
+            "number": 13,
+            "question": "Of the options, which country is smallest in total territory?",
+            "opt1": "Monaco",
+            "opt2": "Vatican City",
+            "opt3": "Nauru",
+            "opt4": "Tuvalu",
+            "answer": "Vatican City"
+        },
 
-    {
-      "number": 14,
-      "question": "Which Nordic country has the nickname 'Land of Many Lakes?'",
-      "opt1": "Sweden",
-      "opt2": "Finland",
-      "opt3": "Norway",
-      "opt4": "Denmark",
-      "answer": "Finland"
-    },
+        {
+            "number": 14,
+            "question": "Which Nordic country has the nickname 'Land of Many Lakes?'",
+            "opt1": "Sweden",
+            "opt2": "Finland",
+            "opt3": "Norway",
+            "opt4": "Denmark",
+            "answer": "Finland"
+        },
 
-    {
-      "number": 15,
-      "question": "Tuscany, home of Leonardo da Vinci and known for famous wines, is in which country?",
-      "opt1": "Spain",
-      "opt2": "France",
-      "opt3": "Italy",
-      "opt4": "Portugal",
-      "answer": "Italy"
-    },
+        {
+            "number": 15,
+            "question": "Tuscany, home of Leonardo da Vinci and known for famous wines, is in which country?",
+            "opt1": "Spain",
+            "opt2": "France",
+            "opt3": "Italy",
+            "opt4": "Portugal",
+            "answer": "Italy"
+        },
 
-    {
-      "number": 16,
-      "question": "Which country is known for its ancient Incan ruins, including Machu Picchu?",
-      "opt1": "Peru",
-      "opt2": "Bolivia",
-      "opt3": "Chile",
-      "opt4": "Ecuador",
-      "answer": "Peru"
-    },
+        {
+            "number": 16,
+            "question": "Which country is known for its ancient Incan ruins, including Machu Picchu?",
+            "opt1": "Peru",
+            "opt2": "Bolivia",
+            "opt3": "Chile",
+            "opt4": "Ecuador",
+            "answer": "Peru"
+        },
 
-    {
-      "number": 17,
-      "question": "Which country has the world's strongest currency? (2025)",
-      "opt1": "United States",
-      "opt2": "United Arab Emirates",
-      "opt3": "Kuwait",
-      "opt4": "Switzerland",
-      "answer": "Kuwait"
-    },
+        {
+            "number": 17,
+            "question": "Which country has the world's strongest currency? (2025)",
+            "opt1": "United States",
+            "opt2": "United Arab Emirates",
+            "opt3": "Kuwait",
+            "opt4": "Switzerland",
+            "answer": "Kuwait"
+        },
 
-    {
-      "number": 18,
-      "question": "Once visited by George Washington, which country is home of Bajans?",
-      "opt1": "Brazil",
-      "opt2": "Barbados",
-      "opt3": "Dominican Republic",
-      "opt4": "Bolivia",
-      "answer": "Barbados"
-    },
+        {
+            "number": 18,
+            "question": "Once visited by George Washington, which country is home of Bajans?",
+            "opt1": "Brazil",
+            "opt2": "Barbados",
+            "opt3": "Dominican Republic",
+            "opt4": "Bolivia",
+            "answer": "Barbados"
+        },
 
-    {
-      "number": 19,
-      "question": "Which country is located in modern day Persia?",
-      "opt1": "Yemen",
-      "opt2": "Greece",
-      "opt3": "Macedonia",
-      "opt4": "Iran",
-      "answer": "Iran"
-    },
+        {
+            "number": 19,
+            "question": "Which country is located in modern day Persia?",
+            "opt1": "Yemen",
+            "opt2": "Greece",
+            "opt3": "Macedonia",
+            "opt4": "Iran",
+            "answer": "Iran"
+        },
 
-    {
-      "number": 20,
-      "question": "Which country was known as 'Ceylon' until 1972?",
-      "opt1": "Sri Lanka",
-      "opt2": "Cyprus",
-      "opt3": "Indonesia",
-      "opt4": "Laos",
-      "answer": "Sri Lanka"
-    },
+        {
+            "number": 20,
+            "question": "Which country was known as 'Ceylon' until 1972?",
+            "opt1": "Sri Lanka",
+            "opt2": "Cyprus",
+            "opt3": "Indonesia",
+            "opt4": "Laos",
+            "answer": "Sri Lanka"
+        },
 
-    {
-      "number": 21,
-      "question": "Kimchi, or spicy fermented cabbage, comes from which country?",
-      "opt1": "South Korea",
-      "opt2": "Japan",
-      "opt3": "Indonesia",
-      "opt4": "Taiwan",
-      "answer": "South Korea"
-    },
+        {
+            "number": 21,
+            "question": "Kimchi, or spicy fermented cabbage, comes from which country?",
+            "opt1": "South Korea",
+            "opt2": "Japan",
+            "opt3": "Indonesia",
+            "opt4": "Taiwan",
+            "answer": "South Korea"
+        },
 
-    {
-      "number": 22,
-      "question": "Which country has won the most FIFA World Cups?",
-      "opt1": "Argentina",
-      "opt2": "Germany",
-      "opt3": "Brazil",
-      "opt4": "Italy",
-      "answer": "Brazil"
-    },
+        {
+            "number": 22,
+            "question": "Which country has won the most FIFA World Cups?",
+            "opt1": "Argentina",
+            "opt2": "Germany",
+            "opt3": "Brazil",
+            "opt4": "Italy",
+            "answer": "Brazil"
+        },
 
-    {
-      "number": 23,
-      "question": "Which country is the home of classical music prodigy Mozart?",
-      "opt1": "Italy",
-      "opt2": "Germany",
-      "opt3": "Czech Republic",
-      "opt4": "Austria",
-      "answer": "Austria"
-    },
+        {
+            "number": 23,
+            "question": "Which country is the home of classical music prodigy Mozart?",
+            "opt1": "Italy",
+            "opt2": "Germany",
+            "opt3": "Czech Republic",
+            "opt4": "Austria",
+            "answer": "Austria"
+        },
 
-    {
-      "number": 24,
-      "question": "Which country has the 'Chicxulub Crater,' proposed site of the dinosaur extinction?",
-      "opt1": "Mexico",
-      "opt2": "Canada",
-      "opt3": "United States",
-      "opt4": "Guatemala",
-      "answer": "Mexico"
-    },
+        {
+            "number": 24,
+            "question": "Which country has the 'Chicxulub Crater,' proposed site of the dinosaur extinction?",
+            "opt1": "Mexico",
+            "opt2": "Canada",
+            "opt3": "United States",
+            "opt4": "Guatemala",
+            "answer": "Mexico"
+        },
 
-    {
-      "number": 25,
-      "question": "Which country partially contains Matterhorn mountain and makes Toblerone chocolate as a result?",
-      "opt1": "Canada",
-      "opt2": "Denmark",
-      "opt3": "Poland",
-      "opt4": "Switzerland",
-      "answer": "Switzerland"
-    },
+        {
+            "number": 25,
+            "question": "Which country partially contains Matterhorn mountain and makes Toblerone chocolate as a result?",
+            "opt1": "Canada",
+            "opt2": "Denmark",
+            "opt3": "Poland",
+            "opt4": "Switzerland",
+            "answer": "Switzerland"
+        },
 
-    {
-      "number": 26,
-      "question": "Which country has a black and red flag with a star, machete, and cogwheel?",
-      "opt1": "Georgia",
-      "opt2": "Kyrgyzstan",
-      "opt3": "Angola",
-      "opt4": "Malawi",
-      "answer": "Angola"
-    },
+        {
+            "number": 26,
+            "question": "Which country has a black and red flag with a star, machete, and cogwheel?",
+            "opt1": "Georgia",
+            "opt2": "Kyrgyzstan",
+            "opt3": "Angola",
+            "opt4": "Malawi",
+            "answer": "Angola"
+        },
 
-    {
-      "number": 27,
-      "question": "Which country has the oldest tri-color flag in use?",
-      "opt1": "Netherlands",
-      "opt2": "France",
-      "opt3": "Italy",
-      "opt4": "Russia",
-      "answer": "Netherlands"
-    },
+        {
+            "number": 27,
+            "question": "Which country has the oldest tri-color flag in use?",
+            "opt1": "Netherlands",
+            "opt2": "France",
+            "opt3": "Italy",
+            "opt4": "Russia",
+            "answer": "Netherlands"
+        },
 
-    {
-      "number": 28,
-      "question": "Inspiring the popular puzzle, Hanoi is the capital of what country?",
-      "opt1": "Vietnam",
-      "opt2": "Singapore",
-      "opt3": "Sri Lanka",
-      "opt4": "Thailand",
-      "answer": "Vietnam"
-    },
+        {
+            "number": 28,
+            "question": "Inspiring the popular puzzle, Hanoi is the capital of what country?",
+            "opt1": "Vietnam",
+            "opt2": "Singapore",
+            "opt3": "Sri Lanka",
+            "opt4": "Thailand",
+            "answer": "Vietnam"
+        },
 
-    {
-      "number": 29,
-      "question": "Inspiring the coding assignment, which country is known for its rope bridges and Dr. Baas' scholarship work?",
-      "opt1": "Bhutan",
-      "opt2": "Ethiopia",
-      "opt3": "India",
-      "opt4": "Nigeria",
-      "answer": "Bhutan"
-    },
+        {
+            "number": 29,
+            "question": "Inspiring the coding assignment, which country is known for its rope bridges and Dr. Baas' scholarship work?",
+            "opt1": "Bhutan",
+            "opt2": "Ethiopia",
+            "opt3": "India",
+            "opt4": "Nigeria",
+            "answer": "Bhutan"
+        },
 
-    {
-      "number": 30,
-      "question": "Which country is known for its strong tradition of lively dance, such as tango?",
-      "opt1": "Honduras",
-      "opt2": "Mexico",
-      "opt3": "Guyana",
-      "opt4": "Argentina",
-      "answer": "Argentina"
-    }
-  ]
+        {
+            "number": 30,
+            "question": "Which country is known for its strong tradition of lively dance, such as tango?",
+            "opt1": "Honduras",
+            "opt2": "Mexico",
+            "opt3": "Guyana",
+            "opt4": "Argentina",
+            "answer": "Argentina"
+        },
+
+        {
+            "number": 31,
+            "question": "Which country is known as the birthplace of the Olympics?",
+            "opt1": "Italy",
+            "opt2": "Greece",
+            "opt3": "Russia",
+            "opt4": "North Macedonia",
+            "answer": "Greece"
+        },
+
+        {
+            "number": 32,
+            "question": "One of the largest lion habitats, the Serengeti region/ecosystem is in which country?",
+            "opt1": "Madagascar",
+            "opt2": "Zimbabwe",
+            "opt3": "Tanzania",
+            "opt4": "Mali",
+            "answer": "Tanzania"
+        },
+
+        {
+            "number": 33,
+            "question": "Which country has the world's tallest building, the Burj Khalifa?",
+            "opt1": "Kuwait",
+            "opt2": "Russia",
+            "opt3": "China",
+            "opt4": "United Arab Emirates",
+            "answer": "United Arab Emirates"
+        },
+
+        {
+            "number": 34,
+            "question": "Which country is known for its ancient pyramids and Sphinx?",
+            "opt1": "Argentina",
+            "opt2": "Peru",
+            "opt3": "Egypt",
+            "opt4": "Syria",
+            "answer": "Egypt"
+        },
+
+        {
+            "number": 35,
+            "question": "Which is the largest African country by land area?",
+            "opt1": "Ethiopia",
+            "opt2": "Nigeria",
+            "opt3": "Algeria",
+            "opt4": "Sudan",
+            "answer": "Algeria"
+        },
+
+        {
+            "number": 36,
+            "question": "What country is known for its globaly influential pottery and silk goods?",
+            "opt1": "Japan",
+            "opt2": "Russia",
+            "opt3": "South Korea",
+            "opt4": "China",
+            "answer": "China"
+        },
+
+        {
+            "number": 37,
+            "question": "'Godzilla', a ficticious radioactive monster, originates from which country?",
+            "opt1": "Russia",
+            "opt2": "China",
+            "opt3": "France",
+            "opt4": "Japan",
+            "answer": "Japan"
+        },
+
+        {
+            "number": 38,
+            "question": "'The Loch Ness Monster,' a mythological lake dweller, originates from where?",
+            "opt1": "Denmark",
+            "opt2": "Netherlands",
+            "opt3": "United Kingdom",
+            "opt4": "Belgium",
+            "answer": "United Kingdom"
+        },
+
+        {
+            "number": 39,
+            "question": "The ancient wonder and sandstone city of Petra is located in which country?",
+            "opt1": "Italy",
+            "opt2": "Germany",
+            "opt3": "Jordan",
+            "opt4": "Iraq",
+            "answer": "Jordan"
+        },
+
+        {
+            "number": 40,
+            "question": "Footballer Cristiano Ronaldo (CR7) hails from which country?",
+            "opt1": "Spain",
+            "opt2": "United Kingdom",
+            "opt3": "Portugal",
+            "opt4": "Italy",
+            "answer": "Portugal"
+        },
+
+        {
+            "number": 41,
+            "question": "Which country has the longest border with Mexico?",
+            "opt1": "Guatemala",
+            "opt2": "Belize",
+            "opt3": "El Salvador",
+            "opt4": "Honduras",
+            "answer": "Guatemala"
+        },
+
+        {
+            "number": 42,
+            "question": "Which country owns the famous Galápagos islands?",
+            "opt1": "Ecuador",
+            "opt2": "Guatemala",
+            "opt3": "Costa Rica",
+            "opt4": "Peru",
+            "answer": "Ecuador"
+        },
+
+        {
+            "number": 43,
+            "question": "Which Caribbean country is known for its classic cars and cigars?",
+            "opt1": "Haiti",
+            "opt2": "Dominican Republic",
+            "opt3": "Jamaica",
+            "opt4": "Cuba",
+            "answer": "Cuba"
+        },
+
+        {
+            "number": 44,
+            "question": "Sprinter Usain Bolt hails from which country?",
+            "opt1": "Haiti",
+            "opt2": "Dominican Republic",
+            "opt3": "Jamaica",
+            "opt4": "Cuba",
+            "answer": "Jamaica"
+        },
+
+        {
+            "number": 45,
+            "question": "Nelson Mandela was the president of which country?",
+            "opt1": "Lesotho",
+            "opt2": "South Africa",
+            "opt3": "Ghana",
+            "opt4": "Ethiopia",
+            "answer": "South Africa"
+        },
+
+        {
+            "number": 46,
+            "question": "The ancient city of Carthage is in which current country?",
+            "opt1": "Morocco",
+            "opt2": "Egypt",
+            "opt3": "Greece",
+            "opt4": "Tunisia",
+            "answer": "Tunisia"
+        },
+
+        {
+            "number": 47,
+            "question": "Marathon runner Eliud Kipchoge hails from which country?",
+            "opt1": "Nigeria",
+            "opt2": "Morocco",
+            "opt3": "Ghana",
+            "opt4": "Kenya",
+            "answer": "Kenya"
+        },
+
+        {
+            "number": 48,
+            "question": "What is the largest landlocked country?",
+            "opt1": "Lesotho",
+            "opt2": "Belarus",
+            "opt3": "Kazakhstan",
+            "opt4": "Algeria",
+            "answer": "Kazakhstan"
+        },
+
+        {
+            "number": 49,
+            "question": "What is the largest archipelagic country?",
+            "opt1": "Philippines",
+            "opt2": "Indonesia",
+            "opt3": "Dominican Republic",
+            "opt4": "Jamaica",
+            "answer": "Indonesia"
+        },
+
+        {
+            "number": 50,
+            "question": "What country is has the world's coldest capital along with a high population of snow leopards?",
+            "opt1": "Russia",
+            "opt2": "Sweden",
+            "opt3": "Canada",
+            "opt4": "Mongolia",
+            "answer": "Mongolia"
+        }
+
+    ]
 }
 	
